@@ -8,29 +8,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #f6f4ee;
-    --paper-dim: #efece3;
-    --card: #ffffff;
-    --ink: #1c2333;
-    --ink-soft: #4a4f5c;
-    --rule: #d8d2bf;
-    --coffee: #6f4e37;
-    --grp-left: #3a5a8c;
-    --grp-center: #7a7566;
-    --grp-right: #a13b2c;
-    --heat-cool: #c9a24a;
-    --heat-neutral: #8a8574;
-    --heat-hot: #a13b2c;
+    --paper: #04070a;
+    --paper-dim: #060d0a;
+    --card: #071008;
+    --ink: #3dff6e;
+    --ink-soft: #2a9e4e;
+    --rule: #135a2c;
+    --coffee: #3dff6e;
+    --grp-left: #45d1ff;
+    --grp-center: #7ae08a;
+    --grp-right: #ff5c4d;
+    --heat-cool: #ffcf5c;
+    --heat-neutral: #7ae08a;
+    --heat-hot: #ff5c4d;
   }
   * { box-sizing: border-box; }
+  html { font-size: 17px; }
+  @media (max-width: 640px) {
+    html { font-size: 19px; }
+  }
   body {
     margin: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif;
-    line-height: 1.5;
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.55;
+    position: relative;
+  }
+  /* CRT scanline + vignette overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,0) 2px,
+        rgba(0,20,5,0.35) 3px,
+        rgba(0,0,0,0) 4px
+      );
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 998;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%);
   }
   .mono { font-family: 'Courier Prime', monospace; }
+
+  /* Font size adjuster */
+  #fontAdjust {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.65rem;
+  }
+  #fontAdjust button {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--paper-dim);
+    color: var(--ink);
+    cursor: pointer;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  #fontAdjust button:hover { background: var(--rule); }
 
   header.masthead {
     border-top: 3px solid var(--coffee);
@@ -41,11 +95,14 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 0.8rem;
+    background: var(--paper-dim);
+    box-shadow: 0 0 18px rgba(61,255,110,0.15);
   }
   header.masthead .title-block h1 {
     font-size: 1.5rem;
     margin: 0;
     font-weight: 700;
+    text-shadow: 0 0 6px rgba(61,255,110,0.7), 0 0 14px rgba(61,255,110,0.35);
   }
   header.masthead .title-block .subtitle {
     font-family: 'Courier Prime', monospace;
@@ -91,8 +148,8 @@
     color: var(--ink-soft);
     line-height: 1.3;
   }
-  .wx-hilo .hi { color: var(--lean-right, #a13b2c); }
-  .wx-hilo .lo { color: var(--lean-left, #3a5a8c); }
+  .wx-hilo .hi { color: var(--heat-hot); }
+  .wx-hilo .lo { color: var(--grp-left); }
   .wx-loc-row {
     display: flex;
     justify-content: space-between;
@@ -170,10 +227,11 @@
   }
   .local-update-title {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.72rem;
+    font-size: 1.05rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+    color: var(--ink);
   }
   .local-update-loc {
     font-family: 'Courier Prime', monospace;
@@ -242,9 +300,13 @@
   details.story {
     background: var(--card);
     border: 1px solid var(--rule);
-    border-radius: 10px;
+    border-radius: 6px;
     margin-bottom: 1rem;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(61,255,110,0.12), inset 0 0 30px rgba(0,0,0,0.4);
+  }
+  details.story[open] {
+    box-shadow: 0 0 16px rgba(61,255,110,0.25), inset 0 0 30px rgba(0,0,0,0.4);
   }
   details.story summary {
     list-style: none;
@@ -275,9 +337,10 @@
   details[open] .chevron { transform: rotate(90deg); }
 
   .story-title {
-    font-size: 1.15rem;
+    font-size: 1.55rem;
     font-weight: 700;
-    margin: 0.25rem 0 0.4rem;
+    margin: 0.3rem 0 0.5rem;
+    text-shadow: 0 0 5px rgba(61,255,110,0.5);
   }
   .story-oneliner {
     font-size: 0.9rem;
@@ -310,9 +373,9 @@
     margin-top: 0.5rem;
     font-family: 'Courier Prime', monospace;
     font-size: 0.65rem;
-    background: #fdf0e0;
+    background: rgba(255,207,92,0.12);
     border: 1px solid var(--heat-cool);
-    color: #7a5a1e;
+    color: var(--heat-cool);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
   }
@@ -412,6 +475,18 @@
   }
   .stance-legend .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:0.3rem; vertical-align:middle; }
 
+  .section-header {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin: 0.4rem 0 1rem;
+    text-shadow: 0 0 6px rgba(61,255,110,0.6), 0 0 14px rgba(61,255,110,0.3);
+  }
+  .section-header::before { content: "> "; opacity: 0.7; }
+
   footer {
     max-width: 780px;
     margin: 0 auto 3rem;
@@ -431,7 +506,13 @@
     <h1>☕ Cup A Joe <span style="font-weight:400; font-size:0.65em; color:var(--ink-soft);">(name for now)</span></h1>
     <div class="subtitle">Morning Coverage Board</div>
   </div>
-  <div id="weatherChip">…</div>
+  <div style="display:flex; align-items:center; gap:0.7rem;">
+    <div id="fontAdjust">
+      <button onclick="adjustFont(-1)" aria-label="Decrease text size">A-</button>
+      <button onclick="adjustFont(1)" aria-label="Increase text size">A+</button>
+    </div>
+    <div id="weatherChip">…</div>
+  </div>
 </header>
 
 <main>
@@ -443,12 +524,7 @@
     <div id="localHeadlines"><span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span></div>
   </div>
 
-  <div class="stance-legend">
-    <span><span class="dot" style="background:var(--heat-cool)"></span>Took claims at face value</span>
-    <span><span class="dot" style="background:var(--heat-neutral)"></span>Neutral / mixed</span>
-    <span><span class="dot" style="background:var(--heat-hot)"></span>Directly challenged claims</span>
-  </div>
-
+  <div class="section-header">Tuck Frump <span style="font-weight:400; font-size:0.7em; color:var(--ink-soft); text-transform:none; letter-spacing:0;">— fact-checked coverage board</span></div>
   <div id="storyList"></div>
 </main>
 
@@ -845,6 +921,14 @@ function submitLocalArea() {
   const val = input.value.trim();
   if (!val) return;
   loadLocalHeadlines(val);
+}
+
+/* ===================== FONT SIZE ADJUSTER ===================== */
+let fontStep = 0; // -2 to +4, relative steps of 1px
+function adjustFont(direction) {
+  fontStep = Math.max(-2, Math.min(6, fontStep + direction));
+  const base = window.innerWidth <= 640 ? 19 : 17;
+  document.documentElement.style.fontSize = (base + fontStep) + "px";
 }
 
 /* ===================== INIT ===================== */
