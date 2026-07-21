@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wire — Cross-Outlet Coverage Board</title>
+<title>Cup A Joe — Morning Coverage Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
@@ -13,11 +13,15 @@
     --ink: #1c2333;
     --ink-soft: #4a4f5c;
     --rule: #cdc7b4;
+    --coffee: #6f4e37;
     --lean-left: #3a5a8c;
     --lean-leanleft: #6b85ab;
     --lean-center: #6b6558;
     --lean-leanright: #b06a4f;
     --lean-right: #a13b2c;
+    --heat-cool: #c9a24a;
+    --heat-neutral: #8a8574;
+    --heat-hot: #a13b2c;
   }
   * { box-sizing: border-box; }
   body {
@@ -30,8 +34,9 @@
   .mono { font-family: 'Courier Prime', monospace; }
 
   header.masthead {
+    border-top: 3px solid var(--coffee);
     border-bottom: 3px double var(--ink);
-    padding: 2.2rem 1.5rem 1.3rem;
+    padding: 2rem 1.5rem 1.2rem;
     text-align: center;
   }
   header.masthead .kicker {
@@ -52,58 +57,120 @@
     color: var(--ink-soft);
   }
 
-  /* Roster strip */
-  .roster {
+  /* Weather strip */
+  .weather-strip {
     max-width: 1000px;
-    margin: 1.4rem auto 0;
+    margin: 1.2rem auto 0;
     padding: 0 1.5rem;
   }
-  .roster-track {
-    position: relative;
-    height: 34px;
-    background: linear-gradient(90deg, var(--lean-left), var(--lean-leanleft), var(--lean-center), var(--lean-leanright), var(--lean-right));
-    border-radius: 3px;
-    opacity: 0.18;
-  }
-  .roster-chips {
+  .weather-box {
+    border: 1px solid var(--rule);
+    background: var(--paper-dim);
+    padding: 0.9rem 1.2rem;
     display: flex;
+    align-items: center;
+    gap: 1rem;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.4rem;
-    margin-top: 0.6rem;
     font-family: 'Courier Prime', monospace;
-    font-size: 0.66rem;
+    font-size: 0.78rem;
+  }
+  .weather-box .wx-temp { font-size: 1.3rem; font-weight: 700; }
+  .weather-box .wx-loc { color: var(--ink-soft); }
+  .weather-box .wx-cond { color: var(--ink); }
+  .weather-box input[type="text"] {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .weather-box button {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+  }
+  .local-updates-note {
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* Heat map */
+  .heatmap-section {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .heatmap-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+  .heat-legend {
+    display: flex;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.9rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.68rem;
     color: var(--ink-soft);
   }
-  .roster-chips span { white-space: nowrap; }
-
-  .roster-pool {
-    margin-top: 1rem;
-    padding-top: 0.9rem;
-    border-top: 1px dashed var(--rule);
+  .heat-legend .swatch {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    margin-right: 0.35rem;
+    vertical-align: middle;
   }
-  .roster-pool-label {
+  .heatmap-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .heatmap-table th {
     font-family: 'Courier Prime', monospace;
     font-size: 0.62rem;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
     color: var(--ink-soft);
-    margin-bottom: 0.5rem;
+    text-align: left;
+    padding: 0.3rem 0.4rem;
+    font-weight: 400;
+    border-bottom: 1px solid var(--rule);
   }
-  .roster-pool-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.5rem;
+  .heatmap-table td.story-label {
+    padding: 0.4rem 0.6rem 0.4rem 0;
+    font-size: 0.82rem;
+    max-width: 220px;
+    vertical-align: middle;
   }
-  .pool-chip {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.68rem;
-    padding: 0.22rem 0.55rem;
-    border-radius: 3px;
-    color: #fff;
-    white-space: nowrap;
+  .heat-cell {
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid var(--paper);
   }
+  .heat-cell .dot {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+  .heat-cell.empty .dot {
+    border: 1px dashed var(--rule);
+    background: transparent;
+  }
+  .heat-cell:hover { outline: 2px solid var(--ink); outline-offset: -2px; }
 
   main {
     max-width: 1000px;
@@ -115,7 +182,11 @@
     border: 1px solid var(--rule);
     background: var(--paper);
     margin-bottom: 2rem;
+    scroll-margin-top: 20px;
+    transition: box-shadow 0.4s;
   }
+  .story.flash { box-shadow: 0 0 0 3px var(--coffee); }
+
   .story-head {
     padding: 1.2rem 1.4rem;
     border-bottom: 1px solid var(--rule);
@@ -128,15 +199,8 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-  .story-head h2 {
-    margin: 0.3rem 0 0.4rem;
-    font-size: 1.3rem;
-  }
-  .story-head .story-facts {
-    font-size: 0.92rem;
-    color: var(--ink);
-    margin: 0;
-  }
+  .story-head h2 { margin: 0.3rem 0 0.4rem; font-size: 1.3rem; }
+  .story-head .story-facts { font-size: 0.92rem; color: var(--ink); margin: 0; }
 
   .coverage-grid {
     display: grid;
@@ -147,17 +211,17 @@
   .coverage-card {
     background: var(--paper);
     padding: 1rem 1.2rem;
+    scroll-margin-top: 20px;
+    transition: background 0.4s;
   }
+  .coverage-card.flash { background: #fff3e0; }
   .coverage-card .outlet-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 0.4rem;
   }
-  .coverage-card .outlet-name {
-    font-weight: 700;
-    font-size: 0.95rem;
-  }
+  .coverage-card .outlet-name { font-weight: 700; font-size: 0.95rem; }
   .coverage-card .lean-tag {
     font-family: 'Courier Prime', monospace;
     font-size: 0.6rem;
@@ -174,11 +238,7 @@
   .lean-leanright-tag { background: var(--lean-leanright); }
   .lean-right-tag { background: var(--lean-right); }
 
-  .coverage-card .framing {
-    font-size: 0.88rem;
-    color: var(--ink);
-    margin: 0 0 0.5rem;
-  }
+  .coverage-card .framing { font-size: 0.88rem; color: var(--ink); margin: 0 0 0.5rem; }
   .coverage-card a {
     font-family: 'Courier Prime', monospace;
     font-size: 0.68rem;
@@ -212,6 +272,16 @@
     margin-right: 0.4rem;
   }
 
+  .howto {
+    max-width: 1000px;
+    margin: 1.4rem auto 0;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
   footer {
     max-width: 1000px;
     margin: 0 auto 3rem;
@@ -222,178 +292,268 @@
     color: var(--ink-soft);
     text-align: center;
   }
-
-  @media (max-width: 640px) {
-    .roster-chips { justify-content: flex-start; }
-  }
 </style>
 </head>
 <body>
 
 <header class="masthead">
-  <div class="kicker">A Working Prototype — Cross-Outlet Coverage Board</div>
-  <h1>The Wire</h1>
-  <div class="subtitle">Same story, a flexible bench of newsrooms · framing compared side by side</div>
+  <div class="kicker">☕ A Working Prototype — Cup A Joe Companion App</div>
+  <h1>Cup A Joe <span style="font-weight:400; font-size:0.5em; color:var(--ink-soft);">(name for now)</span></h1>
+  <div class="subtitle">Morning coverage board · same story, a flexible bench of newsrooms</div>
 </header>
 
-<div class="roster">
-  <div class="roster-track"></div>
-  <div class="roster-chips">
-    <span>← Left</span>
-    <span>Lean Left</span>
-    <span>Center</span>
-    <span>Lean Right</span>
-    <span>Right →</span>
+<div class="weather-strip">
+  <div class="weather-box" id="weatherBox">
+    <span class="mono">Getting your local conditions…</span>
   </div>
-  <div class="roster-pool">
-    <div class="roster-pool-label">Base pool — pulled per story as relevant, not all 17 every time</div>
-    <div class="roster-pool-row">
-      <span class="pool-chip" style="background:var(--lean-left)">The Guardian</span>
-    </div>
-    <div class="roster-pool-row">
-      <span class="pool-chip" style="background:var(--lean-leanleft)">NYT</span>
-      <span class="pool-chip" style="background:var(--lean-leanleft)">Washington Post</span>
-      <span class="pool-chip" style="background:var(--lean-leanleft)">AP</span>
-    </div>
-    <div class="roster-pool-row">
-      <span class="pool-chip" style="background:var(--lean-center)">Reuters</span>
-      <span class="pool-chip" style="background:var(--lean-center)">BBC News</span>
-      <span class="pool-chip" style="background:var(--lean-center)">Financial Times</span>
-      <span class="pool-chip" style="background:var(--lean-center)">The Economist</span>
-      <span class="pool-chip" style="background:var(--lean-center)">PBS NewsHour</span>
-      <span class="pool-chip" style="background:var(--lean-center)">Christian Science Monitor</span>
-      <span class="pool-chip" style="background:var(--lean-center)">Deutsche Welle</span>
-      <span class="pool-chip" style="background:var(--lean-center)">NewsNation</span>
-      <span class="pool-chip" style="background:var(--lean-center)">Axios</span>
-      <span class="pool-chip" style="background:var(--lean-center)">WSJ (news desk)</span>
-    </div>
-    <div class="roster-pool-row">
-      <span class="pool-chip" style="background:var(--lean-leanright)">NY Post</span>
-      <span class="pool-chip" style="background:var(--lean-leanright)">Washington Examiner</span>
-    </div>
-    <div class="roster-pool-row">
-      <span class="pool-chip" style="background:var(--lean-right)">Fox News</span>
-    </div>
+  <div class="local-updates-note">Local stories aren't live yet — that needs the same "search on its own" upgrade as the story tracker. For now, ask in chat for local coverage and I'll add it here by hand.</div>
+</div>
+
+<div class="heatmap-section">
+  <div class="heatmap-title">Coverage Heat Map — click any square to jump to that outlet's writeup</div>
+  <div class="heat-legend">
+    <span><span class="swatch" style="background:var(--heat-cool)"></span>Took claims largely at face value</span>
+    <span><span class="swatch" style="background:var(--heat-neutral)"></span>Neutral / mixed</span>
+    <span><span class="swatch" style="background:var(--heat-hot)"></span>Directly challenged the claims</span>
+    <span><span class="swatch" style="border:1px dashed var(--rule); background:transparent;"></span>Not yet checked</span>
+  </div>
+  <div style="overflow-x:auto;">
+    <table class="heatmap-table" id="heatmapTable"></table>
   </div>
 </div>
 
-<main>
+<main id="storyList"></main>
 
-  <div class="story">
-    <div class="story-head">
-      <div class="story-date mono">JULY 16, 2026</div>
-      <h2>Trump's primetime address on "election security"</h2>
-      <p class="story-facts">What's not in dispute: Trump gave a primetime address focused on elections, the White House declassified and released a batch of intelligence documents alongside it, and he renewed claims about the 2020 election and pushed for the stalled SAVE America Act ahead of the midterms. Where outlets diverge sharply is on whether the documents actually support his claims.</p>
-    </div>
-    <div class="coverage-grid">
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">Fox News</span>
-          <span class="lean-tag lean-right-tag">Right</span>
-        </div>
-        <p class="framing">Covered straightforwardly as an "election integrity" announcement. News coverage relayed Trump's claims (China accessed 220M voter files, intelligence was hidden from him) largely at face value; a companion opinion piece framed the claims as warranting investigation and criticized "Democratic critics" for disputing the evidence.</p>
-        <a href="https://www.foxnews.com/politics/trump-releases-declassified-election-intelligence-says-reveals-shocking-vulnerabilities" target="_blank" rel="noopener">foxnews.com →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">CNN</span>
-          <span class="lean-tag lean-leanleft-tag">Lean Left</span>
-        </div>
-        <p class="framing">Reported the declassification claims, then directly noted the documents "largely discuss vulnerabilities that have been known for years." Contrasted Trump's China-interference claim with a 2021 U.S. intelligence assessment that reached the opposite conclusion.</p>
-        <a href="https://www.cnn.com/2026/07/16/politics/live-news/trump-speech-election" target="_blank" rel="noopener">cnn.com →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">Associated Press</span>
-          <span class="lean-tag lean-center-tag">Center</span>
-        </div>
-        <p class="framing">An AP review of the actual declassified documents found no confirmation of Trump's core claims — many pages were heavily redacted, and the material largely described vulnerabilities already publicly documented for years. Quoted an election-security expert calling the release "a dud."</p>
-        <a href="https://www.pbs.org/newshour/politics/trump-says-these-documents-prove-his-false-claims-of-election-fraud-heres-what-they-really-say" target="_blank" rel="noopener">AP/PBS →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">New York Times</span>
-          <span class="lean-tag lean-leanleft-tag">Lean Left</span>
-        </div>
-        <p class="framing">Reporter Maggie Haberman characterized several of Trump's claims in the speech as exaggerated relative to what the underlying documents actually showed, describing the documents themselves as notably more cautious in their conclusions than the speech.</p>
-        <a href="https://thehill.com/homenews/administration/5973514-save-america-act-push/" target="_blank" rel="noopener">via The Hill (NYT cited) →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">MS NOW (formerly MSNBC)</span>
-          <span class="lean-tag lean-left-tag">Left</span>
-        </div>
-        <p class="framing">Framed the speech as a rehash of long-rejected 2020 conspiracy theories, emphasizing that current and former intelligence officials said no evidence exists that any foreign country changed the outcome of the 2020 election, and noting recent leadership changes atop the intelligence community.</p>
-        <a href="https://www.ms.now/news/trump-speech-election-stolen" target="_blank" rel="noopener">ms.now →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">Al Jazeera</span>
-          <span class="lean-tag lean-left-tag">Left (Intl.)</span>
-        </div>
-        <p class="framing">Described the speech as "controversial," led with a Democratic lawmaker's response accusing Trump of trying to sow doubt about the 2026 election, and noted experts found no conclusive evidence backing his claims.</p>
-        <a href="https://www.aljazeera.com/news/2026/7/17/key-takeaways-from-donald-trumps-speech-on-election-security" target="_blank" rel="noopener">aljazeera.com →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">ABC News</span>
-          <span class="lean-tag lean-leanleft-tag">Lean Left</span>
-        </div>
-        <p class="framing">Relayed the speech's claims in a fairly neutral takeaways format — what Trump said, what documents he released — with comparatively less immediate pushback framing than CNN or MS NOW in the initial writeup.</p>
-        <a href="https://abcnews.com/Politics/key-takeaways-trumps-elections-speech/story?id=134835191" target="_blank" rel="noopener">abcnews.com →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">NBC News</span>
-          <span class="lean-tag lean-leanleft-tag">Lean Left</span>
-        </div>
-        <p class="framing">Live-blog coverage noted plainly that Trump "has repeatedly claimed without evidence" that the 2020 election was affected by fraud, embedding that characterization directly into the news update rather than as separate analysis.</p>
-        <a href="https://www.nbcnews.com/politics/trump-administration/live-blog/trump-congress-iran-blanche-doj-ice-2026-maine-senate-live-updates-rcna587765" target="_blank" rel="noopener">nbcnews.com →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">Time</span>
-          <span class="lean-tag lean-leanleft-tag">Lean Left</span>
-        </div>
-        <p class="framing">Framed the presentation as effective for Trump's base rhetorically but risky factually, previewing that the specific claims would face heavy fact-checking scrutiny in the days after.</p>
-        <a href="https://time.com/article/2026/07/17/trump-speech-elections-china-save-act-takeaways/" target="_blank" rel="noopener">time.com →</a>
-      </div>
-
-      <div class="coverage-card">
-        <div class="outlet-row">
-          <span class="outlet-name">Newsweek</span>
-          <span class="lean-tag lean-center-tag">Center</span>
-        </div>
-        <p class="framing">Analyzed the speech through a media-literacy lens — arguing its function was to keep the 2020 dispute "feeling unresolved" through repetition, regardless of whether the newly released documents actually supported the claims.</p>
-        <a href="https://www.newsweek.com/trump-election-speech-illusory-truth-effect-12212284" target="_blank" rel="noopener">newsweek.com →</a>
-      </div>
-
-    </div>
-    <div class="synthesis">
-      <h3>What this comparison actually shows</h3>
-      <ul>
-        <li><span class="label">Consistent across all 10:</span> Trump gave the speech, declassified documents were released alongside it, and he's pushing for the SAVE America Act before the midterms. Nobody disputes these bare facts.</li>
-        <li><span class="label">Where it splits:</span> Fox's news coverage and opinion content largely presented Trump's claims on their own terms. Every other outlet in this set — including the AP wire service, which has no ideological mandate — reported that a direct review of the actual documents did not support the central claims (that foreign actors altered vote outcomes). That's a real reporting finding, not just left-leaning framing, since AP's review is checkable against the primary documents.</li>
-        <li><span class="label">Framing differences among the outlets that agree on the facts:</span> AP and ABC stayed closest to neutral "here's what was claimed, here's what was found" language. MS NOW, Al Jazeera, and Newsweek led harder with skepticism and historical context (2020 fraud claims being long-rejected). NBC folded the "without evidence" characterization directly into straight news copy rather than flagging it as analysis — worth noting as a style choice that blurs reporting and interpretation.</li>
-        <li><span class="label">Gap in this pass:</span> this story pulled from 10 outlets in the base pool; the rest (BBC, Reuters, Guardian, WaPo, Financial Times, The Economist, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ) weren't checked yet for this particular story — ask and I'll fill in more.</li>
-      </ul>
-    </div>
-  </div>
-
-</main>
+<div class="howto">
+  Add a story by asking in chat, e.g. "add coverage of the Canada tariffs." New cards and heat map columns get generated automatically.
+</div>
 
 <footer>
-  Ask for a story by name or topic and I'll search across the outlet roster and add a new card here. Framing summaries are written in my own words from each outlet's coverage — click through to read the original reporting.
+  Framing summaries are written in my own words from each outlet's coverage — click through to read the original reporting.
 </footer>
+
+<script>
+/* ===================== DATA ===================== */
+const OUTLET_POOL = [
+  { name: "The Guardian", lean: "left" },
+  { name: "NYT", lean: "leanleft" },
+  { name: "Washington Post", lean: "leanleft" },
+  { name: "AP", lean: "leanleft" },
+  { name: "Reuters", lean: "center" },
+  { name: "BBC News", lean: "center" },
+  { name: "Financial Times", lean: "center" },
+  { name: "The Economist", lean: "center" },
+  { name: "PBS NewsHour", lean: "center" },
+  { name: "Christian Science Monitor", lean: "center" },
+  { name: "Deutsche Welle", lean: "center" },
+  { name: "NewsNation", lean: "center" },
+  { name: "Axios", lean: "center" },
+  { name: "WSJ (news desk)", lean: "center" },
+  { name: "NY Post", lean: "leanright" },
+  { name: "Washington Examiner", lean: "leanright" },
+  { name: "Fox News", lean: "right" }
+];
+const LEAN_ORDER = ["left", "leanleft", "center", "leanright", "right"];
+const LEAN_LABEL = { left: "Left", leanleft: "Lean Left", center: "Center", leanright: "Lean Right", right: "Right" };
+const LEAN_TAG_CLASS = { left: "lean-left-tag", leanleft: "lean-leanleft-tag", center: "lean-center-tag", leanright: "lean-leanright-tag", right: "lean-right-tag" };
+
+/* heat: 1 = took claims at face value, 2 = neutral/mixed, 3 = directly challenged claims */
+const STORIES = [
+  {
+    id: "election-security-speech",
+    date: "JULY 16, 2026",
+    title: "Trump's primetime address on \"election security\"",
+    summary: "What's not in dispute: Trump gave a primetime address focused on elections, the White House declassified and released a batch of intelligence documents alongside it, and he renewed claims about the 2020 election and pushed for the stalled SAVE America Act ahead of the midterms. Where outlets diverge sharply is on whether the documents actually support his claims.",
+    outlets: [
+      { name: "Fox News", lean: "right", heat: 1,
+        framing: "Covered straightforwardly as an \"election integrity\" announcement. News coverage relayed Trump's claims (China accessed 220M voter files, intelligence was hidden from him) largely at face value; a companion opinion piece framed the claims as warranting investigation and criticized \"Democratic critics\" for disputing the evidence.",
+        url: "https://www.foxnews.com/politics/trump-releases-declassified-election-intelligence-says-reveals-shocking-vulnerabilities" },
+      { name: "CNN", lean: "leanleft", heat: 3,
+        framing: "Reported the declassification claims, then directly noted the documents \"largely discuss vulnerabilities that have been known for years.\" Contrasted Trump's China-interference claim with a 2021 U.S. intelligence assessment that reached the opposite conclusion.",
+        url: "https://www.cnn.com/2026/07/16/politics/live-news/trump-speech-election" },
+      { name: "AP", lean: "leanleft", heat: 3,
+        framing: "An AP review of the actual declassified documents found no confirmation of Trump's core claims — many pages were heavily redacted, and the material largely described vulnerabilities already publicly documented for years. Quoted an election-security expert calling the release \"a dud.\"",
+        url: "https://www.pbs.org/newshour/politics/trump-says-these-documents-prove-his-false-claims-of-election-fraud-heres-what-they-really-say" },
+      { name: "NYT", lean: "leanleft", heat: 3,
+        framing: "Reporter Maggie Haberman characterized several of Trump's claims in the speech as exaggerated relative to what the underlying documents actually showed, describing the documents themselves as notably more cautious in their conclusions than the speech.",
+        url: "https://thehill.com/homenews/administration/5973514-save-america-act-push/" },
+      { name: "MS NOW (fka MSNBC)", lean: "left", heat: 3,
+        framing: "Framed the speech as a rehash of long-rejected 2020 conspiracy theories, emphasizing that current and former intelligence officials said no evidence exists that any foreign country changed the outcome of the 2020 election, and noting recent leadership changes atop the intelligence community.",
+        url: "https://www.ms.now/news/trump-speech-election-stolen" },
+      { name: "Al Jazeera", lean: "left", heat: 3,
+        framing: "Described the speech as \"controversial,\" led with a Democratic lawmaker's response accusing Trump of trying to sow doubt about the 2026 election, and noted experts found no conclusive evidence backing his claims.",
+        url: "https://www.aljazeera.com/news/2026/7/17/key-takeaways-from-donald-trumps-speech-on-election-security" },
+      { name: "ABC News", lean: "leanleft", heat: 2,
+        framing: "Relayed the speech's claims in a fairly neutral takeaways format — what Trump said, what documents he released — with comparatively less immediate pushback framing than CNN or MS NOW in the initial writeup.",
+        url: "https://abcnews.com/Politics/key-takeaways-trumps-elections-speech/story?id=134835191" },
+      { name: "NBC News", lean: "leanleft", heat: 3,
+        framing: "Live-blog coverage noted plainly that Trump \"has repeatedly claimed without evidence\" that the 2020 election was affected by fraud, embedding that characterization directly into the news update rather than as separate analysis.",
+        url: "https://www.nbcnews.com/politics/trump-administration/live-blog/trump-congress-iran-blanche-doj-ice-2026-maine-senate-live-updates-rcna587765" },
+      { name: "Time", lean: "leanleft", heat: 2,
+        framing: "Framed the presentation as effective for Trump's base rhetorically but risky factually, previewing that the specific claims would face heavy fact-checking scrutiny in the days after.",
+        url: "https://time.com/article/2026/07/17/trump-speech-elections-china-save-act-takeaways/" },
+      { name: "Newsweek", lean: "center", heat: 3,
+        framing: "Analyzed the speech through a media-literacy lens — arguing its function was to keep the 2020 dispute \"feeling unresolved\" through repetition, regardless of whether the newly released documents actually supported the claims.",
+        url: "https://www.newsweek.com/trump-election-speech-illusory-truth-effect-12212284" }
+    ],
+    synthesis: [
+      { label: "Consistent across all 10:", text: "Trump gave the speech, declassified documents were released alongside it, and he's pushing for the SAVE America Act before the midterms. Nobody disputes these bare facts." },
+      { label: "Where it splits:", text: "Fox's news coverage and opinion content largely presented Trump's claims on their own terms. Every other outlet in this set — including the AP wire service, which has no ideological mandate — reported that a direct review of the actual documents did not support the central claims (that foreign actors altered vote outcomes). That's a real reporting finding, not just left-leaning framing, since AP's review is checkable against the primary documents." },
+      { label: "Framing among outlets that agree on the facts:", text: "AP and ABC stayed closest to neutral \"here's what was claimed, here's what was found\" language. MS NOW, Al Jazeera, and Newsweek led harder with skepticism and historical context. NBC folded the \"without evidence\" characterization directly into straight news copy rather than flagging it as analysis — worth noting as a style choice that blurs reporting and interpretation." },
+      { label: "Gap in this pass:", text: "This story pulled from 10 outlets in the base pool; the rest (BBC, Reuters, Guardian, Washington Post, Financial Times, The Economist, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ) weren't checked yet for this particular story." }
+    ]
+  }
+];
+
+/* ===================== RENDER STORIES ===================== */
+function renderStories() {
+  const list = document.getElementById("storyList");
+  list.innerHTML = STORIES.map(story => `
+    <div class="story" id="story-${story.id}">
+      <div class="story-head">
+        <div class="story-date mono">${story.date}</div>
+        <h2>${story.title}</h2>
+        <p class="story-facts">${story.summary}</p>
+      </div>
+      <div class="coverage-grid">
+        ${story.outlets.map(o => `
+          <div class="coverage-card" id="card-${story.id}-${slug(o.name)}">
+            <div class="outlet-row">
+              <span class="outlet-name">${o.name}</span>
+              <span class="lean-tag ${LEAN_TAG_CLASS[o.lean]}">${LEAN_LABEL[o.lean]}</span>
+            </div>
+            <p class="framing">${o.framing}</p>
+            <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
+          </div>
+        `).join("")}
+      </div>
+      <div class="synthesis">
+        <h3>What this comparison actually shows</h3>
+        <ul>
+          ${story.synthesis.map(s => `<li><span class="label">${s.label}</span>${s.text}</li>`).join("")}
+        </ul>
+      </div>
+    </div>
+  `).join("");
+}
+
+function slug(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g, "-"); }
+function hostFromUrl(url) {
+  try { return new URL(url).hostname.replace("www.", ""); } catch(e) { return url; }
+}
+
+/* ===================== RENDER HEAT MAP ===================== */
+function renderHeatmap() {
+  const sortedPool = [...OUTLET_POOL].sort((a,b) => LEAN_ORDER.indexOf(a.lean) - LEAN_ORDER.indexOf(b.lean));
+  const table = document.getElementById("heatmapTable");
+
+  let thead = "<tr><th></th>" + sortedPool.map(o => `<th>${o.name}</th>`).join("") + "</tr>";
+
+  let rows = STORIES.map(story => {
+    const cells = sortedPool.map(outlet => {
+      const covered = story.outlets.find(o => o.name === outlet.name);
+      if (!covered) {
+        return `<td class="heat-cell empty" title="${outlet.name}: not yet checked for this story"><div class="dot"></div></td>`;
+      }
+      const color = covered.heat === 1 ? "var(--heat-cool)" : covered.heat === 2 ? "var(--heat-neutral)" : "var(--heat-hot)";
+      return `<td class="heat-cell" title="${outlet.name}: click to jump to writeup"
+                  onclick="jumpTo('${story.id}','${slug(outlet.name)}')">
+                <div class="dot" style="background:${color}"></div>
+              </td>`;
+    }).join("");
+    return `<tr><td class="story-label">${story.title}</td>${cells}</tr>`;
+  }).join("");
+
+  table.innerHTML = thead + rows;
+}
+
+function jumpTo(storyId, outletSlug) {
+  const card = document.getElementById(`card-${storyId}-${outletSlug}`);
+  const storyEl = document.getElementById(`story-${storyId}`);
+  if (!card) return;
+  card.scrollIntoView({ behavior: "smooth", block: "center" });
+  card.classList.add("flash");
+  storyEl.classList.add("flash");
+  setTimeout(() => { card.classList.remove("flash"); storyEl.classList.remove("flash"); }, 1800);
+}
+
+/* ===================== WEATHER (client-side, runs in visitor's browser) ===================== */
+const WMO = {
+  0: "Clear sky", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
+  45: "Fog", 48: "Fog", 51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle",
+  61: "Light rain", 63: "Rain", 65: "Heavy rain", 71: "Light snow", 73: "Snow", 75: "Heavy snow",
+  80: "Rain showers", 81: "Rain showers", 82: "Violent showers",
+  95: "Thunderstorm", 96: "Thunderstorm w/ hail", 99: "Thunderstorm w/ hail"
+};
+
+function initWeather() {
+  const box = document.getElementById("weatherBox");
+  if (!navigator.geolocation) {
+    showManualWeatherInput("Location access isn't available in this browser.");
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    pos => loadWeather(pos.coords.latitude, pos.coords.longitude),
+    () => showManualWeatherInput("Location access was denied — type a city instead."),
+    { timeout: 8000 }
+  );
+}
+
+async function loadWeather(lat, lon) {
+  const box = document.getElementById("weatherBox");
+  try {
+    const [wxRes, geoRes] = await Promise.all([
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit`),
+      fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
+    ]);
+    const wx = await wxRes.json();
+    const geo = await geoRes.json();
+    const cw = wx.current_weather;
+    const cityName = geo.city || geo.locality || geo.principalSubdivision || "Your location";
+    box.innerHTML = `
+      <span class="wx-temp">${Math.round(cw.temperature)}°F</span>
+      <span class="wx-cond">${WMO[cw.weathercode] || "Conditions unavailable"}</span>
+      <span class="wx-loc">— ${cityName}</span>
+      <button onclick="showManualWeatherInput('Search a different city:')" style="margin-left:auto;">Change</button>
+    `;
+  } catch (e) {
+    showManualWeatherInput("Couldn't load weather — try searching a city:");
+  }
+}
+
+function showManualWeatherInput(message) {
+  const box = document.getElementById("weatherBox");
+  box.innerHTML = `
+    <span class="mono">${message}</span>
+    <input type="text" id="cityInput" placeholder="City name" />
+    <button onclick="searchCity()">Go</button>
+  `;
+}
+
+async function searchCity() {
+  const query = document.getElementById("cityInput").value.trim();
+  if (!query) return;
+  const box = document.getElementById("weatherBox");
+  box.innerHTML = `<span class="mono">Searching…</span>`;
+  try {
+    const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1`);
+    const data = await res.json();
+    if (!data.results || !data.results.length) {
+      showManualWeatherInput(`Couldn't find "${query}" — try another city:`);
+      return;
+    }
+    const { latitude, longitude, name } = data.results[0];
+    await loadWeather(latitude, longitude);
+  } catch (e) {
+    showManualWeatherInput("Search failed — try again:");
+  }
+}
+
+/* ===================== INIT ===================== */
+renderStories();
+renderHeatmap();
+initWeather();
+</script>
 
 </body>
 </html>
