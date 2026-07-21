@@ -35,7 +35,6 @@
     line-height: 1.55;
     position: relative;
   }
-  /* CRT scanline + vignette overlay */
   body::before {
     content: "";
     position: fixed;
@@ -61,7 +60,6 @@
   }
   .mono { font-family: 'Courier Prime', monospace; }
 
-  /* Font size adjuster */
   #fontAdjust {
     display: flex;
     align-items: center;
@@ -112,7 +110,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* Weather card */
   #weatherChip {
     font-family: 'Courier Prime', monospace;
     background: var(--card);
@@ -211,7 +208,6 @@
     margin-bottom: 1.4rem;
   }
 
-  /* Local Update section */
   .local-update {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -296,7 +292,6 @@
     margin-top: 0.5rem;
   }
 
-  /* Story card */
   details.story {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -348,7 +343,6 @@
     margin: 0 0 0.8rem;
   }
 
-  /* Proportional bias bar */
   .bias-bar {
     display: flex;
     height: 10px;
@@ -380,7 +374,6 @@
     border-radius: 4px;
   }
 
-  /* Expanded compare view */
   .compare-wrap {
     border-top: 1px solid var(--rule);
     padding: 1.2rem 1.3rem 1.4rem;
@@ -559,7 +552,6 @@ function group(lean) {
   return "center";
 }
 
-/* heat: 1 = took claims at face value, 2 = neutral/mixed, 3 = directly challenged claims */
 const STORIES = [
   {
     id: "election-security-speech",
@@ -775,20 +767,18 @@ function initWeather() {
   );
 }
 
-async function loadWeather(lat, lon) {
+async function loadWeather(lat, lon, knownName) {
   const chip = document.getElementById("weatherChip");
   chip.innerHTML = `<span class="mono">Loading weather…</span>`;
   try {
-    const [wxRes, geoRes] = await Promise.all([
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`),
-      fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
-    ]);
+    const wxPromise = fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`);
+    const geoPromise = knownName ? Promise.resolve(null) : reverseGeocodePrecise(lat, lon);
+    const [wxRes, cityName0] = await Promise.all([wxPromise, geoPromise]);
     const wx = await wxRes.json();
-    const geo = await geoRes.json();
     const cw = wx.current_weather;
     const hi = Math.round(wx.daily.temperature_2m_max[0]);
     const lo = Math.round(wx.daily.temperature_2m_min[0]);
-    const cityName = geo.city || geo.locality || geo.principalSubdivision || "Local";
+    const cityName = knownName || cityName0 || "Local";
     const icon = WMO_ICON[cw.weathercode] || "🌡️";
     const cond = WMO[cw.weathercode] || "—";
 
@@ -831,11 +821,22 @@ async function searchCity() {
   const chip = document.getElementById("weatherChip");
   chip.innerHTML = `<span class="mono">Searching…</span>`;
   try {
+    if (/^\d{5}$/.test(query)) {
+      const zipRes = await fetch(`https://api.zippopotam.us/us/${query}`);
+      if (zipRes.ok) {
+        const zipData = await zipRes.json();
+        const place = zipData.places && zipData.places[0];
+        if (place) {
+          await loadWeather(parseFloat(place.latitude), parseFloat(place.longitude), `${place["place name"]}, ${place["state abbreviation"]}`);
+          return;
+        }
+      }
+    }
     const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1`);
     const data = await res.json();
     if (!data.results || !data.results.length) { showManualWeatherInput(); return; }
-    const { latitude, longitude } = data.results[0];
-    await loadWeather(latitude, longitude);
+    const { latitude, longitude, name, admin1 } = data.results[0];
+    await loadWeather(latitude, longitude, admin1 ? `${name}, ${admin1}` : name);
   } catch (e) {
     showManualWeatherInput();
   }
@@ -854,20 +855,48 @@ function initLocalNews() {
   );
 }
 
-async function resolveLocalArea(lat, lon) {
+/* Precise reverse geocode: Nominatim resolves neighborhood-level places (e.g. Long Beach)
+   instead of BigDataCloud's coarser snap-to-nearest-major-city. Falls back to BigDataCloud. */
+async function reverseGeocodePrecise(lat, lon) {
+  try {
+    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=14&addressdetails=1`);
+    if (res.ok) {
+      const data = await res.json();
+      const a = data.address || {};
+      const name = a.city || a.town || a.village || a.suburb || a.city_district || a.county;
+      if (name) return name;
+    }
+  } catch (e) {}
   try {
     const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
     const geo = await res.json();
-    // Prefer county-level info if available, otherwise city/locality, otherwise subdivision (state/region)
-    let county = null;
-    if (geo.localityInfo && geo.localityInfo.administrative) {
-      const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
-      if (match) county = match.name;
-    }
-    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
+    return geo.city || geo.locality || geo.principalSubdivision || null;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function resolveLocalArea(lat, lon) {
+  try {
+    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=14&addressdetails=1`);
+    const data = await res.json();
+    const a = data.address || {};
+    const areaName = a.county || a.city || a.town || a.village || a.suburb || a.city_district || "your area";
     loadLocalHeadlines(areaName);
   } catch (e) {
-    showLocalManualInput("Couldn't detect your area — type a city or county:");
+    try {
+      const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
+      const geo = await res.json();
+      let county = null;
+      if (geo.localityInfo && geo.localityInfo.administrative) {
+        const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
+        if (match) county = match.name;
+      }
+      const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
+      loadLocalHeadlines(areaName);
+    } catch (e2) {
+      showLocalManualInput("Couldn't detect your area — type a city or county:");
+    }
   }
 }
 
@@ -879,28 +908,58 @@ async function loadLocalHeadlines(areaName) {
 
   const query = encodeURIComponent(`${areaName} news`);
   const rssUrl = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
-  const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
 
+  let items = null;
+
+  // Primary: rss2json (purpose-built RSS proxy, most reliable in testing)
   try {
-    const res = await fetch(proxyUrl);
-    const text = await res.text();
-    const xml = new DOMParser().parseFromString(text, "text/xml");
-    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
-
-    if (!items.length) {
-      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${areaName}" right now.</span>`;
-      return;
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data.items && data.items.length) {
+        items = data.items.slice(0, 6).map(it => ({
+          title: it.title || "Untitled",
+          link: it.link || "#",
+          source: (it.title && it.title.includes(" - ")) ? it.title.split(" - ").pop() : ""
+        }));
+      }
     }
+  } catch (e) { /* fall through to backup proxies */ }
 
-    list.innerHTML = items.map(item => {
-      const title = item.querySelector("title")?.textContent || "Untitled";
-      const link = item.querySelector("link")?.textContent || "#";
-      const source = item.querySelector("source")?.textContent || "";
-      return `<a class="local-headline" href="${link}" target="_blank" rel="noopener">${title}${source ? `<span class="src">${source}</span>` : ""}</a>`;
-    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
-  } catch (e) {
-    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — the news proxy may be down. Try again shortly.</span>`;
+  // Backup: generic CORS proxies against the raw RSS feed
+  if (!items) {
+    const proxies = [
+      url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+      url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
+    ];
+    for (const makeProxyUrl of proxies) {
+      try {
+        const res = await fetch(makeProxyUrl(rssUrl));
+        if (!res.ok) continue;
+        const text = await res.text();
+        if (!text.includes("<item")) continue;
+        const xml = new DOMParser().parseFromString(text, "text/xml");
+        const nodes = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+        if (nodes.length) {
+          items = nodes.map(item => ({
+            title: item.querySelector("title")?.textContent || "Untitled",
+            link: item.querySelector("link")?.textContent || "#",
+            source: item.querySelector("source")?.textContent || ""
+          }));
+          break;
+        }
+      } catch (e) { /* try next proxy */ }
+    }
   }
+
+  if (!items || !items.length) {
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — all backup proxies failed. Try again shortly.</span>`;
+    return;
+  }
+
+  list.innerHTML = items.map(it =>
+    `<a class="local-headline" href="${it.link}" target="_blank" rel="noopener">${it.title}${it.source ? `<span class="src">${it.source}</span>` : ""}</a>`
+  ).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
 }
 
 function showLocalManualInput(message) {
@@ -916,15 +975,28 @@ function showLocalManualInput(message) {
   `;
 }
 
-function submitLocalArea() {
+async function submitLocalArea() {
   const input = document.getElementById("localAreaInput");
   const val = input.value.trim();
   if (!val) return;
+  if (/^\d{5}$/.test(val)) {
+    try {
+      const zipRes = await fetch(`https://api.zippopotam.us/us/${val}`);
+      if (zipRes.ok) {
+        const zipData = await zipRes.json();
+        const place = zipData.places && zipData.places[0];
+        if (place) {
+          loadLocalHeadlines(`${place["place name"]}, ${place["state abbreviation"]}`);
+          return;
+        }
+      }
+    } catch (e) {}
+  }
   loadLocalHeadlines(val);
 }
 
 /* ===================== FONT SIZE ADJUSTER ===================== */
-let fontStep = 0; // -2 to +4, relative steps of 1px
+let fontStep = 0;
 function adjustFont(direction) {
   fontStep = Math.max(-2, Math.min(6, fontStep + direction));
   const base = window.innerWidth <= 640 ? 19 : 17;
