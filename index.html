@@ -10,15 +10,14 @@
   :root {
     --paper: #f6f4ee;
     --paper-dim: #efece3;
+    --card: #ffffff;
     --ink: #1c2333;
     --ink-soft: #4a4f5c;
-    --rule: #cdc7b4;
+    --rule: #d8d2bf;
     --coffee: #6f4e37;
-    --lean-left: #3a5a8c;
-    --lean-leanleft: #6b85ab;
-    --lean-center: #6b6558;
-    --lean-leanright: #b06a4f;
-    --lean-right: #a13b2c;
+    --grp-left: #3a5a8c;
+    --grp-center: #7a7566;
+    --grp-right: #a13b2c;
     --heat-cool: #c9a24a;
     --heat-neutral: #8a8574;
     --heat-hot: #a13b2c;
@@ -35,260 +34,257 @@
 
   header.masthead {
     border-top: 3px solid var(--coffee);
-    border-bottom: 3px double var(--ink);
-    padding: 2rem 1.5rem 1.2rem;
-    text-align: center;
+    border-bottom: 2px solid var(--ink);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
   }
-  header.masthead .kicker {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  header.masthead h1 {
-    font-size: clamp(1.9rem, 5vw, 3rem);
-    margin: 0.3rem 0 0.4rem;
+  header.masthead .title-block h1 {
+    font-size: 1.5rem;
+    margin: 0;
     font-weight: 700;
   }
-  header.masthead .subtitle {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-  }
-
-  /* Weather strip */
-  .weather-strip {
-    max-width: 1000px;
-    margin: 1.2rem auto 0;
-    padding: 0 1.5rem;
-  }
-  .weather-box {
-    border: 1px solid var(--rule);
-    background: var(--paper-dim);
-    padding: 0.9rem 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.78rem;
-  }
-  .weather-box .wx-temp { font-size: 1.3rem; font-weight: 700; }
-  .weather-box .wx-loc { color: var(--ink-soft); }
-  .weather-box .wx-cond { color: var(--ink); }
-  .weather-box input[type="text"] {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.75rem;
-    padding: 0.35rem 0.5rem;
-    border: 1px solid var(--rule);
-    background: var(--paper);
-  }
-  .weather-box button {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    padding: 0.35rem 0.7rem;
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    cursor: pointer;
-  }
-  .local-updates-note {
-    margin-top: 0.5rem;
-    font-size: 0.78rem;
-    color: var(--ink-soft);
-    font-style: italic;
-  }
-
-  /* Heat map */
-  .heatmap-section {
-    max-width: 1000px;
-    margin: 2rem auto 0;
-    padding: 0 1.5rem;
-  }
-  .heatmap-title {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
-    margin-bottom: 0.6rem;
-  }
-  .heat-legend {
-    display: flex;
-    gap: 1.1rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.9rem;
+  header.masthead .title-block .subtitle {
     font-family: 'Courier Prime', monospace;
     font-size: 0.68rem;
-    color: var(--ink-soft);
-  }
-  .heat-legend .swatch {
-    display: inline-block;
-    width: 10px; height: 10px;
-    border-radius: 2px;
-    margin-right: 0.35rem;
-    vertical-align: middle;
-  }
-  .heatmap-table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 0.8rem;
-  }
-  .heatmap-table th {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.62rem;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    text-align: left;
-    padding: 0.3rem 0.4rem;
-    font-weight: 400;
-    border-bottom: 1px solid var(--rule);
-  }
-  .heatmap-table td.story-label {
-    padding: 0.4rem 0.6rem 0.4rem 0;
-    font-size: 0.82rem;
-    max-width: 220px;
-    vertical-align: middle;
-  }
-  .heat-cell {
-    width: 34px;
-    height: 34px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid var(--paper);
-  }
-  .heat-cell .dot {
-    width: 20px;
-    height: 20px;
-    margin: 0 auto;
-    border-radius: 4px;
-  }
-  .heat-cell.empty .dot {
-    border: 1px dashed var(--rule);
-    background: transparent;
-  }
-  .heat-cell:hover { outline: 2px solid var(--ink); outline-offset: -2px; }
-
-  main {
-    max-width: 1000px;
-    margin: 2rem auto 4rem;
-    padding: 0 1.5rem;
-  }
-
-  .story {
-    border: 1px solid var(--rule);
-    background: var(--paper);
-    margin-bottom: 2rem;
-    scroll-margin-top: 20px;
-    transition: box-shadow 0.4s;
-  }
-  .story.flash { box-shadow: 0 0 0 3px var(--coffee); }
-
-  .story-head {
-    padding: 1.2rem 1.4rem;
-    border-bottom: 1px solid var(--rule);
-    background: var(--paper-dim);
-  }
-  .story-head .story-date {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.7rem;
     color: var(--ink-soft);
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-  .story-head h2 { margin: 0.3rem 0 0.4rem; font-size: 1.3rem; }
-  .story-head .story-facts { font-size: 0.92rem; color: var(--ink); margin: 0; }
 
-  .coverage-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-  }
-  .coverage-card {
-    background: var(--paper);
-    padding: 1rem 1.2rem;
-    scroll-margin-top: 20px;
-    transition: background 0.4s;
-  }
-  .coverage-card.flash { background: #fff3e0; }
-  .coverage-card .outlet-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.4rem;
-  }
-  .coverage-card .outlet-name { font-weight: 700; font-size: 0.95rem; }
-  .coverage-card .lean-tag {
+  /* Weather chip */
+  #weatherChip {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.1rem 0.4rem;
-    border-radius: 2px;
-    color: #fff;
+    font-size: 0.75rem;
+    background: var(--paper-dim);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
     white-space: nowrap;
   }
-  .lean-left-tag { background: var(--lean-left); }
-  .lean-leanleft-tag { background: var(--lean-leanleft); }
-  .lean-center-tag { background: var(--lean-center); }
-  .lean-leanright-tag { background: var(--lean-leanright); }
-  .lean-right-tag { background: var(--lean-right); }
-
-  .coverage-card .framing { font-size: 0.88rem; color: var(--ink); margin: 0 0 0.5rem; }
-  .coverage-card a {
+  .weather-search {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .weather-search input {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+  .weather-search button {
     font-family: 'Courier Prime', monospace;
     font-size: 0.68rem;
+    padding: 0.3rem 0.6rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  main {
+    max-width: 780px;
+    margin: 1.6rem auto 3rem;
+    padding: 0 1.2rem;
+  }
+
+  .local-note {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1.4rem;
+  }
+
+  /* Story card */
+  details.story {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  details.story summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.1rem 1.3rem;
+  }
+  details.story summary::-webkit-details-marker { display: none; }
+
+  .story-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .story-date {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+  .chevron {
+    font-family: 'Courier Prime', monospace;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+  }
+  details[open] .chevron { transform: rotate(90deg); }
+
+  .story-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0.25rem 0 0.4rem;
+  }
+  .story-oneliner {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 0 0 0.8rem;
+  }
+
+  /* Proportional bias bar */
+  .bias-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .bias-bar .seg { height: 100%; }
+  .bias-counts {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.65rem;
+    color: var(--ink-soft);
+  }
+  .bias-counts .count-left { color: var(--grp-left); }
+  .bias-counts .count-center { color: var(--grp-center); }
+  .bias-counts .count-right { color: var(--grp-right); }
+
+  .blindspot-flag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.65rem;
+    background: #fdf0e0;
+    border: 1px solid var(--heat-cool);
+    color: #7a5a1e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  /* Expanded compare view */
+  .compare-wrap {
+    border-top: 1px solid var(--rule);
+    padding: 1.2rem 1.3rem 1.4rem;
+    background: var(--paper-dim);
+  }
+  .compare-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.9rem;
+  }
+  @media (max-width: 640px) {
+    .compare-columns { grid-template-columns: 1fr; }
+  }
+  .compare-col-head {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid;
+  }
+  .col-left .compare-col-head { color: var(--grp-left); border-color: var(--grp-left); }
+  .col-center .compare-col-head { color: var(--grp-center); border-color: var(--grp-center); }
+  .col-right .compare-col-head { color: var(--grp-right); border-color: var(--grp-right); }
+
+  .outlet-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.7rem 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .outlet-card .outlet-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+  }
+  .stance-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .outlet-card .outlet-name { font-weight: 700; font-size: 0.88rem; }
+  .outlet-card .framing { font-size: 0.82rem; color: var(--ink); margin: 0 0 0.4rem; }
+  .outlet-card a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.65rem;
     color: var(--ink-soft);
     text-decoration: none;
     border-bottom: 1px dotted var(--ink-soft);
   }
-  .coverage-card a:hover { border-bottom-style: solid; }
+  .not-checked-note {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
 
   .synthesis {
-    margin: 0;
-    padding: 1.2rem 1.4rem;
-    border-top: 2px solid var(--ink);
-    background: var(--paper-dim);
+    margin-top: 1.1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--rule);
   }
   .synthesis h3 {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin: 0 0 0.6rem;
+    letter-spacing: 0.06em;
     color: var(--ink-soft);
+    margin: 0 0 0.6rem;
   }
-  .synthesis ul { margin: 0; padding-left: 1.2rem; }
-  .synthesis li { margin-bottom: 0.5rem; font-size: 0.92rem; }
+  .synthesis ul { margin: 0; padding-left: 1.1rem; }
+  .synthesis li { margin-bottom: 0.5rem; font-size: 0.88rem; }
   .synthesis .label {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.65rem;
+    font-size: 0.63rem;
     text-transform: uppercase;
     color: var(--ink-soft);
-    margin-right: 0.4rem;
+    margin-right: 0.3rem;
   }
 
-  .howto {
-    max-width: 1000px;
-    margin: 1.4rem auto 0;
-    padding: 0.8rem 1.5rem;
+  .stance-legend {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
     font-family: 'Courier Prime', monospace;
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     color: var(--ink-soft);
-    text-align: center;
+    margin-bottom: 1rem;
   }
+  .stance-legend .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:0.3rem; vertical-align:middle; }
 
   footer {
-    max-width: 1000px;
+    max-width: 780px;
     margin: 0 auto 3rem;
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.2rem;
     border-top: 1px solid var(--rule);
     font-family: 'Courier Prime', monospace;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--ink-soft);
     text-align: center;
   }
@@ -297,39 +293,27 @@
 <body>
 
 <header class="masthead">
-  <div class="kicker">☕ A Working Prototype — Cup A Joe Companion App</div>
-  <h1>Cup A Joe <span style="font-weight:400; font-size:0.5em; color:var(--ink-soft);">(name for now)</span></h1>
-  <div class="subtitle">Morning coverage board · same story, a flexible bench of newsrooms</div>
+  <div class="title-block">
+    <h1>☕ Cup A Joe <span style="font-weight:400; font-size:0.65em; color:var(--ink-soft);">(name for now)</span></h1>
+    <div class="subtitle">Morning Coverage Board</div>
+  </div>
+  <div id="weatherChip">…</div>
 </header>
 
-<div class="weather-strip">
-  <div class="weather-box" id="weatherBox">
-    <span class="mono">Getting your local conditions…</span>
-  </div>
-  <div class="local-updates-note">Local stories aren't live yet — that needs the same "search on its own" upgrade as the story tracker. For now, ask in chat for local coverage and I'll add it here by hand.</div>
-</div>
+<main>
+  <div class="local-note">Local stories aren't live yet — ask in chat for local coverage and I'll add it by hand.</div>
 
-<div class="heatmap-section">
-  <div class="heatmap-title">Coverage Heat Map — click any square to jump to that outlet's writeup</div>
-  <div class="heat-legend">
-    <span><span class="swatch" style="background:var(--heat-cool)"></span>Took claims largely at face value</span>
-    <span><span class="swatch" style="background:var(--heat-neutral)"></span>Neutral / mixed</span>
-    <span><span class="swatch" style="background:var(--heat-hot)"></span>Directly challenged the claims</span>
-    <span><span class="swatch" style="border:1px dashed var(--rule); background:transparent;"></span>Not yet checked</span>
+  <div class="stance-legend">
+    <span><span class="dot" style="background:var(--heat-cool)"></span>Took claims at face value</span>
+    <span><span class="dot" style="background:var(--heat-neutral)"></span>Neutral / mixed</span>
+    <span><span class="dot" style="background:var(--heat-hot)"></span>Directly challenged claims</span>
   </div>
-  <div style="overflow-x:auto;">
-    <table class="heatmap-table" id="heatmapTable"></table>
-  </div>
-</div>
 
-<main id="storyList"></main>
-
-<div class="howto">
-  Add a story by asking in chat, e.g. "add coverage of the Canada tariffs." New cards and heat map columns get generated automatically.
-</div>
+  <div id="storyList"></div>
+</main>
 
 <footer>
-  Framing summaries are written in my own words from each outlet's coverage — click through to read the original reporting.
+  Tap a story to compare coverage. Ask in chat, e.g. "add coverage of the Canada tariffs," to add new stories.
 </footer>
 
 <script>
@@ -353,9 +337,11 @@ const OUTLET_POOL = [
   { name: "Washington Examiner", lean: "leanright" },
   { name: "Fox News", lean: "right" }
 ];
-const LEAN_ORDER = ["left", "leanleft", "center", "leanright", "right"];
-const LEAN_LABEL = { left: "Left", leanleft: "Lean Left", center: "Center", leanright: "Lean Right", right: "Right" };
-const LEAN_TAG_CLASS = { left: "lean-left-tag", leanleft: "lean-leanleft-tag", center: "lean-center-tag", leanright: "lean-leanright-tag", right: "lean-right-tag" };
+function group(lean) {
+  if (lean === "left" || lean === "leanleft") return "left";
+  if (lean === "right" || lean === "leanright") return "right";
+  return "center";
+}
 
 /* heat: 1 = took claims at face value, 2 = neutral/mixed, 3 = directly challenged claims */
 const STORIES = [
@@ -363,7 +349,7 @@ const STORIES = [
     id: "election-security-speech",
     date: "JULY 16, 2026",
     title: "Trump's primetime address on \"election security\"",
-    summary: "What's not in dispute: Trump gave a primetime address focused on elections, the White House declassified and released a batch of intelligence documents alongside it, and he renewed claims about the 2020 election and pushed for the stalled SAVE America Act ahead of the midterms. Where outlets diverge sharply is on whether the documents actually support his claims.",
+    summary: "White House declassified documents alongside a speech renewing 2020 election claims and pushing the SAVE America Act. Outlets agree on what happened; they split hard on whether the documents back up the claims.",
     outlets: [
       { name: "Fox News", lean: "right", heat: 1,
         framing: "Covered straightforwardly as an \"election integrity\" announcement. News coverage relayed Trump's claims (China accessed 220M voter files, intelligence was hidden from him) largely at face value; a companion opinion piece framed the claims as warranting investigation and criticized \"Democratic critics\" for disputing the evidence.",
@@ -398,109 +384,178 @@ const STORIES = [
     ],
     synthesis: [
       { label: "Consistent across all 10:", text: "Trump gave the speech, declassified documents were released alongside it, and he's pushing for the SAVE America Act before the midterms. Nobody disputes these bare facts." },
-      { label: "Where it splits:", text: "Fox's news coverage and opinion content largely presented Trump's claims on their own terms. Every other outlet in this set — including the AP wire service, which has no ideological mandate — reported that a direct review of the actual documents did not support the central claims (that foreign actors altered vote outcomes). That's a real reporting finding, not just left-leaning framing, since AP's review is checkable against the primary documents." },
-      { label: "Framing among outlets that agree on the facts:", text: "AP and ABC stayed closest to neutral \"here's what was claimed, here's what was found\" language. MS NOW, Al Jazeera, and Newsweek led harder with skepticism and historical context. NBC folded the \"without evidence\" characterization directly into straight news copy rather than flagging it as analysis — worth noting as a style choice that blurs reporting and interpretation." },
-      { label: "Gap in this pass:", text: "This story pulled from 10 outlets in the base pool; the rest (BBC, Reuters, Guardian, Washington Post, Financial Times, The Economist, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ) weren't checked yet for this particular story." }
+      { label: "Where it splits:", text: "Fox's news coverage and opinion content largely presented Trump's claims on their own terms. Every other outlet checked here — including the AP wire service, which has no ideological mandate — reported that a direct review of the documents did not support the central claims. That's a reporting finding, not just left-leaning framing, since AP's review is checkable against the primary documents." },
+      { label: "Framing among outlets that agree on the facts:", text: "AP and ABC stayed closest to neutral \"here's what was claimed, here's what was found\" language. MS NOW, Al Jazeera, and Newsweek led harder with skepticism. NBC folded \"without evidence\" directly into straight news copy rather than flagging it as analysis." },
+      { label: "Gap in this pass:", text: "Checked 10 of 17 outlets in the pool. Still missing: BBC, Reuters, Guardian, Washington Post, Financial Times, The Economist, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ." }
+    ]
+  },
+  {
+    id: "canada-tariffs-50",
+    date: "JULY 20, 2026",
+    title: "Trump imposes 50% tariffs on Canadian goods",
+    summary: "Trump signed three proclamations imposing 50% tariffs on a range of Canadian goods (autos, alcohol, dairy, and hundreds of other items), citing Canadian trade discrimination. Unlike the election speech, coverage here is fairly consistent on the facts — the split is more about emphasis than dueling narratives.",
+    outlets: [
+      { name: "Fox Business", lean: "right", heat: 2,
+        framing: "Led with the administration's own framing and a direct quote from a senior official: this is not a trade war, but a defensive response to Canadian discrimination against U.S. autos, alcohol, and dairy exports.",
+        url: "https://www.foxbusiness.com/politics/trump-administration-hits-canada-50-tariff-over-alleged-trade-discrimination" },
+      { name: "NY Post", lean: "leanright", heat: 2,
+        framing: "Covered the broader run-up to this tariff fight, including Trump's shift in tone toward Carney personally, without heavy editorializing on whether the discrimination claims hold up.",
+        url: "https://www.aol.com/news/trump-speaks-canada-pm-ahead-164316299.html" },
+      { name: "CNBC", lean: "center", heat: 2,
+        framing: "Reported the legal mechanism in detail — the tariffs use a rarely-invoked 1930 law (Section 338) with no public precedent since 1949 — and noted Canadian officials pushed back, without asserting who's right on the discrimination claim itself.",
+        url: "https://www.cnbc.com/2026/07/20/trump-tariffs-canada-trade.html" },
+      { name: "Newsweek", lean: "center", heat: 2,
+        framing: "Straightforward explainer format: what's tariffed, what's exempt, and the administration's account that year-long talks with Canada went nowhere before this was announced.",
+        url: "https://www.newsweek.com/trump-tariffs-canada-list-products-imports-explainer-12220703" },
+      { name: "Washington Post", lean: "leanleft", heat: 2,
+        framing: "Straight news account of the announcement and its 30-day timeline, framed around the discrimination dispute without independently weighing in on the underlying trade claims.",
+        url: "https://www.washingtonpost.com/business/2026/07/20/trump-says-he-will-impose-50-percent-tariffs-canada/" },
+      { name: "CNN Business", lean: "leanleft", heat: 3,
+        framing: "Added the most skepticism of the group: quoted an economist noting the tariffs cover only about 0.6% of total U.S. imports despite the steep headline rate, and flagged the untested legal authority being used as notable regardless of outcome.",
+        url: "https://www.cnn.com/2026/07/20/business/canada-tariffs-50-percent-trump" },
+      { name: "The Hill", lean: "center", heat: 2,
+        framing: "Centered Canadian PM Mark Carney's response calling the move a violation of the USMCA trade agreement, giving more direct voice to the Canadian side than most U.S. coverage.",
+        url: "https://thehill.com/policy/international/5979864-mark-carney-donald-trump-tariffs-canadian-wildfires/" }
+    ],
+    synthesis: [
+      { label: "Consistent across the board:", text: "All outlets checked agree on the core facts: 50% tariffs, three proclamations, a 30-day runway, and the administration's stated justification (auto/alcohol/dairy discrimination). No outlet disputed that this announcement happened as described." },
+      { label: "Where emphasis differs:", text: "Fox Business and NY Post led with the administration's rationale largely unchallenged. CNN Business was the outlet most likely to add independent context cutting against the announcement's impact (economists noting the tariffs affect a small share of total trade) and to flag the legal mechanism as untested. The Hill gave the most direct space to Canada's rebuttal." },
+      { label: "Why this is a useful contrast to the election speech story:", text: "This is what non-polarized coverage of a Trump story looks like — outlets differ in emphasis and how much independent pushback they add, but nobody is contesting the basic facts the way AP directly contested the documents in the election-speech story." },
+      { label: "Gap in this pass:", text: "Checked 7 outlets. Still missing: Guardian, BBC, Reuters, AP, Financial Times, The Economist, PBS, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ, Washington Examiner, MS NOW, Al Jazeera, ABC, NBC, Time." }
+    ]
+  },
+  {
+    id: "netanyahu-mamdani-arrest",
+    date: "JULY 20, 2026",
+    title: "Trump says Netanyahu \"will not be arrested\" after Mamdani threat",
+    summary: "NYC Mayor Zohran Mamdani said his administration was in \"active conversation\" about arresting Netanyahu (under an ICC warrant) if he visits for the UN General Assembly in September. Trump posted that Netanyahu will not be arrested \"in any way, shape, or form.\" This is more a political-theater story than a policy dispute over facts.",
+    outlets: [
+      { name: "RedState (via Fox network)", lean: "right", heat: 1,
+        framing: "Opinion-toned piece dismissing Mamdani's position outright, using pointed language (\"fever dream,\" describing his comments as \"anti-Semitic, pro-Hamas\") and citing Sen. John Fetterman calling Mamdani a \"clown.\" Clearly commentary, not a straight news account.",
+        url: "https://redstate.com/rusty-weiss/2026/07/20/president-trump-just-squashed-mamdanis-fever-dream-of-arresting-netanyahu-n2204536" },
+      { name: "Washington Times", lean: "leanright", heat: 2,
+        framing: "Straight account of Trump's Truth Social post and Mamdani's underlying comments, including full quotes from both sides without much added framing.",
+        url: "https://www.washingtontimes.com/news/2026/jul/20/trump-says-netanyahu-wont-arrested-us-rebuffing-mamdanis-threat/" },
+      { name: "CNBC", lean: "center", heat: 2,
+        framing: "Neutral rundown of the back-and-forth, including the ICC's 2024 warrant against Netanyahu and Israel's dismissal of the ICC as illegitimate, without taking a side on the underlying legal dispute.",
+        url: "https://www.cnbc.com/2026/07/20/trump-netanyahu-arrest-mamdani-new-york-israel.html" },
+      { name: "The Hill", lean: "center", heat: 2,
+        framing: "Straight news framing similar to CNBC — laid out both men's statements and the ICC warrant's basis without editorializing on who has the better argument.",
+        url: "https://thehill.com/homenews/administration/5978771-trump-netanyahu-arrest-mamdani-new-york/" },
+      { name: "Bloomberg", lean: "center", heat: 2,
+        framing: "Concise wire-style account focused on the factual sequence — what Mamdani said, what Trump posted in response — without characterizing either side's position.",
+        url: "https://www.bloomberg.com/news/articles/2026-07-20/trump-says-netanyahu-will-not-be-arrested-after-mamdani-threat" },
+      { name: "Al Jazeera", lean: "left", heat: 2,
+        framing: "Led with Trump's rejection of the arrest threat, included Israel's dismissal of the ICC as a \"kangaroo court,\" and gave roughly equal space to Mamdani's original comments — mixed rather than strongly pushing back on Trump's framing here.",
+        url: "https://www.aljazeera.com/news/2026/7/20/trump-rejects-mamdani-threat-to-arrest-israels-netanyahu-for-war-crimes" }
+    ],
+    synthesis: [
+      { label: "Consistent across the board:", text: "Every outlet agrees on the sequence: Mamdani raised the idea of a possible arrest, Trump posted a forceful rejection citing Netanyahu's role against Iran, and the ICC's underlying 2024 warrant is real and undisputed as a fact of what it is (though the U.S. and Israel don't recognize the ICC's jurisdiction here)." },
+      { label: "Where it splits:", text: "The clearest gap here isn't between left and right news desks — it's between straight news accounts (Washington Times, CNBC, The Hill, Bloomberg, Al Jazeera) that mostly relayed both sides' statements, and openly opinion-toned commentary (RedState) that dismissed one side outright. Worth flagging: this kind of piece sits closer to opinion journalism than to the news reporting this tracker is otherwise comparing." },
+      { label: "Notably absent so far:", text: "No outlet in this initial pass strongly challenged either man's underlying claim (that Netanyahu is protected from arrest in the U.S. vs. that the ICC warrant has real legal weight) — this looks more like a political dispute being reported on its face than a factual dispute like the election-speech story." },
+      { label: "Gap in this pass:", text: "Checked 6 outlets, and one of them (RedState) is opinion content rather than straight news — worth replacing with an actual Fox News or NY Post straight-news piece if you want a cleaner right-leaning news comparison here. Still missing most of the base pool." }
     ]
   }
 ];
 
-/* ===================== RENDER STORIES ===================== */
-function renderStories() {
-  const list = document.getElementById("storyList");
-  list.innerHTML = STORIES.map(story => `
-    <div class="story" id="story-${story.id}">
-      <div class="story-head">
-        <div class="story-date mono">${story.date}</div>
-        <h2>${story.title}</h2>
-        <p class="story-facts">${story.summary}</p>
-      </div>
-      <div class="coverage-grid">
-        ${story.outlets.map(o => `
-          <div class="coverage-card" id="card-${story.id}-${slug(o.name)}">
-            <div class="outlet-row">
-              <span class="outlet-name">${o.name}</span>
-              <span class="lean-tag ${LEAN_TAG_CLASS[o.lean]}">${LEAN_LABEL[o.lean]}</span>
-            </div>
-            <p class="framing">${o.framing}</p>
-            <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
-          </div>
-        `).join("")}
-      </div>
-      <div class="synthesis">
-        <h3>What this comparison actually shows</h3>
-        <ul>
-          ${story.synthesis.map(s => `<li><span class="label">${s.label}</span>${s.text}</li>`).join("")}
-        </ul>
-      </div>
-    </div>
-  `).join("");
+/* ===================== RENDER ===================== */
+function heatColor(heat) {
+  return heat === 1 ? "var(--heat-cool)" : heat === 2 ? "var(--heat-neutral)" : "var(--heat-hot)";
 }
-
-function slug(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g, "-"); }
 function hostFromUrl(url) {
   try { return new URL(url).hostname.replace("www.", ""); } catch(e) { return url; }
 }
 
-/* ===================== RENDER HEAT MAP ===================== */
-function renderHeatmap() {
-  const sortedPool = [...OUTLET_POOL].sort((a,b) => LEAN_ORDER.indexOf(a.lean) - LEAN_ORDER.indexOf(b.lean));
-  const table = document.getElementById("heatmapTable");
+function renderStories() {
+  const list = document.getElementById("storyList");
 
-  let thead = "<tr><th></th>" + sortedPool.map(o => `<th>${o.name}</th>`).join("") + "</tr>";
+  list.innerHTML = STORIES.map(story => {
+    const counts = { left: 0, center: 0, right: 0 };
+    story.outlets.forEach(o => counts[group(o.lean)]++);
+    const total = story.outlets.length;
+    const pct = k => total ? (counts[k] / total * 100) : 0;
 
-  let rows = STORIES.map(story => {
-    const cells = sortedPool.map(outlet => {
-      const covered = story.outlets.find(o => o.name === outlet.name);
-      if (!covered) {
-        return `<td class="heat-cell empty" title="${outlet.name}: not yet checked for this story"><div class="dot"></div></td>`;
-      }
-      const color = covered.heat === 1 ? "var(--heat-cool)" : covered.heat === 2 ? "var(--heat-neutral)" : "var(--heat-hot)";
-      return `<td class="heat-cell" title="${outlet.name}: click to jump to writeup"
-                  onclick="jumpTo('${story.id}','${slug(outlet.name)}')">
-                <div class="dot" style="background:${color}"></div>
-              </td>`;
+    const blindspot = (counts.left === 0 || counts.right === 0)
+      ? `<div class="blindspot-flag">⚠ Blindspot: no ${counts.left === 0 ? "left-leaning" : "right-leaning"} outlets found covering this yet</div>`
+      : "";
+
+    const cols = ["left", "center", "right"].map(g => {
+      const outletsInGroup = story.outlets.filter(o => group(o.lean) === g);
+      const label = g === "left" ? "Left" : g === "center" ? "Center" : "Right";
+      const cards = outletsInGroup.length
+        ? outletsInGroup.map(o => `
+            <div class="outlet-card">
+              <div class="outlet-name-row">
+                <span class="stance-dot" style="background:${heatColor(o.heat)}"></span>
+                <span class="outlet-name">${o.name}</span>
+              </div>
+              <p class="framing">${o.framing}</p>
+              <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
+            </div>
+          `).join("")
+        : `<p class="not-checked-note">No ${label.toLowerCase()}-leaning outlets checked yet for this story.</p>`;
+      return `<div class="col-${g}"><div class="compare-col-head">${label} (${outletsInGroup.length})</div>${cards}</div>`;
     }).join("");
-    return `<tr><td class="story-label">${story.title}</td>${cells}</tr>`;
+
+    return `
+      <details class="story">
+        <summary>
+          <div class="story-top-row">
+            <div>
+              <div class="story-date mono">${story.date}</div>
+              <div class="story-title">${story.title}</div>
+            </div>
+            <span class="chevron">▶</span>
+          </div>
+          <p class="story-oneliner">${story.summary}</p>
+          <div class="bias-bar">
+            <div class="seg" style="width:${pct('left')}%; background:var(--grp-left)"></div>
+            <div class="seg" style="width:${pct('center')}%; background:var(--grp-center)"></div>
+            <div class="seg" style="width:${pct('right')}%; background:var(--grp-right)"></div>
+          </div>
+          <div class="bias-counts">
+            <span class="count-left">${counts.left} Left</span>
+            <span class="count-center">${counts.center} Center</span>
+            <span class="count-right">${counts.right} Right</span>
+          </div>
+          ${blindspot}
+        </summary>
+        <div class="compare-wrap">
+          <div class="compare-columns">${cols}</div>
+          <div class="synthesis">
+            <h3>What this comparison actually shows</h3>
+            <ul>${story.synthesis.map(s => `<li><span class="label">${s.label}</span>${s.text}</li>`).join("")}</ul>
+          </div>
+        </div>
+      </details>
+    `;
   }).join("");
-
-  table.innerHTML = thead + rows;
 }
 
-function jumpTo(storyId, outletSlug) {
-  const card = document.getElementById(`card-${storyId}-${outletSlug}`);
-  const storyEl = document.getElementById(`story-${storyId}`);
-  if (!card) return;
-  card.scrollIntoView({ behavior: "smooth", block: "center" });
-  card.classList.add("flash");
-  storyEl.classList.add("flash");
-  setTimeout(() => { card.classList.remove("flash"); storyEl.classList.remove("flash"); }, 1800);
-}
-
-/* ===================== WEATHER (client-side, runs in visitor's browser) ===================== */
+/* ===================== WEATHER ===================== */
 const WMO = {
-  0: "Clear sky", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
+  0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
   45: "Fog", 48: "Fog", 51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle",
   61: "Light rain", 63: "Rain", 65: "Heavy rain", 71: "Light snow", 73: "Snow", 75: "Heavy snow",
   80: "Rain showers", 81: "Rain showers", 82: "Violent showers",
-  95: "Thunderstorm", 96: "Thunderstorm w/ hail", 99: "Thunderstorm w/ hail"
+  95: "Storm", 96: "Storm/hail", 99: "Storm/hail"
 };
 
 function initWeather() {
-  const box = document.getElementById("weatherBox");
-  if (!navigator.geolocation) {
-    showManualWeatherInput("Location access isn't available in this browser.");
-    return;
-  }
+  const chip = document.getElementById("weatherChip");
+  chip.onclick = () => showManualWeatherInput();
+  if (!navigator.geolocation) { showManualWeatherInput(); return; }
+  chip.textContent = "Locating…";
   navigator.geolocation.getCurrentPosition(
     pos => loadWeather(pos.coords.latitude, pos.coords.longitude),
-    () => showManualWeatherInput("Location access was denied — type a city instead."),
+    () => showManualWeatherInput(),
     { timeout: 8000 }
   );
 }
 
 async function loadWeather(lat, lon) {
-  const box = document.getElementById("weatherBox");
+  const chip = document.getElementById("weatherChip");
+  chip.textContent = "Loading weather…";
   try {
     const [wxRes, geoRes] = await Promise.all([
       fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit`),
@@ -509,49 +564,43 @@ async function loadWeather(lat, lon) {
     const wx = await wxRes.json();
     const geo = await geoRes.json();
     const cw = wx.current_weather;
-    const cityName = geo.city || geo.locality || geo.principalSubdivision || "Your location";
-    box.innerHTML = `
-      <span class="wx-temp">${Math.round(cw.temperature)}°F</span>
-      <span class="wx-cond">${WMO[cw.weathercode] || "Conditions unavailable"}</span>
-      <span class="wx-loc">— ${cityName}</span>
-      <button onclick="showManualWeatherInput('Search a different city:')" style="margin-left:auto;">Change</button>
-    `;
+    const cityName = geo.city || geo.locality || geo.principalSubdivision || "Local";
+    chip.innerHTML = `${Math.round(cw.temperature)}°F · ${WMO[cw.weathercode] || "—"} · ${cityName} <span style="opacity:0.6">✎</span>`;
+    chip.onclick = () => showManualWeatherInput();
   } catch (e) {
-    showManualWeatherInput("Couldn't load weather — try searching a city:");
+    showManualWeatherInput();
   }
 }
 
-function showManualWeatherInput(message) {
-  const box = document.getElementById("weatherBox");
-  box.innerHTML = `
-    <span class="mono">${message}</span>
-    <input type="text" id="cityInput" placeholder="City name" />
-    <button onclick="searchCity()">Go</button>
+function showManualWeatherInput() {
+  const chip = document.getElementById("weatherChip");
+  chip.innerHTML = `
+    <span class="weather-search">
+      <input type="text" id="cityInput" placeholder="City" onclick="event.stopPropagation()" />
+      <button onclick="event.stopPropagation(); searchCity()">Go</button>
+    </span>
   `;
 }
 
 async function searchCity() {
-  const query = document.getElementById("cityInput").value.trim();
+  const input = document.getElementById("cityInput");
+  const query = input.value.trim();
   if (!query) return;
-  const box = document.getElementById("weatherBox");
-  box.innerHTML = `<span class="mono">Searching…</span>`;
+  const chip = document.getElementById("weatherChip");
+  chip.textContent = "Searching…";
   try {
     const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1`);
     const data = await res.json();
-    if (!data.results || !data.results.length) {
-      showManualWeatherInput(`Couldn't find "${query}" — try another city:`);
-      return;
-    }
-    const { latitude, longitude, name } = data.results[0];
+    if (!data.results || !data.results.length) { showManualWeatherInput(); return; }
+    const { latitude, longitude } = data.results[0];
     await loadWeather(latitude, longitude);
   } catch (e) {
-    showManualWeatherInput("Search failed — try again:");
+    showManualWeatherInput();
   }
 }
 
 /* ===================== INIT ===================== */
 renderStories();
-renderHeatmap();
 initWeather();
 </script>
 
