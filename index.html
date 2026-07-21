@@ -154,6 +154,90 @@
     margin-bottom: 1.4rem;
   }
 
+  /* Local Update section */
+  .local-update {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.6rem;
+  }
+  .local-update-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+  }
+  .local-update-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-soft);
+  }
+  .local-update-loc {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    color: var(--coffee);
+  }
+  .local-update-loc button {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.66rem;
+    color: var(--coffee);
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.5rem;
+  }
+  .local-headline {
+    display: block;
+    padding: 0.5rem 0;
+    border-top: 1px dashed var(--rule);
+    font-size: 0.88rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .local-headline:first-of-type { border-top: none; }
+  .local-headline:hover { color: var(--coffee); }
+  .local-headline .src {
+    display: block;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.64rem;
+    color: var(--ink-soft);
+    margin-top: 0.15rem;
+  }
+  .local-search-row {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .local-search-row input {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    flex: 1;
+  }
+  .local-search-row button {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .local-fineprint {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.62rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
   /* Story card */
   details.story {
     background: var(--card);
@@ -351,7 +435,13 @@
 </header>
 
 <main>
-  <div class="local-note">Local stories aren't live yet — ask in chat for local coverage and I'll add it by hand.</div>
+  <div class="local-update">
+    <div class="local-update-head">
+      <span class="local-update-title">Local Update</span>
+      <span class="local-update-loc" id="localLocLabel">detecting…</span>
+    </div>
+    <div id="localHeadlines"><span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span></div>
+  </div>
 
   <div class="stance-legend">
     <span><span class="dot" style="background:var(--heat-cool)"></span>Took claims at face value</span>
@@ -675,9 +765,92 @@ async function searchCity() {
   }
 }
 
+/* ===================== LOCAL NEWS ===================== */
+function initLocalNews() {
+  if (!navigator.geolocation) {
+    showLocalManualInput("Location isn't available in this browser.");
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    pos => resolveLocalArea(pos.coords.latitude, pos.coords.longitude),
+    () => showLocalManualInput("Location access declined — type a city or county:"),
+    { timeout: 8000 }
+  );
+}
+
+async function resolveLocalArea(lat, lon) {
+  try {
+    const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
+    const geo = await res.json();
+    // Prefer county-level info if available, otherwise city/locality, otherwise subdivision (state/region)
+    let county = null;
+    if (geo.localityInfo && geo.localityInfo.administrative) {
+      const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
+      if (match) county = match.name;
+    }
+    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
+    loadLocalHeadlines(areaName);
+  } catch (e) {
+    showLocalManualInput("Couldn't detect your area — type a city or county:");
+  }
+}
+
+async function loadLocalHeadlines(areaName) {
+  const label = document.getElementById("localLocLabel");
+  const list = document.getElementById("localHeadlines");
+  label.innerHTML = `${areaName} <button onclick="showLocalManualInput('Search a different area:')">change</button>`;
+  list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span>`;
+
+  const query = encodeURIComponent(`${areaName} news`);
+  const rssUrl = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
+  const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+
+  try {
+    const res = await fetch(proxyUrl);
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, "text/xml");
+    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+
+    if (!items.length) {
+      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${areaName}" right now.</span>`;
+      return;
+    }
+
+    list.innerHTML = items.map(item => {
+      const title = item.querySelector("title")?.textContent || "Untitled";
+      const link = item.querySelector("link")?.textContent || "#";
+      const source = item.querySelector("source")?.textContent || "";
+      return `<a class="local-headline" href="${link}" target="_blank" rel="noopener">${title}${source ? `<span class="src">${source}</span>` : ""}</a>`;
+    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
+  } catch (e) {
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — the news proxy may be down. Try again shortly.</span>`;
+  }
+}
+
+function showLocalManualInput(message) {
+  const label = document.getElementById("localLocLabel");
+  const list = document.getElementById("localHeadlines");
+  label.textContent = "";
+  list.innerHTML = `
+    <div class="mono" style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.4rem;">${message}</div>
+    <div class="local-search-row">
+      <input type="text" id="localAreaInput" placeholder="City or county" />
+      <button onclick="submitLocalArea()">Go</button>
+    </div>
+  `;
+}
+
+function submitLocalArea() {
+  const input = document.getElementById("localAreaInput");
+  const val = input.value.trim();
+  if (!val) return;
+  loadLocalHeadlines(val);
+}
+
 /* ===================== INIT ===================== */
 renderStories();
 initWeather();
+initLocalNews();
 </script>
 
 </body>
