@@ -55,16 +55,65 @@
     letter-spacing: 0.06em;
   }
 
-  /* Weather chip */
+  /* Weather card */
   #weatherChip {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.75rem;
-    background: var(--paper-dim);
+    background: var(--card);
     border: 1px solid var(--rule);
-    border-radius: 20px;
-    padding: 0.4rem 0.9rem;
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
     cursor: pointer;
-    white-space: nowrap;
+    min-width: 190px;
+  }
+  .wx-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .wx-icon { font-size: 1.6rem; line-height: 1; }
+  .wx-main { display: flex; flex-direction: column; }
+  .wx-temp-now {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .wx-cond-text {
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .wx-hilo {
+    margin-left: auto;
+    text-align: right;
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+  .wx-hilo .hi { color: var(--lean-right, #a13b2c); }
+  .wx-hilo .lo { color: var(--lean-left, #3a5a8c); }
+  .wx-loc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+    border-top: 1px dashed var(--rule);
+  }
+  .wx-loc {
+    font-size: 0.66rem;
+    color: var(--ink-soft);
+  }
+  .wx-edit {
+    font-size: 0.66rem;
+    color: var(--coffee);
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Courier Prime', monospace;
+    padding: 0;
   }
   .weather-search {
     display: flex;
@@ -77,6 +126,7 @@
     padding: 0.3rem 0.5rem;
     border: 1px solid var(--rule);
     border-radius: 12px;
+    width: 100px;
   }
   .weather-search button {
     font-family: 'Courier Prime', monospace;
@@ -540,12 +590,18 @@ const WMO = {
   80: "Rain showers", 81: "Rain showers", 82: "Violent showers",
   95: "Storm", 96: "Storm/hail", 99: "Storm/hail"
 };
+const WMO_ICON = {
+  0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️",
+  45: "🌫️", 48: "🌫️", 51: "🌦️", 53: "🌦️", 55: "🌧️",
+  61: "🌦️", 63: "🌧️", 65: "🌧️", 71: "🌨️", 73: "🌨️", 75: "❄️",
+  80: "🌦️", 81: "🌧️", 82: "⛈️",
+  95: "⛈️", 96: "⛈️", 99: "⛈️"
+};
 
 function initWeather() {
   const chip = document.getElementById("weatherChip");
-  chip.onclick = () => showManualWeatherInput();
+  chip.innerHTML = `<span class="mono">Locating…</span>`;
   if (!navigator.geolocation) { showManualWeatherInput(); return; }
-  chip.textContent = "Locating…";
   navigator.geolocation.getCurrentPosition(
     pos => loadWeather(pos.coords.latitude, pos.coords.longitude),
     () => showManualWeatherInput(),
@@ -555,18 +611,38 @@ function initWeather() {
 
 async function loadWeather(lat, lon) {
   const chip = document.getElementById("weatherChip");
-  chip.textContent = "Loading weather…";
+  chip.innerHTML = `<span class="mono">Loading weather…</span>`;
   try {
     const [wxRes, geoRes] = await Promise.all([
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit`),
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`),
       fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
     ]);
     const wx = await wxRes.json();
     const geo = await geoRes.json();
     const cw = wx.current_weather;
+    const hi = Math.round(wx.daily.temperature_2m_max[0]);
+    const lo = Math.round(wx.daily.temperature_2m_min[0]);
     const cityName = geo.city || geo.locality || geo.principalSubdivision || "Local";
-    chip.innerHTML = `${Math.round(cw.temperature)}°F · ${WMO[cw.weathercode] || "—"} · ${cityName} <span style="opacity:0.6">✎</span>`;
-    chip.onclick = () => showManualWeatherInput();
+    const icon = WMO_ICON[cw.weathercode] || "🌡️";
+    const cond = WMO[cw.weathercode] || "—";
+
+    chip.innerHTML = `
+      <div class="wx-row">
+        <span class="wx-icon">${icon}</span>
+        <div class="wx-main">
+          <span class="wx-temp-now">${Math.round(cw.temperature)}°F</span>
+          <span class="wx-cond-text">${cond}</span>
+        </div>
+        <div class="wx-hilo">
+          <div><span class="hi">H ${hi}°</span></div>
+          <div><span class="lo">L ${lo}°</span></div>
+        </div>
+      </div>
+      <div class="wx-loc-row">
+        <span class="wx-loc">${cityName}</span>
+        <button class="wx-edit" onclick="event.stopPropagation(); showManualWeatherInput();">change</button>
+      </div>
+    `;
   } catch (e) {
     showManualWeatherInput();
   }
@@ -587,7 +663,7 @@ async function searchCity() {
   const query = input.value.trim();
   if (!query) return;
   const chip = document.getElementById("weatherChip");
-  chip.textContent = "Searching…";
+  chip.innerHTML = `<span class="mono">Searching…</span>`;
   try {
     const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1`);
     const data = await res.json();
