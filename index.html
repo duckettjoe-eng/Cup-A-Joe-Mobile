@@ -35,6 +35,7 @@
     line-height: 1.55;
     position: relative;
   }
+  /* CRT scanline + vignette overlay */
   body::before {
     content: "";
     position: fixed;
@@ -60,6 +61,7 @@
   }
   .mono { font-family: 'Courier Prime', monospace; }
 
+  /* Font size adjuster */
   #fontAdjust {
     display: flex;
     align-items: center;
@@ -110,40 +112,76 @@
     letter-spacing: 0.06em;
   }
 
-  #weatherChip {
+  /* Weather cards — multi-city row */
+  #weatherContainer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 2px;
+  }
+  .wx-card {
     font-family: 'Courier Prime', monospace;
     background: var(--card);
     border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 0.6rem 1rem;
-    cursor: pointer;
-    min-width: 190px;
+    border-radius: 10px;
+    padding: 0.5rem 0.7rem;
+    position: relative;
+    flex-shrink: 0;
+    min-width: 108px;
+    transition: min-width 0.15s, padding 0.15s;
   }
+  /* When there's only one city, give it room to breathe like the original design */
+  #weatherContainer.single .wx-card { min-width: 190px; padding: 0.6rem 1rem; }
+
+  .wx-remove {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 0.62rem;
+    color: var(--ink-soft);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px;
+  }
+  .wx-remove:hover { color: var(--heat-hot); }
+
   .wx-row {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.4rem;
   }
-  .wx-icon { font-size: 1.6rem; line-height: 1; }
-  .wx-main { display: flex; flex-direction: column; }
+  .wx-icon { font-size: 1.3rem; line-height: 1; }
+  #weatherContainer.single .wx-icon { font-size: 1.6rem; }
+  .wx-main { display: flex; flex-direction: column; min-width: 0; }
   .wx-temp-now {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--ink);
     line-height: 1.1;
+    white-space: nowrap;
   }
+  #weatherContainer.single .wx-temp-now { font-size: 1.15rem; }
   .wx-cond-text {
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     color: var(--ink-soft);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90px;
   }
   .wx-hilo {
     margin-left: auto;
     text-align: right;
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     color: var(--ink-soft);
-    line-height: 1.3;
+    line-height: 1.25;
+    padding-left: 0.3rem;
   }
   .wx-hilo .hi { color: var(--heat-hot); }
   .wx-hilo .lo { color: var(--grp-left); }
@@ -151,46 +189,70 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.35rem;
-    padding-top: 0.35rem;
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
     border-top: 1px dashed var(--rule);
   }
   .wx-loc {
-    font-size: 0.66rem;
+    font-size: 0.6rem;
     color: var(--ink-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90px;
   }
-  .wx-edit {
-    font-size: 0.66rem;
-    color: var(--coffee);
-    text-decoration: underline;
-    cursor: pointer;
-    background: none;
-    border: none;
+
+  .wx-add-card {
     font-family: 'Courier Prime', monospace;
-    padding: 0;
+    background: var(--paper-dim);
+    border: 1px dashed var(--rule);
+    border-radius: 10px;
+    padding: 0.5rem 0.6rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    min-width: 34px;
   }
+  .wx-add-card:hover { color: var(--ink); border-color: var(--ink); }
+
   .weather-search {
     display: flex;
     gap: 0.4rem;
     align-items: center;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 0.5rem 0.6rem;
   }
   .weather-search input {
     font-family: 'Courier Prime', monospace;
     font-size: 0.72rem;
     padding: 0.3rem 0.5rem;
     border: 1px solid var(--rule);
-    border-radius: 12px;
-    width: 100px;
+    border-radius: 8px;
+    width: 90px;
+    background: var(--paper);
+    color: var(--ink);
   }
   .weather-search button {
     font-family: 'Courier Prime', monospace;
     font-size: 0.68rem;
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.5rem;
     background: var(--ink);
     color: var(--paper);
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
+  }
+  .weather-search .wx-cancel {
+    background: none;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    padding: 0 0.2rem;
   }
 
   main {
@@ -208,6 +270,7 @@
     margin-bottom: 1.4rem;
   }
 
+  /* Local Update section */
   .local-update {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -292,6 +355,7 @@
     margin-top: 0.5rem;
   }
 
+  /* Story card */
   details.story {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -343,6 +407,7 @@
     margin: 0 0 0.8rem;
   }
 
+  /* Proportional bias bar */
   .bias-bar {
     display: flex;
     height: 10px;
@@ -374,6 +439,7 @@
     border-radius: 4px;
   }
 
+  /* Expanded compare view */
   .compare-wrap {
     border-top: 1px solid var(--rule);
     padding: 1.2rem 1.3rem 1.4rem;
@@ -504,7 +570,7 @@
       <button onclick="adjustFont(-1)" aria-label="Decrease text size">A-</button>
       <button onclick="adjustFont(1)" aria-label="Increase text size">A+</button>
     </div>
-    <div id="weatherChip">…</div>
+    <div id="weatherContainer" class="single">…</div>
   </div>
 </header>
 
@@ -552,6 +618,7 @@ function group(lean) {
   return "center";
 }
 
+/* heat: 1 = took claims at face value, 2 = neutral/mixed, 3 = directly challenged claims */
 const STORIES = [
   {
     id: "election-security-speech",
@@ -740,7 +807,7 @@ function renderStories() {
   }).join("");
 }
 
-/* ===================== WEATHER ===================== */
+/* ===================== WEATHER (multi-city) ===================== */
 const WMO = {
   0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
   45: "Fog", 48: "Fog", 51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle",
@@ -756,90 +823,128 @@ const WMO_ICON = {
   95: "⛈️", 96: "⛈️", 99: "⛈️"
 };
 
+let wxCities = []; // { id, name, temp, hi, lo, icon, cond }
+let wxNextId = 1;
+let wxShowingAdd = false;
+
 function initWeather() {
-  const chip = document.getElementById("weatherChip");
-  chip.innerHTML = `<span class="mono">Locating…</span>`;
-  if (!navigator.geolocation) { showManualWeatherInput(); return; }
+  renderWeatherContainer();
+  if (!navigator.geolocation) { wxShowingAdd = true; renderWeatherContainer(); return; }
   navigator.geolocation.getCurrentPosition(
-    pos => loadWeather(pos.coords.latitude, pos.coords.longitude),
-    () => showManualWeatherInput(),
+    pos => addCityByCoords(pos.coords.latitude, pos.coords.longitude, null),
+    () => { wxShowingAdd = true; renderWeatherContainer(); },
     { timeout: 8000 }
   );
 }
 
-async function loadWeather(lat, lon, knownName) {
-  const chip = document.getElementById("weatherChip");
-  chip.innerHTML = `<span class="mono">Loading weather…</span>`;
+async function addCityByCoords(lat, lon, labelOverride) {
   try {
-    const wxPromise = fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`);
-    const geoPromise = knownName ? Promise.resolve(null) : reverseGeocodePrecise(lat, lon);
-    const [wxRes, cityName0] = await Promise.all([wxPromise, geoPromise]);
+    const [wxRes, geoRes] = await Promise.all([
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`),
+      labelOverride ? Promise.resolve(null) : fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
+    ]);
     const wx = await wxRes.json();
+    let cityName = labelOverride;
+    if (!cityName) {
+      const geo = await geoRes.json();
+      cityName = geo.city || geo.locality || geo.principalSubdivision || "Local";
+    }
     const cw = wx.current_weather;
-    const hi = Math.round(wx.daily.temperature_2m_max[0]);
-    const lo = Math.round(wx.daily.temperature_2m_min[0]);
-    const cityName = knownName || cityName0 || "Local";
-    const icon = WMO_ICON[cw.weathercode] || "🌡️";
-    const cond = WMO[cw.weathercode] || "—";
+    const entry = {
+      id: wxNextId++,
+      name: cityName,
+      temp: Math.round(cw.temperature),
+      hi: Math.round(wx.daily.temperature_2m_max[0]),
+      lo: Math.round(wx.daily.temperature_2m_min[0]),
+      icon: WMO_ICON[cw.weathercode] || "🌡️",
+      cond: WMO[cw.weathercode] || "—"
+    };
+    // avoid exact duplicate names
+    if (wxCities.some(c => c.name.toLowerCase() === cityName.toLowerCase())) {
+      wxShowingAdd = false;
+      renderWeatherContainer();
+      return;
+    }
+    wxCities.push(entry);
+    wxShowingAdd = false;
+    renderWeatherContainer();
+  } catch (e) {
+    wxShowingAdd = true;
+    renderWeatherContainer();
+  }
+}
 
-    chip.innerHTML = `
+async function addCityByName(query) {
+  if (!query) return;
+  try {
+    const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1`);
+    const data = await res.json();
+    if (!data.results || !data.results.length) return;
+    const { latitude, longitude, name } = data.results[0];
+    await addCityByCoords(latitude, longitude, name);
+  } catch (e) { /* silently fail, add card stays open */ }
+}
+
+function removeCity(id) {
+  wxCities = wxCities.filter(c => c.id !== id);
+  renderWeatherContainer();
+}
+
+function toggleAddCity() {
+  wxShowingAdd = !wxShowingAdd;
+  renderWeatherContainer();
+}
+
+function submitWeatherSearch() {
+  const input = document.getElementById("wxCityInput");
+  const query = input ? input.value.trim() : "";
+  if (!query) return;
+  addCityByName(query);
+}
+
+function renderWeatherContainer() {
+  const container = document.getElementById("weatherContainer");
+  container.className = wxCities.length <= 1 ? "single" : "";
+
+  let html = "";
+
+  if (!wxCities.length && !wxShowingAdd) {
+    html += `<div class="wx-card mono" style="cursor:default;">Locating…</div>`;
+  }
+
+  html += wxCities.map(c => `
+    <div class="wx-card">
+      <button class="wx-remove" onclick="removeCity(${c.id})" aria-label="Remove ${c.name}">✕</button>
       <div class="wx-row">
-        <span class="wx-icon">${icon}</span>
+        <span class="wx-icon">${c.icon}</span>
         <div class="wx-main">
-          <span class="wx-temp-now">${Math.round(cw.temperature)}°F</span>
-          <span class="wx-cond-text">${cond}</span>
+          <span class="wx-temp-now">${c.temp}°F</span>
+          <span class="wx-cond-text">${c.cond}</span>
         </div>
         <div class="wx-hilo">
-          <div><span class="hi">H ${hi}°</span></div>
-          <div><span class="lo">L ${lo}°</span></div>
+          <div><span class="hi">H${c.hi}°</span></div>
+          <div><span class="lo">L${c.lo}°</span></div>
         </div>
       </div>
       <div class="wx-loc-row">
-        <span class="wx-loc">${cityName}</span>
-        <button class="wx-edit" onclick="event.stopPropagation(); showManualWeatherInput();">change</button>
+        <span class="wx-loc">${c.name}</span>
+      </div>
+    </div>
+  `).join("");
+
+  if (wxShowingAdd) {
+    html += `
+      <div class="weather-search">
+        <input type="text" id="wxCityInput" placeholder="City" onkeydown="if(event.key==='Enter') submitWeatherSearch();" />
+        <button onclick="submitWeatherSearch()">Go</button>
+        <button class="wx-cancel" onclick="wxShowingAdd=false; renderWeatherContainer();">✕</button>
       </div>
     `;
-  } catch (e) {
-    showManualWeatherInput();
+  } else {
+    html += `<div class="wx-add-card" onclick="toggleAddCity()" title="Add a city">+</div>`;
   }
-}
 
-function showManualWeatherInput() {
-  const chip = document.getElementById("weatherChip");
-  chip.innerHTML = `
-    <span class="weather-search">
-      <input type="text" id="cityInput" placeholder="City" onclick="event.stopPropagation()" />
-      <button onclick="event.stopPropagation(); searchCity()">Go</button>
-    </span>
-  `;
-}
-
-async function searchCity() {
-  const input = document.getElementById("cityInput");
-  const query = input.value.trim();
-  if (!query) return;
-  const chip = document.getElementById("weatherChip");
-  chip.innerHTML = `<span class="mono">Searching…</span>`;
-  try {
-    if (/^\d{5}$/.test(query)) {
-      const zipRes = await fetch(`https://api.zippopotam.us/us/${query}`);
-      if (zipRes.ok) {
-        const zipData = await zipRes.json();
-        const place = zipData.places && zipData.places[0];
-        if (place) {
-          await loadWeather(parseFloat(place.latitude), parseFloat(place.longitude), `${place["place name"]}, ${place["state abbreviation"]}`);
-          return;
-        }
-      }
-    }
-    const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1`);
-    const data = await res.json();
-    if (!data.results || !data.results.length) { showManualWeatherInput(); return; }
-    const { latitude, longitude, name, admin1 } = data.results[0];
-    await loadWeather(latitude, longitude, admin1 ? `${name}, ${admin1}` : name);
-  } catch (e) {
-    showManualWeatherInput();
-  }
+  container.innerHTML = html;
 }
 
 /* ===================== LOCAL NEWS ===================== */
@@ -855,48 +960,20 @@ function initLocalNews() {
   );
 }
 
-/* Precise reverse geocode: Nominatim resolves neighborhood-level places (e.g. Long Beach)
-   instead of BigDataCloud's coarser snap-to-nearest-major-city. Falls back to BigDataCloud. */
-async function reverseGeocodePrecise(lat, lon) {
-  try {
-    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=14&addressdetails=1`);
-    if (res.ok) {
-      const data = await res.json();
-      const a = data.address || {};
-      const name = a.city || a.town || a.village || a.suburb || a.city_district || a.county;
-      if (name) return name;
-    }
-  } catch (e) {}
+async function resolveLocalArea(lat, lon) {
   try {
     const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
     const geo = await res.json();
-    return geo.city || geo.locality || geo.principalSubdivision || null;
-  } catch (e) {
-    return null;
-  }
-}
-
-async function resolveLocalArea(lat, lon) {
-  try {
-    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=14&addressdetails=1`);
-    const data = await res.json();
-    const a = data.address || {};
-    const areaName = a.county || a.city || a.town || a.village || a.suburb || a.city_district || "your area";
+    // Prefer county-level info if available, otherwise city/locality, otherwise subdivision (state/region)
+    let county = null;
+    if (geo.localityInfo && geo.localityInfo.administrative) {
+      const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
+      if (match) county = match.name;
+    }
+    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
     loadLocalHeadlines(areaName);
   } catch (e) {
-    try {
-      const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
-      const geo = await res.json();
-      let county = null;
-      if (geo.localityInfo && geo.localityInfo.administrative) {
-        const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
-        if (match) county = match.name;
-      }
-      const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
-      loadLocalHeadlines(areaName);
-    } catch (e2) {
-      showLocalManualInput("Couldn't detect your area — type a city or county:");
-    }
+    showLocalManualInput("Couldn't detect your area — type a city or county:");
   }
 }
 
@@ -908,58 +985,28 @@ async function loadLocalHeadlines(areaName) {
 
   const query = encodeURIComponent(`${areaName} news`);
   const rssUrl = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
+  const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
 
-  let items = null;
-
-  // Primary: rss2json (purpose-built RSS proxy, most reliable in testing)
   try {
-    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
-    if (res.ok) {
-      const data = await res.json();
-      if (data.items && data.items.length) {
-        items = data.items.slice(0, 6).map(it => ({
-          title: it.title || "Untitled",
-          link: it.link || "#",
-          source: (it.title && it.title.includes(" - ")) ? it.title.split(" - ").pop() : ""
-        }));
-      }
+    const res = await fetch(proxyUrl);
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, "text/xml");
+    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+
+    if (!items.length) {
+      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${areaName}" right now.</span>`;
+      return;
     }
-  } catch (e) { /* fall through to backup proxies */ }
 
-  // Backup: generic CORS proxies against the raw RSS feed
-  if (!items) {
-    const proxies = [
-      url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-      url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
-    ];
-    for (const makeProxyUrl of proxies) {
-      try {
-        const res = await fetch(makeProxyUrl(rssUrl));
-        if (!res.ok) continue;
-        const text = await res.text();
-        if (!text.includes("<item")) continue;
-        const xml = new DOMParser().parseFromString(text, "text/xml");
-        const nodes = Array.from(xml.querySelectorAll("item")).slice(0, 6);
-        if (nodes.length) {
-          items = nodes.map(item => ({
-            title: item.querySelector("title")?.textContent || "Untitled",
-            link: item.querySelector("link")?.textContent || "#",
-            source: item.querySelector("source")?.textContent || ""
-          }));
-          break;
-        }
-      } catch (e) { /* try next proxy */ }
-    }
+    list.innerHTML = items.map(item => {
+      const title = item.querySelector("title")?.textContent || "Untitled";
+      const link = item.querySelector("link")?.textContent || "#";
+      const source = item.querySelector("source")?.textContent || "";
+      return `<a class="local-headline" href="${link}" target="_blank" rel="noopener">${title}${source ? `<span class="src">${source}</span>` : ""}</a>`;
+    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
+  } catch (e) {
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — the news proxy may be down. Try again shortly.</span>`;
   }
-
-  if (!items || !items.length) {
-    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — all backup proxies failed. Try again shortly.</span>`;
-    return;
-  }
-
-  list.innerHTML = items.map(it =>
-    `<a class="local-headline" href="${it.link}" target="_blank" rel="noopener">${it.title}${it.source ? `<span class="src">${it.source}</span>` : ""}</a>`
-  ).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
 }
 
 function showLocalManualInput(message) {
@@ -975,28 +1022,15 @@ function showLocalManualInput(message) {
   `;
 }
 
-async function submitLocalArea() {
+function submitLocalArea() {
   const input = document.getElementById("localAreaInput");
   const val = input.value.trim();
   if (!val) return;
-  if (/^\d{5}$/.test(val)) {
-    try {
-      const zipRes = await fetch(`https://api.zippopotam.us/us/${val}`);
-      if (zipRes.ok) {
-        const zipData = await zipRes.json();
-        const place = zipData.places && zipData.places[0];
-        if (place) {
-          loadLocalHeadlines(`${place["place name"]}, ${place["state abbreviation"]}`);
-          return;
-        }
-      }
-    } catch (e) {}
-  }
   loadLocalHeadlines(val);
 }
 
 /* ===================== FONT SIZE ADJUSTER ===================== */
-let fontStep = 0;
+let fontStep = 0; // -2 to +4, relative steps of 1px
 function adjustFont(direction) {
   fontStep = Math.max(-2, Math.min(6, fontStep + direction));
   const base = window.innerWidth <= 640 ? 19 : 17;
