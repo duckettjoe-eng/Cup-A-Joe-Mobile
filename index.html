@@ -925,12 +925,34 @@ const WMO_ICON = {
   95: "⛈️", 96: "⛈️", 99: "⛈️"
 };
 
-let wxCities = []; // { id, name, temp, hi, lo, icon, cond }
+let wxCities = []; // { id, name, lat, lon, temp, hi, lo, icon, cond }
 let wxNextId = 1;
 let wxShowingAdd = false;
 
+function saveWxCities() {
+  try {
+    const toSave = wxCities.map(c => ({ name: c.name, lat: c.lat, lon: c.lon }));
+    localStorage.setItem("cupajoe_wx_cities", JSON.stringify(toSave));
+  } catch (e) { /* storage unavailable — app still works, just won't remember */ }
+}
+
+function loadSavedWxCities() {
+  try {
+    const raw = localStorage.getItem("cupajoe_wx_cities");
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+
 function initWeather() {
   renderWeatherContainer();
+  const saved = loadSavedWxCities();
+
+  if (saved && saved.length) {
+    // Re-fetch fresh weather for each previously saved city — the set of cities persists, the numbers refresh
+    saved.forEach(c => addCityByCoords(c.lat, c.lon, c.name));
+    return;
+  }
+
   if (!navigator.geolocation) { wxShowingAdd = true; renderWeatherContainer(); return; }
   navigator.geolocation.getCurrentPosition(
     pos => addCityByCoords(pos.coords.latitude, pos.coords.longitude, null),
@@ -955,6 +977,7 @@ async function addCityByCoords(lat, lon, labelOverride) {
     const entry = {
       id: wxNextId++,
       name: cityName,
+      lat, lon,
       temp: Math.round(cw.temperature),
       hi: Math.round(wx.daily.temperature_2m_max[0]),
       lo: Math.round(wx.daily.temperature_2m_min[0]),
@@ -970,6 +993,7 @@ async function addCityByCoords(lat, lon, labelOverride) {
     wxCities.push(entry);
     wxShowingAdd = false;
     renderWeatherContainer();
+    saveWxCities();
   } catch (e) {
     wxShowingAdd = true;
     renderWeatherContainer();
@@ -990,6 +1014,7 @@ async function addCityByName(query) {
 function removeCity(id) {
   wxCities = wxCities.filter(c => c.id !== id);
   renderWeatherContainer();
+  saveWxCities();
 }
 
 function toggleAddCity() {
@@ -1050,7 +1075,19 @@ function renderWeatherContainer() {
 }
 
 /* ===================== LOCAL NEWS ===================== */
+function saveLocalArea(name) {
+  try { localStorage.setItem("cupajoe_local_area", name); } catch (e) { /* unavailable, app still works */ }
+}
+function loadSavedLocalArea() {
+  try { return localStorage.getItem("cupajoe_local_area"); } catch (e) { return null; }
+}
+
 function initLocalNews() {
+  const saved = loadSavedLocalArea();
+  if (saved) {
+    loadLocalHeadlines(saved);
+    return;
+  }
   if (!navigator.geolocation) {
     showLocalManualInput("Location isn't available in this browser.");
     return;
@@ -1073,6 +1110,7 @@ async function resolveLocalArea(lat, lon) {
       if (match) county = match.name;
     }
     const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
+    saveLocalArea(areaName);
     loadLocalHeadlines(areaName);
   } catch (e) {
     showLocalManualInput("Couldn't detect your area — type a city or county:");
@@ -1128,6 +1166,7 @@ function submitLocalArea() {
   const input = document.getElementById("localAreaInput");
   const val = input.value.trim();
   if (!val) return;
+  saveLocalArea(val);
   loadLocalHeadlines(val);
 }
 
