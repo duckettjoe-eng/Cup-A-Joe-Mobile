@@ -12,7 +12,7 @@
 </script>
 <title>Cup A Joe — Morning Coverage Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #04070a;
@@ -41,66 +41,69 @@
     --story-glow-open: 0 0 16px rgba(61,255,110,0.25), inset 0 0 30px rgba(0,0,0,0.4);
     --scanline-opacity: 1;
     --vignette-opacity: 1;
+    --rule-style: dashed;
   }
 
   /* ---- Layout: Minimal ---- */
   [data-theme="minimal"] {
-    --paper: #fafafa;
-    --paper-dim: #f2f2f0;
+    --paper: #ffffff;
+    --paper-dim: #f7f7f7;
     --card: #ffffff;
-    --ink: #1a1a1a;
-    --ink-soft: #70706a;
-    --rule: #e2e2de;
-    --coffee: #2563eb;
-    --grp-left: #3b82f6;
-    --grp-center: #10b981;
-    --grp-right: #ef4444;
-    --heat-cool: #d99a1f;
-    --heat-neutral: #10b981;
-    --heat-hot: #ef4444;
+    --ink: #111111;
+    --ink-soft: #767676;
+    --rule: #e3e3e3;
+    --coffee: #111111;
+    --grp-left: #5b8def;
+    --grp-center: #4f9e6e;
+    --grp-right: #d9645a;
+    --heat-cool: #c68a2e;
+    --heat-neutral: #4f9e6e;
+    --heat-hot: #d9645a;
     --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    --radius-lg: 12px;
-    --radius-md: 8px;
-    --radius-sm: 8px;
-    --radius-xs: 6px;
+    --radius-lg: 6px;
+    --radius-md: 4px;
+    --radius-sm: 4px;
+    --radius-xs: 3px;
     --text-glow: none;
     --text-glow-soft: none;
     --box-glow: none;
     --box-glow-soft: none;
-    --story-glow: 0 1px 3px rgba(0,0,0,0.06);
-    --story-glow-open: 0 1px 3px rgba(0,0,0,0.06);
+    --story-glow: none;
+    --story-glow-open: none;
     --scanline-opacity: 0;
     --vignette-opacity: 0;
+    --rule-style: solid;
   }
 
   /* ---- Layout: Card ---- */
   [data-theme="card"] {
-    --paper: #eef0f4;
-    --paper-dim: #e4e7ee;
+    --paper: #f1eefc;
+    --paper-dim: #e9e4fb;
     --card: #ffffff;
-    --ink: #1f2338;
-    --ink-soft: #6b7085;
-    --rule: #dfe2ea;
-    --coffee: #6d5bf6;
-    --grp-left: #4f8dfd;
-    --grp-center: #22c58b;
-    --grp-right: #fb6f6f;
-    --heat-cool: #dc9a1f;
-    --heat-neutral: #22c58b;
-    --heat-hot: #fb6f6f;
-    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    --radius-lg: 18px;
-    --radius-md: 12px;
-    --radius-sm: 14px;
+    --ink: #221c3d;
+    --ink-soft: #837bab;
+    --rule: #e6e1fa;
+    --coffee: #7c5cff;
+    --grp-left: #4a8dfd;
+    --grp-center: #21c48a;
+    --grp-right: #ff6b6b;
+    --heat-cool: #f5a623;
+    --heat-neutral: #21c48a;
+    --heat-hot: #ff6b6b;
+    --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 18px;
     --radius-xs: 999px;
     --text-glow: none;
     --text-glow-soft: none;
-    --box-glow: 0 8px 24px rgba(31,35,56,0.08);
-    --box-glow-soft: 0 4px 14px rgba(31,35,56,0.06);
-    --story-glow: 0 6px 20px rgba(31,35,56,0.08);
-    --story-glow-open: 0 10px 28px rgba(31,35,56,0.14);
+    --box-glow: 0 12px 28px rgba(124,92,255,0.18);
+    --box-glow-soft: 0 6px 16px rgba(124,92,255,0.14);
+    --story-glow: 0 8px 24px rgba(124,92,255,0.16);
+    --story-glow-open: 0 14px 34px rgba(124,92,255,0.22);
     --scanline-opacity: 0;
     --vignette-opacity: 0;
+    --rule-style: solid;
   }
 
   /* ---- Layout: Newsprint ---- */
@@ -131,6 +134,7 @@
     --story-glow-open: none;
     --scanline-opacity: 0;
     --vignette-opacity: 0;
+    --rule-style: solid;
   }
   * { box-sizing: border-box; }
   html { font-size: 17px; }
@@ -316,7 +320,7 @@
     align-items: center;
     margin-top: 0.3rem;
     padding-top: 0.3rem;
-    border-top: 1px dashed var(--rule);
+    border-top: 1px var(--rule-style) var(--rule);
   }
   .wx-loc {
     font-size: 0.6rem;
@@ -330,7 +334,7 @@
   .wx-add-card {
     font-family: var(--font-main);
     background: var(--paper-dim);
-    border: 1px dashed var(--rule);
+    border: 1px var(--rule-style) var(--rule);
     border-radius: var(--radius-lg);
     padding: 0.5rem 0.6rem;
     flex-shrink: 0;
@@ -436,7 +440,7 @@
   .local-headline {
     display: block;
     padding: 0.5rem 0;
-    border-top: 1px dashed var(--rule);
+    border-top: 1px var(--rule-style) var(--rule);
     font-size: 0.88rem;
     color: var(--ink);
     text-decoration: none;
@@ -531,7 +535,7 @@
     font-weight: 700;
   }
   .fc-claim-card {
-    border-top: 1px dashed var(--rule);
+    border-top: 1px var(--rule-style) var(--rule);
     padding: 0.7rem 0;
   }
   .fc-claim-card:first-child { border-top: none; }
@@ -719,7 +723,7 @@
   .synthesis {
     margin-top: 1.1rem;
     padding-top: 1rem;
-    border-top: 1px dashed var(--rule);
+    border-top: 1px var(--rule-style) var(--rule);
   }
   .synthesis h3 {
     font-family: var(--font-main);
