@@ -13,6 +13,8 @@
 <title>Cup A Joe — Morning Coverage Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root {
     --paper: #04070a;
@@ -44,7 +46,6 @@
     --rule-style: dashed;
   }
 
-  /* ---- Layout: Minimal ---- */
   [data-theme="minimal"] {
     --paper: #ffffff;
     --paper-dim: #f7f7f7;
@@ -75,7 +76,6 @@
     --rule-style: solid;
   }
 
-  /* ---- Layout: Card ---- */
   [data-theme="card"] {
     --paper: #f1eefc;
     --paper-dim: #e9e4fb;
@@ -106,7 +106,6 @@
     --rule-style: solid;
   }
 
-  /* ---- Layout: Newsprint ---- */
   [data-theme="newsprint"] {
     --paper: #f4f1e8;
     --paper-dim: #ece7d8;
@@ -149,7 +148,6 @@
     line-height: 1.55;
     position: relative;
   }
-  /* CRT scanline + vignette overlay */
   body::before {
     content: "";
     position: fixed;
@@ -190,7 +188,6 @@
     cursor: pointer;
   }
 
-  /* Font size adjuster */
   #fontAdjust {
     display: flex;
     align-items: center;
@@ -241,7 +238,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* Weather cards — multi-city row */
   #weatherContainer {
     display: flex;
     gap: 0.5rem;
@@ -261,7 +257,6 @@
     min-width: 108px;
     transition: min-width 0.15s, padding 0.15s;
   }
-  /* When there's only one city, give it room to breathe like the original design */
   #weatherContainer.single .wx-card { min-width: 190px; padding: 0.6rem 1rem; }
 
   .wx-remove {
@@ -399,7 +394,6 @@
     margin-bottom: 1.4rem;
   }
 
-  /* Local Update section */
   .local-update {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -484,7 +478,6 @@
     margin-top: 0.5rem;
   }
 
-  /* Fact Check section */
   .factcheck {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -575,7 +568,51 @@
     color: var(--ink-soft);
   }
 
-  /* Story card */
+  #storyMap {
+    height: 280px;
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--rule);
+    margin-bottom: 1.4rem;
+    box-shadow: var(--box-glow-soft);
+    background: var(--paper-dim);
+  }
+  .leaflet-container {
+    background: var(--paper-dim) !important;
+    font-family: var(--font-main) !important;
+  }
+  .story-pulse-marker {
+    display: block;
+    border-radius: 50%;
+    background: var(--ink);
+    box-shadow: 0 0 6px 2px color-mix(in srgb, var(--ink) 80%, transparent);
+    animation: storyPulse 2s infinite;
+  }
+  @keyframes storyPulse {
+    0%   { box-shadow: 0 0 4px 1px color-mix(in srgb, var(--ink) 70%, transparent); }
+    50%  { box-shadow: 0 0 12px 6px color-mix(in srgb, var(--ink) 50%, transparent); }
+    100% { box-shadow: 0 0 4px 1px color-mix(in srgb, var(--ink) 70%, transparent); }
+  }
+  .leaflet-popup-content-wrapper {
+    background: var(--card) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm) !important;
+  }
+  .leaflet-popup-tip { background: var(--card) !important; }
+  .story-popup-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  .story-popup-link {
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    color: var(--coffee);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
   details.story {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -627,7 +664,6 @@
     margin: 0 0 0.8rem;
   }
 
-  /* Proportional bias bar */
   .bias-bar {
     display: flex;
     height: 10px;
@@ -659,7 +695,6 @@
     border-radius: var(--radius-xs);
   }
 
-  /* Expanded compare view */
   .compare-wrap {
     border-top: 1px solid var(--rule);
     padding: 1.2rem 1.3rem 1.4rem;
@@ -821,6 +856,7 @@
   </div>
 
   <div class="section-header">Tuck Frump <span style="font-weight:400; font-size:0.7em; color:var(--ink-soft); text-transform:none; letter-spacing:0;">— fact-checked coverage board</span></div>
+  <div id="storyMap"></div>
   <div id="storyList"></div>
 </main>
 
@@ -829,7 +865,6 @@
 </footer>
 
 <script>
-/* ===================== DATA ===================== */
 const OUTLET_POOL = [
   { name: "The Guardian", lean: "left" },
   { name: "NYT", lean: "leanleft" },
@@ -855,10 +890,10 @@ function group(lean) {
   return "center";
 }
 
-/* heat: 1 = took claims at face value, 2 = neutral/mixed, 3 = directly challenged claims */
 const STORIES = [
   {
     id: "election-security-speech",
+    locations: [{ name: "Washington, DC", lat: 38.9072, lon: -77.0369 }],
     date: "JULY 16, 2026",
     title: "Trump's primetime address on \"election security\"",
     summary: "White House declassified documents alongside a speech renewing 2020 election claims and pushing the SAVE America Act. Outlets agree on what happened; they split hard on whether the documents back up the claims.",
@@ -903,6 +938,10 @@ const STORIES = [
   },
   {
     id: "canada-tariffs-50",
+    locations: [
+      { name: "Washington, DC", lat: 38.9072, lon: -77.0369 },
+      { name: "Ottawa, Canada", lat: 45.4215, lon: -75.6972 }
+    ],
     date: "JULY 20, 2026",
     title: "Trump imposes 50% tariffs on Canadian goods",
     summary: "Trump signed three proclamations imposing 50% tariffs on a range of Canadian goods (autos, alcohol, dairy, and hundreds of other items), citing Canadian trade discrimination. Unlike the election speech, coverage here is fairly consistent on the facts — the split is more about emphasis than dueling narratives.",
@@ -938,6 +977,10 @@ const STORIES = [
   },
   {
     id: "netanyahu-mamdani-arrest",
+    locations: [
+      { name: "New York, NY", lat: 40.7128, lon: -74.0060 },
+      { name: "Jerusalem, Israel", lat: 31.7683, lon: 35.2137 }
+    ],
     date: "JULY 20, 2026",
     title: "Trump says Netanyahu \"will not be arrested\" after Mamdani threat",
     summary: "NYC Mayor Zohran Mamdani said his administration was in \"active conversation\" about arresting Netanyahu (under an ICC warrant) if he visits for the UN General Assembly in September. Trump posted that Netanyahu will not be arrested \"in any way, shape, or form.\" This is more a political-theater story than a policy dispute over facts.",
@@ -970,7 +1013,6 @@ const STORIES = [
   }
 ];
 
-/* ===================== RENDER ===================== */
 function heatColor(heat) {
   return heat === 1 ? "var(--heat-cool)" : heat === 2 ? "var(--heat-neutral)" : "var(--heat-hot)";
 }
@@ -1010,7 +1052,7 @@ function renderStories() {
     }).join("");
 
     return `
-      <details class="story">
+      <details class="story" id="story-${story.id}">
         <summary>
           <div class="story-top-row">
             <div>
@@ -1044,7 +1086,46 @@ function renderStories() {
   }).join("");
 }
 
-/* ===================== WEATHER (multi-city) ===================== */
+function jumpToStoryCard(storyId) {
+  const el = document.getElementById(`story-${storyId}`);
+  if (!el) return;
+  el.setAttribute("open", "");
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  el.style.transition = "box-shadow 0.4s";
+  const originalShadow = el.style.boxShadow;
+  el.style.boxShadow = "0 0 0 3px var(--coffee)";
+  setTimeout(() => { el.style.boxShadow = originalShadow; }, 1800);
+}
+
+function initStoryMap() {
+  const mapEl = document.getElementById("storyMap");
+  if (!mapEl || typeof L === "undefined") return;
+
+  const map = L.map("storyMap", { scrollWheelZoom: false }).setView([30, -40], 2);
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    maxZoom: 18
+  }).addTo(map);
+
+  STORIES.forEach(story => {
+    (story.locations || []).forEach(loc => {
+      const icon = L.divIcon({
+        className: "",
+        html: `<span class="story-pulse-marker" style="width:14px; height:14px; display:block;"></span>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+      });
+      const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
+      marker.bindPopup(`
+        <div class="story-popup-title">${story.title}</div>
+        <div style="font-size:0.72rem; color:var(--ink-soft); margin-bottom:0.4rem;">${loc.name}</div>
+        <span class="story-popup-link" onclick="jumpToStoryCard('${story.id}')">Jump to story →</span>
+      `);
+    });
+  });
+}
+
 const WMO = {
   0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
   45: "Fog", 48: "Fog", 51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle",
@@ -1060,7 +1141,7 @@ const WMO_ICON = {
   95: "⛈️", 96: "⛈️", 99: "⛈️"
 };
 
-let wxCities = []; // { id, name, lat, lon, temp, hi, lo, icon, cond }
+let wxCities = [];
 let wxNextId = 1;
 let wxShowingAdd = false;
 
@@ -1068,7 +1149,7 @@ function saveWxCities() {
   try {
     const toSave = wxCities.map(c => ({ name: c.name, lat: c.lat, lon: c.lon }));
     localStorage.setItem("cupajoe_wx_cities", JSON.stringify(toSave));
-  } catch (e) { /* storage unavailable — app still works, just won't remember */ }
+  } catch (e) { }
 }
 
 function loadSavedWxCities() {
@@ -1083,7 +1164,6 @@ function initWeather() {
   const saved = loadSavedWxCities();
 
   if (saved && saved.length) {
-    // Re-fetch fresh weather for each previously saved city — the set of cities persists, the numbers refresh
     saved.forEach(c => addCityByCoords(c.lat, c.lon, c.name));
     return;
   }
@@ -1119,7 +1199,6 @@ async function addCityByCoords(lat, lon, labelOverride) {
       icon: WMO_ICON[cw.weathercode] || "🌡️",
       cond: WMO[cw.weathercode] || "—"
     };
-    // avoid exact duplicate names
     if (wxCities.some(c => c.name.toLowerCase() === cityName.toLowerCase())) {
       wxShowingAdd = false;
       renderWeatherContainer();
@@ -1143,7 +1222,7 @@ async function addCityByName(query) {
     if (!data.results || !data.results.length) return;
     const { latitude, longitude, name } = data.results[0];
     await addCityByCoords(latitude, longitude, name);
-  } catch (e) { /* silently fail, add card stays open */ }
+  } catch (e) { }
 }
 
 function removeCity(id) {
@@ -1209,9 +1288,8 @@ function renderWeatherContainer() {
   container.innerHTML = html;
 }
 
-/* ===================== LOCAL NEWS ===================== */
 function saveLocalArea(name) {
-  try { localStorage.setItem("cupajoe_local_area", name); } catch (e) { /* unavailable, app still works */ }
+  try { localStorage.setItem("cupajoe_local_area", name); } catch (e) { }
 }
 function loadSavedLocalArea() {
   try { return localStorage.getItem("cupajoe_local_area"); } catch (e) { return null; }
@@ -1238,7 +1316,6 @@ async function resolveLocalArea(lat, lon) {
   try {
     const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
     const geo = await res.json();
-    // Prefer county-level info if available, otherwise city/locality, otherwise subdivision (state/region)
     let county = null;
     if (geo.localityInfo && geo.localityInfo.administrative) {
       const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
@@ -1304,15 +1381,13 @@ function submitLocalArea() {
   loadLocalHeadlines(val);
 }
 
-/* ===================== FONT SIZE ADJUSTER ===================== */
-let fontStep = 0; // -2 to +4, relative steps of 1px
+let fontStep = 0;
 function adjustFont(direction) {
   fontStep = Math.max(-2, Math.min(6, fontStep + direction));
   const base = window.innerWidth <= 640 ? 19 : 17;
   document.documentElement.style.fontSize = (base + fontStep) + "px";
 }
 
-/* ===================== LAYOUT / THEME SWITCHER ===================== */
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   const sel = document.getElementById("themeSelect");
@@ -1320,24 +1395,20 @@ function applyTheme(theme) {
 }
 function setTheme(theme) {
   applyTheme(theme);
-  try { localStorage.setItem("cupajoe_theme", theme); } catch (e) { /* app still works, just won't remember */ }
+  try { localStorage.setItem("cupajoe_theme", theme); } catch (e) { }
 }
 function initTheme() {
-  // data-theme was already set by the inline script in <head> to avoid a flash —
-  // this just syncs the <select> to match on load.
   const current = document.documentElement.getAttribute("data-theme") || "retro";
   applyTheme(current);
 }
 
-/* ===================== FACT CHECK (Google Fact Check Tools API) ===================== */
-// This key is restricted to this site's domain in Google Cloud Console — safe to expose client-side.
 const FACTCHECK_API_KEY = "AIzaSyBzA2bXyIEIzBNQ-LTOQRMxOgDfZdAUI6E";
 
 function classifyRating(ratingText) {
   const r = (ratingText || "").toLowerCase();
   if (/false|pants on fire|incorrect|fabricated|fake|hoax/.test(r)) return "false-ish";
   if (/true|correct|accurate/.test(r) && !/mostly|partly|half/.test(r)) return "true-ish";
-  return "mixed-ish"; // mostly true/false, misleading, unproven, half true, etc.
+  return "mixed-ish";
 }
 
 async function runFactCheck() {
@@ -1387,11 +1458,11 @@ async function runFactCheck() {
   }
 }
 
-/* ===================== INIT ===================== */
 initTheme();
 renderStories();
 initWeather();
 initLocalNews();
+initStoryMap();
 </script>
 
 </body>
