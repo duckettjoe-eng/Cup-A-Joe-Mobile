@@ -869,6 +869,12 @@
     <div id="localHeadlines"><span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span></div>
   </div>
 
+  <div class="factcheck" id="weeklyTracked">
+    <div class="factcheck-head">This Week's Tracked Claims</div>
+    <p class="factcheck-sub" id="weeklyTrackedMeta">Loading…</p>
+    <div id="weeklyTrackedResults"></div>
+  </div>
+
   <div class="factcheck">
     <div class="factcheck-head">Fact Check</div>
     <p class="factcheck-sub">Search what independent fact-checking organizations (PolitiFact, Snopes, AP, Reuters, and others) have already found on a claim.</p>
@@ -1551,11 +1557,53 @@ function renderFcClaims(replace) {
   }
 }
 
+async function loadWeeklyTracked() {
+  const meta = document.getElementById("weeklyTrackedMeta");
+  const container = document.getElementById("weeklyTrackedResults");
+  try {
+    const res = await fetch("/data/weekly-results.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("no weekly results file yet");
+    const data = await res.json();
+
+    if (!data.generatedAt || !data.claims || !data.claims.length) {
+      meta.textContent = "No weekly run has completed yet — check back after the next scheduled run.";
+      return;
+    }
+
+    const when = new Date(data.generatedAt).toLocaleString();
+    meta.textContent = `Last automated run: ${when} — ${data.claims.length} claims found across tracked topics and new activity.`;
+
+    container.innerHTML = data.claims.map(claim => {
+      const reviewList = claim.claimReview || [];
+      const reviews = reviewList.map(review => {
+        const cls = classifyRating(review.textualRating);
+        return `
+          <div class="fc-review-row">
+            <span class="fc-rating ${cls}">${escapeHtml(review.textualRating || "Unrated")}</span>
+            <span class="fc-publisher"><a href="${escapeHtml(review.url || '#')}" target="_blank" rel="noopener">${escapeHtml(review.publisher?.name || "Unknown source")}</a></span>
+          </div>
+        `;
+      }).join("");
+      return `
+        <div class="fc-claim-card">
+          <p class="fc-claim-text">"${escapeHtml(claim.text || '')}"${claim.claimant ? ` — ${escapeHtml(claim.claimant)}` : ""}</p>
+          <div class="fc-source-tag" style="color:var(--ink-soft);">Matched: ${escapeHtml(claim.matchedTopic || "")}</div>
+          ${summarizeReviews(reviewList)}
+          ${reviews || `<div class="fc-empty">No individual reviews attached to this entry.</div>`}
+        </div>
+      `;
+    }).join("");
+  } catch (e) {
+    meta.textContent = "Couldn't load this week's tracked claims right now.";
+  }
+}
+
 initTheme();
 renderStories();
 initWeather();
 initLocalNews();
 initStoryMap();
+loadWeeklyTracked();
 </script>
 
 </body>
