@@ -557,6 +557,31 @@
   .fc-rating.true-ish { background: color-mix(in srgb, var(--ink) 15%, transparent); color: var(--ink); border: 1px solid var(--ink); }
   .fc-rating.false-ish { background: color-mix(in srgb, var(--heat-hot) 15%, transparent); color: var(--heat-hot); border: 1px solid var(--heat-hot); }
   .fc-rating.mixed-ish { background: color-mix(in srgb, var(--heat-cool) 15%, transparent); color: var(--heat-cool); border: 1px solid var(--heat-cool); }
+  .fc-rating.mostly-true-ish { background: color-mix(in srgb, var(--ink) 10%, transparent); color: var(--ink); border: 1px dashed var(--ink); }
+  .fc-rating.mostly-false-ish { background: color-mix(in srgb, var(--heat-hot) 10%, transparent); color: var(--heat-hot); border: 1px dashed var(--heat-hot); }
+  .fc-load-more {
+    display: block;
+    width: 100%;
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    font-size: 0.72rem;
+    padding: 0.5rem;
+    background: var(--paper-dim);
+    color: var(--ink);
+    border: 1px dashed var(--rule);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+  }
+  .fc-load-more:hover { border-color: var(--ink); }
+  .fc-source-tag {
+    font-family: var(--font-main);
+    font-size: 0.66rem;
+    padding: 0.2rem 0;
+    margin-bottom: 0.35rem;
+  }
+  .fc-source-single { color: var(--heat-cool); }
+  .fc-source-agree { color: var(--ink-soft); }
+  .fc-source-disagree { color: var(--heat-hot); }
   .fc-publisher {
     font-size: 0.8rem;
     color: var(--ink-soft);
@@ -849,7 +874,7 @@
     <p class="factcheck-sub">Search what independent fact-checking organizations (PolitiFact, Snopes, AP, Reuters, and others) have already found on a claim.</p>
     <div class="factcheck-input-row">
       <input type="text" id="fcQueryInput" placeholder="e.g. Trump tariffs Canada 50%" onkeydown="if(event.key==='Enter') runFactCheck();" />
-      <button onclick="runFactCheck()">Check</button>
+      <button id="fcCheckBtn" onclick="runFactCheck()">Check</button>
     </div>
     <div id="fcResults"></div>
     <div class="local-fineprint">Live results from Google's Fact Check Tools API — only shows claims independent fact-checkers have already reviewed. Brand new claims may not appear yet.</div>
@@ -1404,19 +1429,55 @@ function initTheme() {
 
 const FACTCHECK_API_KEY = "AIzaSyBzA2bXyIEIzBNQ-LTOQRMxOgDfZdAUI6E";
 
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str).replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[ch]));
+}
+
 function classifyRating(ratingText) {
   const r = (ratingText || "").toLowerCase();
-  if (/false|pants on fire|incorrect|fabricated|fake|hoax/.test(r)) return "false-ish";
-  if (/true|correct|accurate/.test(r) && !/mostly|partly|half/.test(r)) return "true-ish";
+  if (/pants on fire|completely false|totally false/.test(r)) return "false-ish";
+  if (/mostly false|mostly incorrect/.test(r)) return "mostly-false-ish";
+  if (/mostly true|mostly correct|mostly accurate/.test(r)) return "mostly-true-ish";
+  if (/half true|half false|mixture|mixed|misleading|needs context|unproven|unverified/.test(r)) return "mixed-ish";
+  if (/false|incorrect|fabricated|fake|hoax|inaccurate/.test(r)) return "false-ish";
+  if (/^true$|correct|accurate|confirmed/.test(r)) return "true-ish";
   return "mixed-ish";
 }
 
+function summarizeReviews(reviews) {
+  if (!reviews.length) return "";
+  const classes = reviews.map(r => classifyRating(r.textualRating));
+  const unique = [...new Set(classes)];
+  const count = reviews.length;
+
+  if (count === 1) {
+    return `<div class="fc-source-tag fc-source-single">Only 1 fact-checker has reviewed this — treat with caution until more weigh in.</div>`;
+  }
+  if (unique.length === 1) {
+    return `<div class="fc-source-tag fc-source-agree">${count} fact-checkers agree on this rating.</div>`;
+  }
+  return `<div class="fc-source-tag fc-source-disagree">${count} fact-checkers reviewed this and don't all agree — check the individual ratings below.</div>`;
+}
+
+let fcAllClaims = [];
+let fcShownCount = 0;
+let fcLoading = false;
+const FC_PAGE_SIZE = 6;
+
 async function runFactCheck() {
+  if (fcLoading) return;
   const input = document.getElementById("fcQueryInput");
+  const btn = document.getElementById("fcCheckBtn");
   const query = input.value.trim();
   const results = document.getElementById("fcResults");
   if (!query) return;
 
+  fcLoading = true;
+  if (btn) { btn.disabled = true; btn.textContent = "Checking…"; }
+  input.disabled = true;
   results.innerHTML = `<div class="fc-loading">Searching fact-checkers…</div>`;
 
   const url = `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${encodeURIComponent(query + " Trump")}&languageCode=en&key=${FACTCHECK_API_KEY}`;
@@ -1424,37 +1485,69 @@ async function runFactCheck() {
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      const errBody = await res.text();
-      results.innerHTML = `<div class="fc-error">Couldn't reach the fact-check service (${res.status}). ${res.status === 403 ? "Double-check the API key's website restriction matches this domain." : "Try again shortly."}</div>`;
+      let msg = `Couldn't reach the fact-check service (${res.status}).`;
+      if (res.status === 403) msg += " Double-check the API key's website restriction matches this domain.";
+      else if (res.status === 429) msg += " The service is rate-limited right now — wait a moment and try again.";
+      else msg += " Try again shortly.";
+      results.innerHTML = `<div class="fc-error">${msg}</div>`;
       return;
     }
     const data = await res.json();
-    const claims = data.claims || [];
+    fcAllClaims = data.claims || [];
+    fcShownCount = 0;
 
-    if (!claims.length) {
-      results.innerHTML = `<div class="fc-empty">No fact-checks found yet for "${query}." This may be too new, too obscure, or worded differently than how fact-checkers described it — try different keywords.</div>`;
+    if (!fcAllClaims.length) {
+      results.innerHTML = `<div class="fc-empty">No fact-checks found yet for "${escapeHtml(query)}." This may be too new, too obscure, or worded differently than how fact-checkers described it — try different keywords.</div>`;
       return;
     }
 
-    results.innerHTML = claims.slice(0, 6).map(claim => {
-      const reviews = (claim.claimReview || []).map(review => {
-        const cls = classifyRating(review.textualRating);
-        return `
-          <div class="fc-review-row">
-            <span class="fc-rating ${cls}">${review.textualRating || "Unrated"}</span>
-            <span class="fc-publisher"><a href="${review.url}" target="_blank" rel="noopener">${review.publisher?.name || "Unknown source"}</a></span>
-          </div>
-        `;
-      }).join("");
+    renderFcClaims(true);
+  } catch (e) {
+    results.innerHTML = `<div class="fc-error">Something went wrong reaching the fact-check service. Try again in a moment.</div>`;
+  } finally {
+    fcLoading = false;
+    if (btn) { btn.disabled = false; btn.textContent = "Check"; }
+    input.disabled = false;
+  }
+}
+
+function renderFcClaims(replace) {
+  const results = document.getElementById("fcResults");
+  const nextBatch = fcAllClaims.slice(fcShownCount, fcShownCount + FC_PAGE_SIZE);
+
+  const html = nextBatch.map(claim => {
+    const reviewList = claim.claimReview || [];
+    const reviews = reviewList.map(review => {
+      const cls = classifyRating(review.textualRating);
       return `
-        <div class="fc-claim-card">
-          <p class="fc-claim-text">"${claim.text || query}"${claim.claimant ? ` — ${claim.claimant}` : ""}</p>
-          ${reviews || `<div class="fc-empty">No individual reviews attached to this entry.</div>`}
+        <div class="fc-review-row">
+          <span class="fc-rating ${cls}">${escapeHtml(review.textualRating || "Unrated")}</span>
+          <span class="fc-publisher"><a href="${escapeHtml(review.url || '#')}" target="_blank" rel="noopener">${escapeHtml(review.publisher?.name || "Unknown source")}</a></span>
         </div>
       `;
     }).join("");
-  } catch (e) {
-    results.innerHTML = `<div class="fc-error">Something went wrong reaching the fact-check service. Try again in a moment.</div>`;
+    return `
+      <div class="fc-claim-card">
+        <p class="fc-claim-text">"${escapeHtml(claim.text || '')}"${claim.claimant ? ` — ${escapeHtml(claim.claimant)}` : ""}</p>
+        ${summarizeReviews(reviewList)}
+        ${reviews || `<div class="fc-empty">No individual reviews attached to this entry.</div>`}
+      </div>
+    `;
+  }).join("");
+
+  if (replace) {
+    results.innerHTML = html;
+  } else {
+    results.insertAdjacentHTML("beforeend", html);
+  }
+  fcShownCount += nextBatch.length;
+
+  const existingBtn = document.getElementById("fcLoadMoreBtn");
+  if (existingBtn) existingBtn.remove();
+
+  if (fcShownCount < fcAllClaims.length) {
+    results.insertAdjacentHTML("beforeend",
+      `<button id="fcLoadMoreBtn" class="fc-load-more" onclick="renderFcClaims(false)">Show more (${fcAllClaims.length - fcShownCount} remaining)</button>`);
   }
 }
 
