@@ -13,8 +13,8 @@
 <title>Cup A Joe — Morning Coverage Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <style>
   :root {
     --paper: #04070a;
@@ -611,29 +611,58 @@
     box-shadow: var(--box-glow-soft);
     background: var(--paper-dim);
   }
-  .leaflet-container {
-    background: var(--paper-dim) !important;
-    font-family: var(--font-main) !important;
+  .story-globe { display: block; width: 100%; height: 100%; }
+  .globe-sphere {
+    fill: var(--paper-dim);
+    stroke: var(--rule);
+    stroke-width: 1;
   }
-  .story-pulse-marker {
-    display: block;
-    border-radius: 50%;
-    background: var(--ink);
-    box-shadow: 0 0 6px 2px color-mix(in srgb, var(--ink) 80%, transparent);
-    animation: storyPulse 2s infinite;
+  .globe-graticule {
+    fill: none;
+    stroke: var(--rule);
+    stroke-opacity: 0.4;
+    stroke-width: 0.5;
   }
-  @keyframes storyPulse {
-    0%   { box-shadow: 0 0 4px 1px color-mix(in srgb, var(--ink) 70%, transparent); }
-    50%  { box-shadow: 0 0 12px 6px color-mix(in srgb, var(--ink) 50%, transparent); }
-    100% { box-shadow: 0 0 4px 1px color-mix(in srgb, var(--ink) 70%, transparent); }
+  .globe-land {
+    fill: color-mix(in srgb, var(--ink) 15%, transparent);
+    stroke: var(--rule);
+    stroke-width: 0.6;
   }
-  .leaflet-popup-content-wrapper {
-    background: var(--card) !important;
-    color: var(--ink) !important;
-    border: 1px solid var(--rule);
-    border-radius: var(--radius-sm) !important;
+  .globe-pin { cursor: pointer; }
+  .globe-pin.is-hidden { display: none; }        /* on the far side of the sphere */
+  .globe-pin .hit { fill: transparent; }
+  .globe-pin .dot { fill: var(--ink); }
+  .globe-pin .halo {
+    fill: var(--ink);
+    animation: globePulse 2.4s ease-out infinite;
   }
-  .leaflet-popup-tip { background: var(--card) !important; }
+  .globe-pin.is-active .dot,
+  .globe-pin.is-active .halo { fill: var(--coffee); }
+  .globe-pin .pin-label {
+    font-family: var(--font-main);
+    font-size: 0.62rem;
+    fill: var(--ink-soft);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .globe-pin:hover .pin-label,
+  .globe-pin.is-active .pin-label { opacity: 1; }
+  @keyframes globePulse {
+    0%   { r: 4;  opacity: 0.5; }
+    70%  { r: 12; opacity: 0; }
+    100% { r: 12; opacity: 0; }
+  }
+  .globe-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 1rem;
+  }
   .story-popup-title {
     font-weight: 700;
     font-size: 0.85rem;
@@ -734,40 +763,50 @@
     padding: 1.2rem 1.3rem 1.4rem;
     background: var(--paper-dim);
   }
-  .compare-columns {
+  .outlet-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 0.5rem;
+    align-items: start;
   }
-  @media (max-width: 640px) {
-    .compare-columns { grid-template-columns: 1fr; }
-  }
-  .compare-col-head {
-    font-family: var(--font-main);
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.6rem;
-    border-bottom: 2px solid;
-  }
-  .col-left .compare-col-head { color: var(--grp-left); border-color: var(--grp-left); }
-  .col-center .compare-col-head { color: var(--grp-center); border-color: var(--grp-center); }
-  .col-right .compare-col-head { color: var(--grp-right); border-color: var(--grp-right); }
 
   .outlet-card {
     background: var(--card);
     border: 1px solid var(--rule);
+    border-left: 3px solid var(--rule);   /* carries the lean */
     border-radius: var(--radius-sm);
-    padding: 0.7rem 0.8rem;
-    margin-bottom: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    margin: 0;
   }
-  .outlet-card .outlet-name-row {
+  .outlet-card.lean-left   { border-left-color: var(--grp-left); }
+  .outlet-card.lean-center { border-left-color: var(--grp-center); }
+  .outlet-card.lean-right  { border-left-color: var(--grp-right); }
+  /* An opened outlet takes the full width so its framing isn't squeezed
+     into one narrow column. */
+  .outlet-card[open] {
+    grid-column: 1 / -1;
+    padding: 0.7rem 0.8rem;
+  }
+  /* Each outlet collapses to just its name, so an opened story reads as a
+     scannable list of who covered it - you expand only what you want.     */
+  .outlet-card > summary.outlet-name-row {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    margin-bottom: 0.35rem;
+    cursor: pointer;
+    list-style: none;
   }
+  .outlet-card > summary.outlet-name-row::-webkit-details-marker { display: none; }
+  .outlet-card > summary.outlet-name-row::after {
+    content: "\25B8";
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    transition: transform 0.15s ease;
+  }
+  .outlet-card[open] > summary.outlet-name-row::after { transform: rotate(90deg); }
+  .outlet-card[open] > summary.outlet-name-row { margin-bottom: 0.5rem; }
+  .outlet-card > summary.outlet-name-row:hover .outlet-name { color: var(--coffee); }
   .stance-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
@@ -880,13 +919,14 @@
 
   <div class="section-header">Tuck Frump <span style="font-weight:400; font-size:0.7em; color:var(--ink-soft); text-transform:none; letter-spacing:0;">— fact-checked coverage board</span></div>
   <div id="storyMap"></div>
-  <div id="storyList"></div>
 
   <div class="factcheck" id="weeklyTracked">
     <div class="factcheck-head">This Week's Tracked Claims</div>
     <p class="factcheck-sub" id="weeklyTrackedMeta">Loading…</p>
     <div id="weeklyTrackedResults"></div>
   </div>
+
+  <div id="storyList"></div>
 
   <div class="factcheck">
     <div class="factcheck-head">Fact Check</div>
@@ -949,6 +989,7 @@ async function loadStories() {
     return;
   }
   renderStories();
+  wireStoryCardsToGlobe();
   initStoryMap();
 }
 
@@ -972,23 +1013,30 @@ function renderStories() {
       ? `<div class="blindspot-flag">⚠ Blindspot: no ${counts.left === 0 ? "left-leaning" : "right-leaning"} outlets found covering this yet</div>`
       : "";
 
-    const cols = ["left", "center", "right"].map(g => {
-      const outletsInGroup = story.outlets.filter(o => group(o.lean) === g);
-      const label = g === "left" ? "Left" : g === "center" ? "Center" : "Right";
-      const cards = outletsInGroup.length
-        ? outletsInGroup.map(o => `
-            <div class="outlet-card">
-              <div class="outlet-name-row">
-                <span class="stance-dot" style="background:${heatColor(o.heat)}"></span>
-                <span class="outlet-name">${o.name}</span>
-              </div>
-              <p class="framing">${o.framing}</p>
-              <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
-            </div>
-          `).join("")
-        : `<p class="not-checked-note">No ${label.toLowerCase()}-leaning outlets checked yet for this story.</p>`;
-      return `<div class="col-${g}"><div class="compare-col-head">${label} (${outletsInGroup.length})</div>${cards}</div>`;
-    }).join("");
+    // One flowing grid rather than three fixed columns: with 8 outlets on the
+    // left and one each side, a 1fr 1fr 1fr grid left two thirds of the area
+    // permanently empty. Lean is carried by the coloured left edge instead,
+    // and the proportions are already shown by the bar above.
+    const GROUP_ORDER = ["left", "center", "right"];
+    const ordered = GROUP_ORDER.flatMap(g =>
+      story.outlets.filter(o => group(o.lean) === g).map(o => ({ o, g }))
+    );
+
+    const cards = ordered.map(({ o, g }) => `
+      <details class="outlet-card lean-${g}">
+        <summary class="outlet-name-row">
+          <span class="stance-dot" style="background:${heatColor(o.heat)}"></span>
+          <span class="outlet-name">${o.name}</span>
+        </summary>
+        <p class="framing">${o.framing}</p>
+        <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
+      </details>
+    `).join("");
+
+    const missing = GROUP_ORDER.filter(g => !story.outlets.some(o => group(o.lean) === g));
+    const missingNote = missing.length
+      ? `<p class="not-checked-note">No ${missing.join(" or ")}-leaning outlets checked yet for this story.</p>`
+      : "";
 
     return `
       <details class="story" id="story-${story.id}">
@@ -1014,7 +1062,7 @@ function renderStories() {
           ${blindspot}
         </summary>
         <div class="compare-wrap">
-          <div class="compare-columns">${cols}</div>
+          <div class="outlet-grid">${cards}</div>${missingNote}
           <div class="synthesis">
             <h3>What this comparison actually shows</h3>
             <ul>${story.synthesis.map(s => `<li><span class="label">${s.label}</span>${s.text}</li>`).join("")}</ul>
@@ -1036,34 +1084,178 @@ function jumpToStoryCard(storyId) {
   setTimeout(() => { el.style.boxShadow = originalShadow; }, 1800);
 }
 
-function initStoryMap() {
-  const mapEl = document.getElementById("storyMap");
-  if (!mapEl || typeof L === "undefined") return;
+/* ---- Story globe --------------------------------------------------------
+   Replaces the flat map. The globe drifts slowly on its own, and opening a
+   story spins it to that story's location and holds there - so the rotation
+   is navigation rather than decoration. Only half a sphere is ever visible,
+   which is fine when the rotation is telling you where you're looking.   */
 
-  const map = L.map("storyMap", { scrollWheelZoom: false }).setView([30, -40], 2);
+const GLOBE_LAND_URL   = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json";
+const GLOBE_DRIFT_DPS  = 3;      // degrees of longitude per second
+const GLOBE_HOLD_MS    = 7000;   // pause the drift after a deliberate spin
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
-    maxZoom: 18
-  }).addTo(map);
+let globe = null;
+let globeLand = null;            // cached so a resize doesn't refetch
+let globeDriftTimer = null;      // outside `globe`: that object is replaced on
+                                 // resize, which used to start a second timer
 
-  STORIES.forEach(story => {
-    (story.locations || []).forEach(loc => {
-      const icon = L.divIcon({
-        className: "",
-        html: `<span class="story-pulse-marker" style="width:14px; height:14px; display:block;"></span>`,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7]
-      });
-      const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
-      marker.bindPopup(`
-        <div class="story-popup-title">${story.title}</div>
-        <div style="font-size:0.72rem; color:var(--ink-soft); margin-bottom:0.4rem;">${loc.name}</div>
-        <span class="story-popup-link" onclick="jumpToStoryCard('${story.id}')">Jump to story →</span>
-      `);
-    });
+async function initStoryMap() {
+  const el = document.getElementById("storyMap");
+  if (!el) return;
+
+  if (typeof d3 === "undefined" || typeof topojson === "undefined") {
+    el.innerHTML = `<div class="globe-fallback mono">Globe library didn't load.</div>`;
+    return;
+  }
+
+  if (!globeLand) {
+    try {
+      const res = await fetchWithTimeout(GLOBE_LAND_URL, 10000);
+      if (!res.ok) throw new Error(`land outline responded with ${res.status}`);
+      const topo = await res.json();
+      globeLand = topojson.feature(topo, topo.objects.land);
+    } catch (e) {
+      el.innerHTML = `<div class="globe-fallback mono">Couldn't load the globe outline right now.</div>`;
+      return;
+    }
+  }
+
+  if (globe && globe.spinTimer) globe.spinTimer.stop();
+
+  el.innerHTML = "";
+  const w = el.clientWidth  || 640;
+  const h = el.clientHeight || 280;
+
+  const projection = d3.geoOrthographic()
+    .scale(Math.min(w, h) / 2 - 10)
+    .translate([w / 2, h / 2])
+    .clipAngle(90)
+    .rotate(globe ? globe.projection.rotate() : [60, -25, 0]);
+
+  const path = d3.geoPath(projection);
+
+  const svg = d3.select(el).append("svg")
+    .attr("class", "story-globe")
+    .attr("viewBox", `0 0 ${w} ${h}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const sphere    = svg.append("path").datum({ type: "Sphere" }).attr("class", "globe-sphere");
+  const graticule = svg.append("path").datum(d3.geoGraticule10()).attr("class", "globe-graticule");
+  const landPath  = svg.append("path").datum(globeLand).attr("class", "globe-land");
+  const pinLayer  = svg.append("g");
+
+  const pins = [];
+  STORIES.forEach(story => (story.locations || []).forEach(loc => pins.push({ story, loc })));
+
+  const pinSel = pinLayer.selectAll("g").data(pins).join("g")
+    .attr("class", "globe-pin")
+    .on("click", (event, d) => { spinToStory(d.story.id); jumpToStoryCard(d.story.id); });
+
+  pinSel.append("circle").attr("class", "halo").attr("r", 4);
+  pinSel.append("circle").attr("class", "dot").attr("r", 3.2);
+  pinSel.append("circle").attr("class", "hit").attr("r", 14);   // finger-sized target
+  pinSel.append("text").attr("class", "pin-label").attr("x", 11).attr("y", 4)
+    .text(d => d.loc.name);
+  pinSel.append("title").text(d => `${d.story.title} — ${d.loc.name}`);
+
+  globe = {
+    projection, path, sphere, graticule, landPath, pinSel,
+    w, h, activeId: globe ? globe.activeId : null, spinning: false, holdUntil: 0
+  };
+
+  renderGlobe();
+  if (!globeDriftTimer) globeDriftTimer = d3.timer(driftGlobe);
+}
+
+function renderGlobe() {
+  if (!globe) return;
+  const { projection, path, sphere, graticule, landPath, pinSel, w, h } = globe;
+
+  sphere.attr("d", path);
+  graticule.attr("d", path);
+  landPath.attr("d", path);
+
+  const center = projection.invert([w / 2, h / 2]);
+  pinSel
+    .attr("transform", d => {
+      const p = projection([d.loc.lon, d.loc.lat]);
+      return p ? `translate(${p[0]},${p[1]})` : "translate(-999,-999)";
+    })
+    // Hide the far hemisphere rather than letting pins smear across the limb.
+    .classed("is-hidden", d => d3.geoDistance([d.loc.lon, d.loc.lat], center) > Math.PI / 2)
+    .classed("is-active", d => d.story.id === globe.activeId);
+}
+
+let globeLastTick = 0;
+function driftGlobe(elapsed) {
+  if (!globe) return;
+  const dt = elapsed - globeLastTick;
+  globeLastTick = elapsed;
+  if (globe.spinning || Date.now() < globe.holdUntil) return;
+
+  const r = globe.projection.rotate();
+  globe.projection.rotate([r[0] + GLOBE_DRIFT_DPS * (dt / 1000), r[1], r[2]]);
+  renderGlobe();
+}
+
+function spinToStory(storyId) {
+  if (!globe) return;
+
+  const story = STORIES.find(s => s.id === storyId);
+  const loc = story && (story.locations || [])[0];
+  if (!loc) return;
+
+  globe.activeId = storyId;
+
+  const from = globe.projection.rotate();
+  // Take the short way round instead of unwinding the long way past 180.
+  let lambda = -loc.lon;
+  while (lambda - from[0] >  180) lambda -= 360;
+  while (lambda - from[0] < -180) lambda += 360;
+  const to = [lambda, -loc.lat, 0];
+
+  // Hand-rolled rather than d3.transition. A transition that stalled without
+  // firing "end" left `spinning` true forever, and since `spinning` gates the
+  // drift, the globe froze the first time a story was opened. This version
+  // always terminates and always clears its own flag.
+  if (globe.spinTimer) globe.spinTimer.stop();
+  globe.spinning = true;
+
+  const DUR = 950;
+  globe.spinTimer = d3.timer(elapsed => {
+    const t = Math.min(1, elapsed / DUR);
+    const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;  // cubic in-out
+
+    globe.projection.rotate([
+      from[0] + (to[0] - from[0]) * e,
+      from[1] + (to[1] - from[1]) * e,
+      0
+    ]);
+    renderGlobe();
+
+    if (t >= 1) {
+      globe.spinTimer.stop();
+      globe.spinTimer = null;
+      globe.spinning = false;
+      globe.holdUntil = Date.now() + GLOBE_HOLD_MS;
+    }
   });
 }
+
+// Opening a story card is what drives the globe.
+function wireStoryCardsToGlobe() {
+  STORIES.forEach(story => {
+    const card = document.getElementById(`story-${story.id}`);
+    if (!card) return;
+    card.addEventListener("toggle", () => { if (card.open) spinToStory(story.id); });
+  });
+}
+
+let globeResizeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(globeResizeTimer);
+  globeResizeTimer = setTimeout(() => { if (globe) initStoryMap(); }, 250);
+});
 
 const WMO = {
   0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
