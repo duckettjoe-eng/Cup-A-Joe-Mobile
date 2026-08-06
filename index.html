@@ -448,9 +448,18 @@
     color: var(--ink-soft);
     margin-top: 0.15rem;
   }
+  .local-headline .age { opacity: 0.75; }
+  .local-headline .age::before { content: " · "; }
   .local-search-row {
     display: flex;
     gap: 0.4rem;
+  }
+  .local-area-error {
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    color: var(--coffee);
+    margin-top: 0.35rem;
+    min-height: 0.9rem;
   }
   .local-search-row input {
     font-family: var(--font-main);
@@ -842,7 +851,7 @@
 
 <header class="masthead">
   <div class="title-block">
-    <h1>☕ Cup A Joe <span style="font-weight:400; font-size:0.65em; color:var(--ink-soft);">(name for now)</span></h1>
+    <h1>☕ Cup A Joe</h1>
     <div class="subtitle">Morning Coverage Board</div>
   </div>
   <div style="display:flex; align-items:center; gap:0.7rem;">
@@ -921,128 +930,27 @@ function group(lean) {
   return "center";
 }
 
-const STORIES = [
-  {
-    id: "election-security-speech",
-    locations: [{ name: "Washington, DC", lat: 38.9072, lon: -77.0369 }],
-    date: "JULY 16, 2026",
-    title: "Trump's primetime address on \"election security\"",
-    summary: "White House declassified documents alongside a speech renewing 2020 election claims and pushing the SAVE America Act. Outlets agree on what happened; they split hard on whether the documents back up the claims.",
-    outlets: [
-      { name: "Fox News", lean: "right", heat: 1,
-        framing: "Covered straightforwardly as an \"election integrity\" announcement. News coverage relayed Trump's claims (China accessed 220M voter files, intelligence was hidden from him) largely at face value; a companion opinion piece framed the claims as warranting investigation and criticized \"Democratic critics\" for disputing the evidence.",
-        url: "https://www.foxnews.com/politics/trump-releases-declassified-election-intelligence-says-reveals-shocking-vulnerabilities" },
-      { name: "CNN", lean: "leanleft", heat: 3,
-        framing: "Reported the declassification claims, then directly noted the documents \"largely discuss vulnerabilities that have been known for years.\" Contrasted Trump's China-interference claim with a 2021 U.S. intelligence assessment that reached the opposite conclusion.",
-        url: "https://www.cnn.com/2026/07/16/politics/live-news/trump-speech-election" },
-      { name: "AP", lean: "leanleft", heat: 3,
-        framing: "An AP review of the actual declassified documents found no confirmation of Trump's core claims — many pages were heavily redacted, and the material largely described vulnerabilities already publicly documented for years. Quoted an election-security expert calling the release \"a dud.\"",
-        url: "https://www.pbs.org/newshour/politics/trump-says-these-documents-prove-his-false-claims-of-election-fraud-heres-what-they-really-say" },
-      { name: "NYT", lean: "leanleft", heat: 3,
-        framing: "Reporter Maggie Haberman characterized several of Trump's claims in the speech as exaggerated relative to what the underlying documents actually showed, describing the documents themselves as notably more cautious in their conclusions than the speech.",
-        url: "https://thehill.com/homenews/administration/5973514-save-america-act-push/" },
-      { name: "MS NOW (fka MSNBC)", lean: "left", heat: 3,
-        framing: "Framed the speech as a rehash of long-rejected 2020 conspiracy theories, emphasizing that current and former intelligence officials said no evidence exists that any foreign country changed the outcome of the 2020 election, and noting recent leadership changes atop the intelligence community.",
-        url: "https://www.ms.now/news/trump-speech-election-stolen" },
-      { name: "Al Jazeera", lean: "left", heat: 3,
-        framing: "Described the speech as \"controversial,\" led with a Democratic lawmaker's response accusing Trump of trying to sow doubt about the 2026 election, and noted experts found no conclusive evidence backing his claims.",
-        url: "https://www.aljazeera.com/news/2026/7/17/key-takeaways-from-donald-trumps-speech-on-election-security" },
-      { name: "ABC News", lean: "leanleft", heat: 2,
-        framing: "Relayed the speech's claims in a fairly neutral takeaways format — what Trump said, what documents he released — with comparatively less immediate pushback framing than CNN or MS NOW in the initial writeup.",
-        url: "https://abcnews.com/Politics/key-takeaways-trumps-elections-speech/story?id=134835191" },
-      { name: "NBC News", lean: "leanleft", heat: 3,
-        framing: "Live-blog coverage noted plainly that Trump \"has repeatedly claimed without evidence\" that the 2020 election was affected by fraud, embedding that characterization directly into the news update rather than as separate analysis.",
-        url: "https://www.nbcnews.com/politics/trump-administration/live-blog/trump-congress-iran-blanche-doj-ice-2026-maine-senate-live-updates-rcna587765" },
-      { name: "Time", lean: "leanleft", heat: 2,
-        framing: "Framed the presentation as effective for Trump's base rhetorically but risky factually, previewing that the specific claims would face heavy fact-checking scrutiny in the days after.",
-        url: "https://time.com/article/2026/07/17/trump-speech-elections-china-save-act-takeaways/" },
-      { name: "Newsweek", lean: "center", heat: 3,
-        framing: "Analyzed the speech through a media-literacy lens — arguing its function was to keep the 2020 dispute \"feeling unresolved\" through repetition, regardless of whether the newly released documents actually supported the claims.",
-        url: "https://www.newsweek.com/trump-election-speech-illusory-truth-effect-12212284" }
-    ],
-    synthesis: [
-      { label: "Consistent across all 10:", text: "Trump gave the speech, declassified documents were released alongside it, and he's pushing for the SAVE America Act before the midterms. Nobody disputes these bare facts." },
-      { label: "Where it splits:", text: "Fox's news coverage and opinion content largely presented Trump's claims on their own terms. Every other outlet checked here — including the AP wire service, which has no ideological mandate — reported that a direct review of the documents did not support the central claims. That's a reporting finding, not just left-leaning framing, since AP's review is checkable against the primary documents." },
-      { label: "Framing among outlets that agree on the facts:", text: "AP and ABC stayed closest to neutral \"here's what was claimed, here's what was found\" language. MS NOW, Al Jazeera, and Newsweek led harder with skepticism. NBC folded \"without evidence\" directly into straight news copy rather than flagging it as analysis." },
-      { label: "Gap in this pass:", text: "Checked 10 of 17 outlets in the pool. Still missing: BBC, Reuters, Guardian, Washington Post, Financial Times, The Economist, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ." }
-    ]
-  },
-  {
-    id: "canada-tariffs-50",
-    locations: [
-      { name: "Washington, DC", lat: 38.9072, lon: -77.0369 },
-      { name: "Ottawa, Canada", lat: 45.4215, lon: -75.6972 }
-    ],
-    date: "JULY 20, 2026",
-    title: "Trump imposes 50% tariffs on Canadian goods",
-    summary: "Trump signed three proclamations imposing 50% tariffs on a range of Canadian goods (autos, alcohol, dairy, and hundreds of other items), citing Canadian trade discrimination. Unlike the election speech, coverage here is fairly consistent on the facts — the split is more about emphasis than dueling narratives.",
-    outlets: [
-      { name: "Fox Business", lean: "right", heat: 2,
-        framing: "Led with the administration's own framing and a direct quote from a senior official: this is not a trade war, but a defensive response to Canadian discrimination against U.S. autos, alcohol, and dairy exports.",
-        url: "https://www.foxbusiness.com/politics/trump-administration-hits-canada-50-tariff-over-alleged-trade-discrimination" },
-      { name: "NY Post", lean: "leanright", heat: 2,
-        framing: "Covered the broader run-up to this tariff fight, including Trump's shift in tone toward Carney personally, without heavy editorializing on whether the discrimination claims hold up.",
-        url: "https://www.aol.com/news/trump-speaks-canada-pm-ahead-164316299.html" },
-      { name: "CNBC", lean: "center", heat: 2,
-        framing: "Reported the legal mechanism in detail — the tariffs use a rarely-invoked 1930 law (Section 338) with no public precedent since 1949 — and noted Canadian officials pushed back, without asserting who's right on the discrimination claim itself.",
-        url: "https://www.cnbc.com/2026/07/20/trump-tariffs-canada-trade.html" },
-      { name: "Newsweek", lean: "center", heat: 2,
-        framing: "Straightforward explainer format: what's tariffed, what's exempt, and the administration's account that year-long talks with Canada went nowhere before this was announced.",
-        url: "https://www.newsweek.com/trump-tariffs-canada-list-products-imports-explainer-12220703" },
-      { name: "Washington Post", lean: "leanleft", heat: 2,
-        framing: "Straight news account of the announcement and its 30-day timeline, framed around the discrimination dispute without independently weighing in on the underlying trade claims.",
-        url: "https://www.washingtonpost.com/business/2026/07/20/trump-says-he-will-impose-50-percent-tariffs-canada/" },
-      { name: "CNN Business", lean: "leanleft", heat: 3,
-        framing: "Added the most skepticism of the group: quoted an economist noting the tariffs cover only about 0.6% of total U.S. imports despite the steep headline rate, and flagged the untested legal authority being used as notable regardless of outcome.",
-        url: "https://www.cnn.com/2026/07/20/business/canada-tariffs-50-percent-trump" },
-      { name: "The Hill", lean: "center", heat: 2,
-        framing: "Centered Canadian PM Mark Carney's response calling the move a violation of the USMCA trade agreement, giving more direct voice to the Canadian side than most U.S. coverage.",
-        url: "https://thehill.com/policy/international/5979864-mark-carney-donald-trump-tariffs-canadian-wildfires/" }
-    ],
-    synthesis: [
-      { label: "Consistent across the board:", text: "All outlets checked agree on the core facts: 50% tariffs, three proclamations, a 30-day runway, and the administration's stated justification (auto/alcohol/dairy discrimination). No outlet disputed that this announcement happened as described." },
-      { label: "Where emphasis differs:", text: "Fox Business and NY Post led with the administration's rationale largely unchallenged. CNN Business was the outlet most likely to add independent context cutting against the announcement's impact (economists noting the tariffs affect a small share of total trade) and to flag the legal mechanism as untested. The Hill gave the most direct space to Canada's rebuttal." },
-      { label: "Why this is a useful contrast to the election speech story:", text: "This is what non-polarized coverage of a Trump story looks like — outlets differ in emphasis and how much independent pushback they add, but nobody is contesting the basic facts the way AP directly contested the documents in the election-speech story." },
-      { label: "Gap in this pass:", text: "Checked 7 outlets. Still missing: Guardian, BBC, Reuters, AP, Financial Times, The Economist, PBS, Christian Science Monitor, Deutsche Welle, NewsNation, WSJ, Washington Examiner, MS NOW, Al Jazeera, ABC, NBC, Time." }
-    ]
-  },
-  {
-    id: "netanyahu-mamdani-arrest",
-    locations: [
-      { name: "New York, NY", lat: 40.7128, lon: -74.0060 },
-      { name: "Jerusalem, Israel", lat: 31.7683, lon: 35.2137 }
-    ],
-    date: "JULY 20, 2026",
-    title: "Trump says Netanyahu \"will not be arrested\" after Mamdani threat",
-    summary: "NYC Mayor Zohran Mamdani said his administration was in \"active conversation\" about arresting Netanyahu (under an ICC warrant) if he visits for the UN General Assembly in September. Trump posted that Netanyahu will not be arrested \"in any way, shape, or form.\" This is more a political-theater story than a policy dispute over facts.",
-    outlets: [
-      { name: "RedState (via Fox network)", lean: "right", heat: 1,
-        framing: "Opinion-toned piece dismissing Mamdani's position outright, using pointed language (\"fever dream,\" describing his comments as \"anti-Semitic, pro-Hamas\") and citing Sen. John Fetterman calling Mamdani a \"clown.\" Clearly commentary, not a straight news account.",
-        url: "https://redstate.com/rusty-weiss/2026/07/20/president-trump-just-squashed-mamdanis-fever-dream-of-arresting-netanyahu-n2204536" },
-      { name: "Washington Times", lean: "leanright", heat: 2,
-        framing: "Straight account of Trump's Truth Social post and Mamdani's underlying comments, including full quotes from both sides without much added framing.",
-        url: "https://www.washingtontimes.com/news/2026/jul/20/trump-says-netanyahu-wont-arrested-us-rebuffing-mamdanis-threat/" },
-      { name: "CNBC", lean: "center", heat: 2,
-        framing: "Neutral rundown of the back-and-forth, including the ICC's 2024 warrant against Netanyahu and Israel's dismissal of the ICC as illegitimate, without taking a side on the underlying legal dispute.",
-        url: "https://www.cnbc.com/2026/07/20/trump-netanyahu-arrest-mamdani-new-york-israel.html" },
-      { name: "The Hill", lean: "center", heat: 2,
-        framing: "Straight news framing similar to CNBC — laid out both men's statements and the ICC warrant's basis without editorializing on who has the better argument.",
-        url: "https://thehill.com/homenews/administration/5978771-trump-netanyahu-arrest-mamdani-new-york/" },
-      { name: "Bloomberg", lean: "center", heat: 2,
-        framing: "Concise wire-style account focused on the factual sequence — what Mamdani said, what Trump posted in response — without characterizing either side's position.",
-        url: "https://www.bloomberg.com/news/articles/2026-07-20/trump-says-netanyahu-will-not-be-arrested-after-mamdani-threat" },
-      { name: "Al Jazeera", lean: "left", heat: 2,
-        framing: "Led with Trump's rejection of the arrest threat, included Israel's dismissal of the ICC as a \"kangaroo court,\" and gave roughly equal space to Mamdani's original comments — mixed rather than strongly pushing back on Trump's framing here.",
-        url: "https://www.aljazeera.com/news/2026/7/20/trump-rejects-mamdani-threat-to-arrest-israels-netanyahu-for-war-crimes" }
-    ],
-    synthesis: [
-      { label: "Consistent across the board:", text: "Every outlet agrees on the sequence: Mamdani raised the idea of a possible arrest, Trump posted a forceful rejection citing Netanyahu's role against Iran, and the ICC's underlying 2024 warrant is real and undisputed as a fact of what it is (though the U.S. and Israel don't recognize the ICC's jurisdiction here)." },
-      { label: "Where it splits:", text: "The clearest gap here isn't between left and right news desks — it's between straight news accounts (Washington Times, CNBC, The Hill, Bloomberg, Al Jazeera) that mostly relayed both sides' statements, and openly opinion-toned commentary (RedState) that dismissed one side outright. Worth flagging: this kind of piece sits closer to opinion journalism than to the news reporting this tracker is otherwise comparing." },
-      { label: "Notably absent so far:", text: "No outlet in this initial pass strongly challenged either man's underlying claim (that Netanyahu is protected from arrest in the U.S. vs. that the ICC warrant has real legal weight) — this looks more like a political dispute being reported on its face than a factual dispute like the election-speech story." },
-      { label: "Gap in this pass:", text: "Checked 6 outlets, and one of them (RedState) is opinion content rather than straight news — worth replacing with an actual Fox News or NY Post straight-news piece if you want a cleaner right-leaning news comparison here. Still missing most of the base pool." }
-    ]
+// Stories live in data/stories.json so the board can be updated without
+// touching this file. Anything that writes a weekly update edits that file.
+let STORIES = [];
+
+async function loadStories() {
+  const list = document.getElementById("storyList");
+  try {
+    const res = await fetchWithTimeout("data/stories.json", 10000, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`stories.json responded with ${res.status}`);
+    const data = await res.json();
+    STORIES = Array.isArray(data) ? data : (data.stories || []);
+  } catch (e) {
+    STORIES = [];
+    if (list) {
+      list.innerHTML = `<div class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load the coverage board right now.</div>`;
+    }
+    return;
   }
-];
+  renderStories();
+  initStoryMap();
+}
 
 function heatColor(heat) {
   return heat === 1 ? "var(--heat-cool)" : heat === 2 ? "var(--heat-neutral)" : "var(--heat-hot)";
@@ -1319,97 +1227,367 @@ function renderWeatherContainer() {
   container.innerHTML = html;
 }
 
-function saveLocalArea(name) {
-  try { localStorage.setItem("cupajoe_local_area", name); } catch (e) { }
+/* ---------------- Local Update: area detection + headlines ----------------
+   Reliability notes:
+   - Mobile GPS cold-starts routinely exceed 8s, so the old timeout sent most
+     phone visitors to manual entry. Timeout raised and a cached fix accepted.
+   - DOMParser never throws on bad input, so an upstream HTML error page used
+     to render as "No local headlines found". Now detected and retried.
+   - Every network call has an explicit timeout; nothing can hang the panel.
+   - A saved area expires so a moving truck stops showing yesterday's town.
+   - Last good headlines are cached and shown if the live feed goes down.     */
+
+const LOCAL_AREA_KEY    = "cupajoe_local_area";
+const LOCAL_AREA_TS_KEY = "cupajoe_local_area_ts";
+const LOCAL_CACHE_KEY   = "cupajoe_local_headlines";
+const AREA_MAX_AGE_MS   = 12 * 60 * 60 * 1000;  // re-detect twice a day
+const HEADLINE_STALE_MS = 6  * 60 * 60 * 1000;  // how long a cached render may stand in
+
+let currentLocalArea = null;
+
+function fetchWithTimeout(url, ms, opts) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, Object.assign({}, opts || {}, { signal: ctrl.signal }))
+    .finally(() => clearTimeout(timer));
 }
+
+function saveLocalArea(name, manual) {
+  try {
+    localStorage.setItem(LOCAL_AREA_KEY, name);
+    // A hand-typed area is a deliberate choice - never expire it out from under them.
+    localStorage.setItem(LOCAL_AREA_TS_KEY, manual ? "manual" : String(Date.now()));
+  } catch (e) { }
+}
+
+// Returns the saved area only while it is still considered current.
 function loadSavedLocalArea() {
-  try { return localStorage.getItem("cupajoe_local_area"); } catch (e) { return null; }
+  try {
+    const name = localStorage.getItem(LOCAL_AREA_KEY);
+    if (!name) return null;
+    const ts = localStorage.getItem(LOCAL_AREA_TS_KEY);
+    if (ts === "manual") return name;
+    if (!ts || Date.now() - Number(ts) > AREA_MAX_AGE_MS) return null;
+    return name;
+  } catch (e) { return null; }
+}
+
+// Returns the saved area regardless of age - used as a fallback when detection fails.
+function peekSavedLocalArea() {
+  try { return localStorage.getItem(LOCAL_AREA_KEY); } catch (e) { return null; }
+}
+
+function cacheHeadlines(areaName, html) {
+  try {
+    localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify({ area: areaName, html: html, ts: Date.now() }));
+  } catch (e) { }
+}
+
+function readCachedHeadlines(areaName) {
+  try {
+    const raw = localStorage.getItem(LOCAL_CACHE_KEY);
+    if (!raw) return null;
+    const c = JSON.parse(raw);
+    if (!c || c.area !== areaName) return null;
+    if (Date.now() - c.ts > HEADLINE_STALE_MS) return null;
+    return c;
+  } catch (e) { return null; }
 }
 
 function initLocalNews() {
-  const saved = loadSavedLocalArea();
-  if (saved) {
-    loadLocalHeadlines(saved);
-    return;
-  }
+  const fresh = loadSavedLocalArea();
+  if (fresh) { loadLocalHeadlines(fresh); return; }
+
+  // Stale area still beats an empty panel: render it now, refresh in the background.
+  const stale = peekSavedLocalArea();
+  if (stale) loadLocalHeadlines(stale);
+
   if (!navigator.geolocation) {
-    showLocalManualInput("Location isn't available in this browser.");
+    if (!stale) showLocalManualInput("Location isn't available in this browser — enter a city, ZIP, or county:");
     return;
   }
+
   navigator.geolocation.getCurrentPosition(
-    pos => resolveLocalArea(pos.coords.latitude, pos.coords.longitude),
-    () => showLocalManualInput("Location access declined — type a city or county:"),
-    { timeout: 8000 }
+    pos => resolveLocalArea(pos.coords.latitude, pos.coords.longitude, stale),
+    err => handleGeoError(err, stale),
+    // 20s because a cold mobile fix regularly needs >8s; a 10-min-old fix is
+    // plenty for city/county resolution, and high accuracy only costs time.
+    { timeout: 20000, maximumAge: 600000, enableHighAccuracy: false }
   );
 }
 
-async function resolveLocalArea(lat, lon) {
-  try {
-    const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
-    const geo = await res.json();
-    let county = null;
-    if (geo.localityInfo && geo.localityInfo.administrative) {
-      const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
-      if (match) county = match.name;
-    }
-    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
-    saveLocalArea(areaName);
-    loadLocalHeadlines(areaName);
-  } catch (e) {
-    showLocalManualInput("Couldn't detect your area — type a city or county:");
-  }
+function handleGeoError(err, stale) {
+  if (stale) return;  // already showing cached headlines - don't yank them away
+  const code = err && err.code;
+  const msg =
+    code === 1 ? "Location access declined — enter a city, ZIP, or county:" :
+    code === 3 ? "Couldn't get a location fix in time — enter a city, ZIP, or county:" :
+                 "Location unavailable — enter a city, ZIP, or county:";
+  showLocalManualInput(msg);
 }
 
-async function loadLocalHeadlines(areaName) {
-  const label = document.getElementById("localLocLabel");
-  const list = document.getElementById("localHeadlines");
-  label.innerHTML = `${areaName} <button onclick="showLocalManualInput('Search a different area:')">change</button>`;
-  list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span>`;
-
-  const apiUrl = `/api/local-news?area=${encodeURIComponent(areaName)}`;
-
+async function resolveLocalArea(lat, lon, stale) {
   try {
-    const res = await fetch(apiUrl);
-    if (!res.ok) throw new Error(`local-news API responded with ${res.status}`);
-    const text = await res.text();
-    const xml = new DOMParser().parseFromString(text, "text/xml");
-    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+    const res = await fetchWithTimeout(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`,
+      8000
+    );
+    if (!res.ok) throw new Error(`reverse-geocode responded with ${res.status}`);
+    const geo = await res.json();
 
-    if (!items.length) {
-      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${areaName}" right now.</span>`;
+    let county = null;
+    const admin = geo.localityInfo && geo.localityInfo.administrative;
+    if (Array.isArray(admin)) {
+      // Walk narrowest-first so the nearest "... County" wins over a broader one.
+      const match = admin.slice().reverse().find(a => a && /\bcounty\b/i.test(a.name || ""));
+      if (match) county = match.name;
+    }
+
+    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || null;
+
+    // Never fall through to the literal string "your area" - Google News happily
+    // returns 100 unrelated national stories for "your area news".
+    if (!areaName) {
+      if (!stale) showLocalManualInput("Couldn't name your area — enter a city, ZIP, or county:");
       return;
     }
 
-    list.innerHTML = items.map(item => {
-      const title = item.querySelector("title")?.textContent || "Untitled";
-      const link = item.querySelector("link")?.textContent || "#";
-      const source = item.querySelector("source")?.textContent || "";
-      return `<a class="local-headline" href="${link}" target="_blank" rel="noopener">${title}${source ? `<span class="src">${source}</span>` : ""}</a>`;
-    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
+    saveLocalArea(areaName, false);
+    if (areaName !== stale) loadLocalHeadlines(areaName);
   } catch (e) {
-    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — the news proxy may be down. Try again shortly.</span>`;
+    if (!stale) showLocalManualInput("Couldn't detect your area — enter a city, ZIP, or county:");
   }
 }
 
-function showLocalManualInput(message) {
+async function loadLocalHeadlines(areaName, attempt) {
+  attempt = attempt || 0;
+  currentLocalArea = areaName;
+
   const label = document.getElementById("localLocLabel");
-  const list = document.getElementById("localHeadlines");
+  const list  = document.getElementById("localHeadlines");
+  if (!label || !list) return;
+
+  label.innerHTML = `${escapeHtml(areaName)} <button onclick="showLocalManualInput('Search a different area:')">change</button>`;
+  if (attempt === 0) {
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span>`;
+  }
+
+  try {
+    const res = await fetchWithTimeout(`/api/local-news?area=${encodeURIComponent(areaName)}`, 12000);
+    if (!res.ok) throw new Error(`local-news API responded with ${res.status}`);
+
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, "text/xml");
+
+    // DOMParser hands back a <parsererror> document instead of throwing. Without
+    // this guard an upstream error page silently reads as "no headlines found".
+    if (xml.querySelector("parsererror") || !xml.querySelector("rss, feed")) {
+      throw new Error("local-news returned a non-RSS response");
+    }
+
+    // Sort before slicing - taking the feed's first 6 was handing back
+    // relevance-ranked results that were routinely months old.
+    const items = Array.from(xml.querySelectorAll("item"))
+      .map(item => {
+        const raw = item.querySelector("pubDate")?.textContent || "";
+        const when = raw ? new Date(raw) : null;
+        return { item, when: when && !isNaN(when) ? when : null };
+      })
+      .sort((a, b) => (b.when ? b.when.getTime() : 0) - (a.when ? a.when.getTime() : 0))
+      .slice(0, 6);
+
+    if (!items.length) {
+      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${escapeHtml(areaName)}" right now.</span>`;
+      return;
+    }
+
+    const html = items.map(({ item, when }) => {
+      const title  = item.querySelector("title")?.textContent || "Untitled";
+      const link   = item.querySelector("link")?.textContent || "#";
+      const source = item.querySelector("source")?.textContent || "";
+      // Only http(s) links get through - blocks javascript: and data: URLs.
+      const safeLink = /^https?:\/\//i.test(link) ? link : "#";
+      const meta = [
+        source ? escapeHtml(source) : "",
+        when ? `<span class="age">${escapeHtml(relativeAge(when))}</span>` : ""
+      ].filter(Boolean).join("");
+      return `<a class="local-headline" href="${escapeHtml(safeLink)}" target="_blank" rel="noopener">${escapeHtml(title)}${meta ? `<span class="src">${meta}</span>` : ""}</a>`;
+    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${escapeHtml(areaName)} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
+
+    list.innerHTML = html;
+    cacheHeadlines(areaName, html);
+  } catch (e) {
+    // Two quick retries cover the ordinary single-blip failure.
+    if (attempt < 2) {
+      setTimeout(() => loadLocalHeadlines(areaName, attempt + 1), 1200 * (attempt + 1));
+      return;
+    }
+    const cached = readCachedHeadlines(areaName);
+    if (cached) {
+      list.innerHTML = cached.html +
+        `<div class="local-fineprint">Showing the last headlines that loaded — the live feed is unavailable right now.</div>`;
+      return;
+    }
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now. <button onclick="retryLocalHeadlines()">Retry</button></span>`;
+  }
+}
+
+// Google News ranks by relevance, not date. Showing the age keeps a quiet
+// week visibly quiet instead of passing off old stories as today's news.
+function relativeAge(date) {
+  const mins = Math.floor((Date.now() - date.getTime()) / 60000);
+  if (mins < 60)   return `${Math.max(mins, 1)}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24)    return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  if (days < 30)   return `${days}d ago`;
+  return `${Math.floor(days / 30)}mo ago`;
+}
+
+function retryLocalHeadlines() {
+  if (currentLocalArea) loadLocalHeadlines(currentLocalArea, 0);
+}
+
+/* ---- Manual area entry: "City, ST" or a 5-digit ZIP ---------------------
+   Google News returns literally nothing for a bare ZIP, so a ZIP is resolved
+   to "City, ST" before it is ever searched. Anything that is neither is
+   rejected rather than sent upstream - that is how "your area news" used to
+   happen.                                                                  */
+
+const US_STATES = {
+  alabama:"AL", alaska:"AK", arizona:"AZ", arkansas:"AR", california:"CA",
+  colorado:"CO", connecticut:"CT", delaware:"DE", florida:"FL", georgia:"GA",
+  hawaii:"HI", idaho:"ID", illinois:"IL", indiana:"IN", iowa:"IA",
+  kansas:"KS", kentucky:"KY", louisiana:"LA", maine:"ME", maryland:"MD",
+  massachusetts:"MA", michigan:"MI", minnesota:"MN", mississippi:"MS",
+  missouri:"MO", montana:"MT", nebraska:"NE", nevada:"NV",
+  "new hampshire":"NH", "new jersey":"NJ", "new mexico":"NM", "new york":"NY",
+  "north carolina":"NC", "north dakota":"ND", ohio:"OH", oklahoma:"OK",
+  oregon:"OR", pennsylvania:"PA", "rhode island":"RI", "south carolina":"SC",
+  "south dakota":"SD", tennessee:"TN", texas:"TX", utah:"UT", vermont:"VT",
+  virginia:"VA", washington:"WA", "west virginia":"WV", wisconsin:"WI",
+  wyoming:"WY", "district of columbia":"DC"
+};
+const STATE_CODES = new Set(Object.keys(US_STATES).map(k => US_STATES[k]));
+
+function normalizeState(token) {
+  const t = (token || "").trim().replace(/\./g, "").toLowerCase();
+  if (!t) return null;
+  if (STATE_CODES.has(t.toUpperCase())) return t.toUpperCase();
+  if (US_STATES[t]) return US_STATES[t];
+
+  // Accept unambiguous abbreviations people actually write - Calif, Penn,
+  // Wash, Tenn. Requires 4+ chars and exactly one matching state, so "Miss"
+  // (Mississippi vs Missouri) is still rejected rather than guessed at.
+  if (t.length >= 4) {
+    const hits = Object.keys(US_STATES).filter(name => name.indexOf(t) === 0);
+    if (hits.length === 1) return US_STATES[hits[0]];
+  }
+  return null;
+}
+
+async function zipToArea(zip) {
+  const res = await fetchWithTimeout(`https://api.zippopotam.us/us/${zip}`, 8000);
+  if (!res.ok) return null;                       // 404 = no such ZIP
+  const data = await res.json();
+  const place = data && data.places && data.places[0];
+  if (!place) return null;
+  return `${place["place name"]}, ${place["state abbreviation"]}`;
+}
+
+// Accepts "Murphys, CA", "Murphys California", or "95247".
+// Resolves to { area } or { error }.
+async function parseAreaInput(rawValue) {
+  const raw = (rawValue || "").trim().replace(/\s+/g, " ");
+  if (!raw) return { error: "Enter a city and state, a ZIP code, or a county." };
+
+  // County / parish / borough. Kept typeable because auto-detection resolves
+  // to one, and a county returns markedly better local coverage than a town.
+  // The state is optional here - "Calaveras County" alone searches well.
+  if (/\b(county|parish|borough)\b/i.test(raw)) {
+    const parts = raw.split(",");
+    if (parts.length >= 2) {
+      const st   = normalizeState(parts[parts.length - 1]);
+      const name = parts.slice(0, -1).join(",").trim();
+      if (!st)   return { error: 'Check the state — like "Calaveras County, CA".' };
+      if (!name) return { error: 'Add a county name, like "Calaveras County, CA".' };
+      return { area: `${name}, ${st}` };
+    }
+    // No comma: peel off a trailing state if one is there, else take it as-is.
+    const words = raw.split(" ");
+    for (const take of [2, 1]) {
+      if (words.length > take + 1) {
+        const st = normalizeState(words.slice(-take).join(" "));
+        if (st) return { area: `${words.slice(0, -take).join(" ")}, ${st}` };
+      }
+    }
+    return { area: raw };
+  }
+
+  if (/^\d{5}$/.test(raw)) {
+    let area = null;
+    try { area = await zipToArea(raw); } catch (e) { area = null; }
+    return area ? { area } : { error: `Couldn't find ZIP ${raw}. Try a city and state instead.` };
+  }
+  if (/^\d+$/.test(raw)) {
+    return { error: "ZIP codes are 5 digits — or enter a city and state." };
+  }
+
+  let city = null, state = null;
+  const parts = raw.split(",");
+  if (parts.length >= 2) {
+    state = normalizeState(parts[parts.length - 1]);
+    city  = parts.slice(0, -1).join(",").trim();
+  } else {
+    // No comma: try the last two words as a state name, then the last one.
+    const words = raw.split(" ");
+    for (const take of [2, 1]) {
+      if (words.length > take) {
+        const cand = normalizeState(words.slice(-take).join(" "));
+        if (cand) { state = cand; city = words.slice(0, -take).join(" "); break; }
+      }
+    }
+  }
+
+  if (!state) return { error: 'Add a state — like "Murphys, CA" — or use a ZIP or county.' };
+  if (!city)  return { error: 'Add a city before the state, like "Murphys, CA".' };
+  return { area: `${city}, ${state}` };
+}
+
+function showLocalManualInput(message, prefill) {
+  const label = document.getElementById("localLocLabel");
+  const list  = document.getElementById("localHeadlines");
+  if (!label || !list) return;
   label.textContent = "";
   list.innerHTML = `
     <div class="mono" style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.4rem;">${message}</div>
     <div class="local-search-row">
-      <input type="text" id="localAreaInput" placeholder="City or county" />
+      <input type="text" id="localAreaInput" placeholder="City, ST / ZIP / county" value="${escapeHtml(prefill || "")}"
+             onkeydown="if(event.key==='Enter') submitLocalArea();" />
       <button onclick="submitLocalArea()">Go</button>
     </div>
+    <div id="localAreaError" class="local-area-error"></div>
   `;
+  const input = document.getElementById("localAreaInput");
+  if (input) input.focus();
 }
 
-function submitLocalArea() {
+async function submitLocalArea() {
   const input = document.getElementById("localAreaInput");
-  const val = input.value.trim();
-  if (!val) return;
-  saveLocalArea(val);
-  loadLocalHeadlines(val);
+  const err   = document.getElementById("localAreaError");
+  if (!input) return;
+  if (err) err.textContent = "";
+
+  const parsed = await parseAreaInput(input.value);
+  if (parsed.error) {
+    // Keep what they typed so they can correct it rather than retype it.
+    if (err) err.textContent = parsed.error;
+    input.focus();
+    return;
+  }
+
+  saveLocalArea(parsed.area, true);
+  loadLocalHeadlines(parsed.area);
 }
 
 let fontStep = 0;
@@ -1433,7 +1611,8 @@ function initTheme() {
   applyTheme(current);
 }
 
-const FACTCHECK_API_KEY = "AIzaSyBzA2bXyIEIzBNQ-LTOQRMxOgDfZdAUI6E";
+// The Fact Check API key now lives server-side in the FACTCHECK_API_KEY env
+// var and is used by /api/factcheck, so it never reaches the browser.
 
 function escapeHtml(str) {
   if (!str) return "";
@@ -1486,13 +1665,13 @@ async function runFactCheck() {
   input.disabled = true;
   results.innerHTML = `<div class="fc-loading">Searching fact-checkers…</div>`;
 
-  const url = `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${encodeURIComponent(query + " Trump")}&languageCode=en&key=${FACTCHECK_API_KEY}`;
+  const url = `/api/factcheck?query=${encodeURIComponent(query)}`;
 
   try {
     const res = await fetch(url);
     if (!res.ok) {
       let msg = `Couldn't reach the fact-check service (${res.status}).`;
-      if (res.status === 403) msg += " Double-check the API key's website restriction matches this domain.";
+      if (res.status === 403) msg += " The server's Fact Check API key was rejected — check it in Vercel's env vars.";
       else if (res.status === 429) msg += " The service is rate-limited right now — wait a moment and try again.";
       else msg += " Try again shortly.";
       results.innerHTML = `<div class="fc-error">${msg}</div>`;
@@ -1599,10 +1778,9 @@ async function loadWeeklyTracked() {
 }
 
 initTheme();
-renderStories();
 initWeather();
 initLocalNews();
-initStoryMap();
+loadStories();      // renders the board and map once the data arrives
 loadWeeklyTracked();
 </script>
 
