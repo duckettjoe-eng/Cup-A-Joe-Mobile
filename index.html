@@ -791,12 +791,26 @@
     padding: 0.7rem 0.8rem;
     margin-bottom: 0.6rem;
   }
-  .outlet-card .outlet-name-row {
+  /* Each outlet collapses to just its name, so an opened story reads as a
+     scannable list of who covered it - you expand only what you want.     */
+  .outlet-card > summary.outlet-name-row {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    margin-bottom: 0.35rem;
+    cursor: pointer;
+    list-style: none;
   }
+  .outlet-card > summary.outlet-name-row::-webkit-details-marker { display: none; }
+  .outlet-card > summary.outlet-name-row::after {
+    content: "\25B8";
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    transition: transform 0.15s ease;
+  }
+  .outlet-card[open] > summary.outlet-name-row::after { transform: rotate(90deg); }
+  .outlet-card[open] > summary.outlet-name-row { margin-bottom: 0.5rem; }
+  .outlet-card > summary.outlet-name-row:hover .outlet-name { color: var(--coffee); }
   .stance-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
@@ -1007,14 +1021,14 @@ function renderStories() {
       const label = g === "left" ? "Left" : g === "center" ? "Center" : "Right";
       const cards = outletsInGroup.length
         ? outletsInGroup.map(o => `
-            <div class="outlet-card">
-              <div class="outlet-name-row">
+            <details class="outlet-card">
+              <summary class="outlet-name-row">
                 <span class="stance-dot" style="background:${heatColor(o.heat)}"></span>
                 <span class="outlet-name">${o.name}</span>
-              </div>
+              </summary>
               <p class="framing">${o.framing}</p>
               <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
-            </div>
+            </details>
           `).join("")
         : `<p class="not-checked-note">No ${label.toLowerCase()}-leaning outlets checked yet for this story.</p>`;
       return `<div class="col-${g}"><div class="compare-col-head">${label} (${outletsInGroup.length})</div>${cards}</div>`;
