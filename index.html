@@ -448,6 +448,8 @@
     color: var(--ink-soft);
     margin-top: 0.15rem;
   }
+  .local-headline .age { opacity: 0.75; }
+  .local-headline .age::before { content: " · "; }
   .local-search-row {
     display: flex;
     gap: 0.4rem;
@@ -1477,20 +1479,33 @@ async function loadLocalHeadlines(areaName, attempt) {
       throw new Error("local-news returned a non-RSS response");
     }
 
-    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+    // Sort before slicing - taking the feed's first 6 was handing back
+    // relevance-ranked results that were routinely months old.
+    const items = Array.from(xml.querySelectorAll("item"))
+      .map(item => {
+        const raw = item.querySelector("pubDate")?.textContent || "";
+        const when = raw ? new Date(raw) : null;
+        return { item, when: when && !isNaN(when) ? when : null };
+      })
+      .sort((a, b) => (b.when ? b.when.getTime() : 0) - (a.when ? a.when.getTime() : 0))
+      .slice(0, 6);
 
     if (!items.length) {
       list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${escapeHtml(areaName)}" right now.</span>`;
       return;
     }
 
-    const html = items.map(item => {
+    const html = items.map(({ item, when }) => {
       const title  = item.querySelector("title")?.textContent || "Untitled";
       const link   = item.querySelector("link")?.textContent || "#";
       const source = item.querySelector("source")?.textContent || "";
       // Only http(s) links get through - blocks javascript: and data: URLs.
       const safeLink = /^https?:\/\//i.test(link) ? link : "#";
-      return `<a class="local-headline" href="${escapeHtml(safeLink)}" target="_blank" rel="noopener">${escapeHtml(title)}${source ? `<span class="src">${escapeHtml(source)}</span>` : ""}</a>`;
+      const meta = [
+        source ? escapeHtml(source) : "",
+        when ? `<span class="age">${escapeHtml(relativeAge(when))}</span>` : ""
+      ].filter(Boolean).join("");
+      return `<a class="local-headline" href="${escapeHtml(safeLink)}" target="_blank" rel="noopener">${escapeHtml(title)}${meta ? `<span class="src">${meta}</span>` : ""}</a>`;
     }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${escapeHtml(areaName)} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
 
     list.innerHTML = html;
@@ -1509,6 +1524,18 @@ async function loadLocalHeadlines(areaName, attempt) {
     }
     list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now. <button onclick="retryLocalHeadlines()">Retry</button></span>`;
   }
+}
+
+// Google News ranks by relevance, not date. Showing the age keeps a quiet
+// week visibly quiet instead of passing off old stories as today's news.
+function relativeAge(date) {
+  const mins = Math.floor((Date.now() - date.getTime()) / 60000);
+  if (mins < 60)   return `${Math.max(mins, 1)}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24)    return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  if (days < 30)   return `${days}d ago`;
+  return `${Math.floor(days / 30)}mo ago`;
 }
 
 function retryLocalHeadlines() {
