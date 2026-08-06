@@ -763,33 +763,29 @@
     padding: 1.2rem 1.3rem 1.4rem;
     background: var(--paper-dim);
   }
-  .compare-columns {
+  .outlet-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 0.5rem;
+    align-items: start;
   }
-  @media (max-width: 640px) {
-    .compare-columns { grid-template-columns: 1fr; }
-  }
-  .compare-col-head {
-    font-family: var(--font-main);
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.6rem;
-    border-bottom: 2px solid;
-  }
-  .col-left .compare-col-head { color: var(--grp-left); border-color: var(--grp-left); }
-  .col-center .compare-col-head { color: var(--grp-center); border-color: var(--grp-center); }
-  .col-right .compare-col-head { color: var(--grp-right); border-color: var(--grp-right); }
 
   .outlet-card {
     background: var(--card);
     border: 1px solid var(--rule);
+    border-left: 3px solid var(--rule);   /* carries the lean */
     border-radius: var(--radius-sm);
+    padding: 0.4rem 0.6rem;
+    margin: 0;
+  }
+  .outlet-card.lean-left   { border-left-color: var(--grp-left); }
+  .outlet-card.lean-center { border-left-color: var(--grp-center); }
+  .outlet-card.lean-right  { border-left-color: var(--grp-right); }
+  /* An opened outlet takes the full width so its framing isn't squeezed
+     into one narrow column. */
+  .outlet-card[open] {
+    grid-column: 1 / -1;
     padding: 0.7rem 0.8rem;
-    margin-bottom: 0.6rem;
   }
   /* Each outlet collapses to just its name, so an opened story reads as a
      scannable list of who covered it - you expand only what you want.     */
@@ -1016,23 +1012,30 @@ function renderStories() {
       ? `<div class="blindspot-flag">⚠ Blindspot: no ${counts.left === 0 ? "left-leaning" : "right-leaning"} outlets found covering this yet</div>`
       : "";
 
-    const cols = ["left", "center", "right"].map(g => {
-      const outletsInGroup = story.outlets.filter(o => group(o.lean) === g);
-      const label = g === "left" ? "Left" : g === "center" ? "Center" : "Right";
-      const cards = outletsInGroup.length
-        ? outletsInGroup.map(o => `
-            <details class="outlet-card">
-              <summary class="outlet-name-row">
-                <span class="stance-dot" style="background:${heatColor(o.heat)}"></span>
-                <span class="outlet-name">${o.name}</span>
-              </summary>
-              <p class="framing">${o.framing}</p>
-              <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
-            </details>
-          `).join("")
-        : `<p class="not-checked-note">No ${label.toLowerCase()}-leaning outlets checked yet for this story.</p>`;
-      return `<div class="col-${g}"><div class="compare-col-head">${label} (${outletsInGroup.length})</div>${cards}</div>`;
-    }).join("");
+    // One flowing grid rather than three fixed columns: with 8 outlets on the
+    // left and one each side, a 1fr 1fr 1fr grid left two thirds of the area
+    // permanently empty. Lean is carried by the coloured left edge instead,
+    // and the proportions are already shown by the bar above.
+    const GROUP_ORDER = ["left", "center", "right"];
+    const ordered = GROUP_ORDER.flatMap(g =>
+      story.outlets.filter(o => group(o.lean) === g).map(o => ({ o, g }))
+    );
+
+    const cards = ordered.map(({ o, g }) => `
+      <details class="outlet-card lean-${g}">
+        <summary class="outlet-name-row">
+          <span class="stance-dot" style="background:${heatColor(o.heat)}"></span>
+          <span class="outlet-name">${o.name}</span>
+        </summary>
+        <p class="framing">${o.framing}</p>
+        <a href="${o.url}" target="_blank" rel="noopener">${hostFromUrl(o.url)} →</a>
+      </details>
+    `).join("");
+
+    const missing = GROUP_ORDER.filter(g => !story.outlets.some(o => group(o.lean) === g));
+    const missingNote = missing.length
+      ? `<p class="not-checked-note">No ${missing.join(" or ")}-leaning outlets checked yet for this story.</p>`
+      : "";
 
     return `
       <details class="story" id="story-${story.id}">
@@ -1058,7 +1061,7 @@ function renderStories() {
           ${blindspot}
         </summary>
         <div class="compare-wrap">
-          <div class="compare-columns">${cols}</div>
+          <div class="outlet-grid">${cards}</div>${missingNote}
           <div class="synthesis">
             <h3>What this comparison actually shows</h3>
             <ul>${story.synthesis.map(s => `<li><span class="label">${s.label}</span>${s.text}</li>`).join("")}</ul>
