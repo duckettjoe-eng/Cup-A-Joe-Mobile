@@ -1,5 +1,179 @@
 [
   {
+    "id": "blanche-ag-nomination-advances",
+    "locations": [
+      {
+        "name": "Washington, DC",
+        "lat": 38.9072,
+        "lon": -77.0369
+      }
+    ],
+    "date": "AUGUST 4, 2026",
+    "title": "Blanche's AG nomination advances after he rescinds the $1.8B \"anti-weaponization fund\"",
+    "summary": "The Senate Judiciary Committee advanced acting AG Todd Blanche 12–10 on party lines after he issued written orders rescinding a $1.8 billion fund created in Trump's IRS settlement and narrowing the scope of the Trump family's audit immunity. Republican holdouts Cornyn and Tillis called it settled; Susan Collins then said she'd vote no. Every outlet checked — including Fox — reported that the orders don't legally prevent the fund's revival, which makes this a useful test of how differently outlets weight the same conceded fact.",
+    "outlets": [
+      {
+        "name": "Fox News",
+        "lean": "right",
+        "heat": 2,
+        "framing": "Led on Collins's defection as a threat to the confirmation math and to Thune's plan to confirm Blanche before the August recess. Described the Cornyn–Tillis deal as giving \"explicit direction that the anti-weaponization fund was dead.\" Worth noting for the comparison: Fox's own news copy also reported that \"critics of the deal in the Senate say there's no real binding mechanism\" preventing Trump or Blanche from tearing it up after confirmation — the same limitation the left-leaning outlets emphasized.",
+        "url": "https://www.foxnews.com/politics/collins-drops-hammer-trumps-pick-lead-doj-jeopardizing-path-confirmation"
+      },
+      {
+        "name": "Washington Examiner",
+        "lean": "leanright",
+        "heat": 2,
+        "framing": "Procedural framing throughout — the vote as a \"crucial procedural hurdle\" cleared before recess. Gave the most detailed account of what Blanche's order actually says (no members appointed, no money transferred, no claims paid) and of the audit clarification's limits. Ran the Democratic objections at length and in their own words, quoting Booker's \"all hat and no cattle\" and Blumenthal calling the documents \"a sham,\" without rebutting them.",
+        "url": "https://www.washingtonexaminer.com/news/justice/4673560/trump-attorney-general-pick-todd-blanche-faces-final-hurdle-before-confirmation-vote/"
+      },
+      {
+        "name": "CBS News",
+        "lean": "center",
+        "heat": 2,
+        "framing": "The most complete documentary account of the deal itself, quoting the DOJ order, the senators' joint statement, and Cornyn's \"stake driven through the heart\" line. Closed the loop with the single most load-bearing sentence in the coverage: \"The written settlement reached with Mr. Trump and his lawyers has not been modified.\" Also carried Trump saying the same day that he still views the fund as \"a positive\" and that he didn't know what had been agreed to.",
+        "url": "https://www.cbsnews.com/news/cornyn-tillis-todd-blanche-attorney-general-nomination/"
+      },
+      {
+        "name": "AP (via PBS NewsHour)",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "Balanced the two competing readings against each other rather than picking one: Grassley saying the rescission \"put this issue to bed once and for all,\" against Durbin saying the fund \"can easily be revived with a new order from the Department of Justice 15 minutes after Mr. Blanche is confirmed.\" Added a checkable finding neither senator raised — that the order doesn't stop the administration from compensating the same people through a pre-existing damages-claim process. Also laid out the floor math (McConnell absent, Murkowski and Cassidy undeclared).",
+        "url": "https://www.pbs.org/newshour/politics/watch-live-senate-judiciary-committee-votes-on-blanche-nomination-for-attorney-general"
+      },
+      {
+        "name": "ABC News",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "Straight floor-and-committee account organized around Collins's announcement. Stated the loophole as flat fact in its own voice — \"the agreement reached has no language preventing the resurrection of the controversial fund under a different name or method\" — and then immediately gave Cornyn his answer to it. Ran Tillis's \"payout pot for punks\" line and Booker's and Whitehouse's objections at similar length.",
+        "url": "https://abcnews.com/Politics/senate-judiciary-committee-advances-todd-blanches-nomination-attorney/story?id=135353842"
+      },
+      {
+        "name": "NPR",
+        "lean": "leanleft",
+        "heat": 3,
+        "framing": "The sharpest characterization of the group, delivered as reporter analysis on Morning Edition: the two Blanche documents \"purport to\" do what they claim, and \"legal experts say neither document… is actually legally binding.\" Went further than the news accounts by noting the tax-immunity benefits \"still very much remain in place,\" and then widened out to Blanche's broader record — Epstein files, the Comey indictment, judges questioning DOJ representations — which the other outlets mostly left out of the vote story.",
+        "url": "https://www.npr.org/2026/08/04/nx-s1-5918355/senate-judiciary-committee-to-vote-on-todd-blanches-nomination-for-attorney-general"
+      }
+    ],
+    "synthesis": [
+      {
+        "label": "Consistent across all 6:",
+        "text": "The committee voted 12–10 on party lines on Aug. 4. Blanche issued written orders Aug. 2–3 rescinding the $1.8 billion fund and narrowing the audit immunity to Trump, two sons, the Trump Organization, and already-filed returns. Cornyn and Tillis flipped to yes; Collins announced she'd vote no. The underlying IRS settlement with Trump was not itself modified. No outlet disputes any of this."
+      },
+      {
+        "label": "Where it splits — and where it notably doesn't:",
+        "text": "The central contested question is whether the rescission is binding. This is a rare case where the answer isn't split by lean: Fox reported Senate critics saying there's \"no real binding mechanism,\" ABC stated in its own voice that the agreement has no language preventing revival, AP flagged an alternate compensation route that survives the order, and NPR cited legal experts saying neither document is legally binding. That convergence makes it a reporting finding rather than a partisan characterization. What differs is placement: for Fox and the Examiner it's a paragraph inside a procedural story; for NPR it's the thesis."
+      },
+      {
+        "label": "Framing among outlets that agree on the facts:",
+        "text": "Fox and the Examiner organized around process and vote-counting. CBS and AP organized around the documents themselves and let Grassley and Durbin argue in their own quotes. ABC organized around Collins. NPR was alone in going past the vote to Blanche's broader DOJ record, which is a genuine editorial choice about scope rather than a factual disagreement — the vote story and the fitness story are not the same story, and reasonable desks put that material in different places."
+      },
+      {
+        "label": "Gap in this pass:",
+        "text": "Checked 6 outlets. Missing coverage that was located but could not be retrieved: CNN's \"major loopholes\" piece, NBC News, CNBC, Washington Post, Washington Times, The Federalist, MS NOW. The Federalist in particular would be a useful second right-side data point. Also unchecked: Reuters, WSJ, NYT, Bloomberg, Newsweek, The Hill."
+      }
+    ]
+  },
+  {
+    "id": "iran-strikes-called-off-hormuz-talks",
+    "locations": [
+      {
+        "name": "Washington, DC",
+        "lat": 38.9072,
+        "lon": -77.0369
+      },
+      {
+        "name": "Tehran, Iran",
+        "lat": 35.6892,
+        "lon": 51.389
+      },
+      {
+        "name": "Strait of Hormuz",
+        "lat": 26.5667,
+        "lon": 56.25
+      }
+    ],
+    "date": "AUGUST 2, 2026",
+    "title": "Trump calls off Iran strikes, says talks are underway — Tehran says they aren't",
+    "summary": "Trump canceled what he described as the largest planned U.S. attack since World War II, saying Gulf allies and Iran had asked for time and that the \"perimeters of a deal\" to reopen the Strait of Hormuz were in place. Iran's foreign ministry then said it is not negotiating with the United States at all — only with Oman, over a temporary shipping route. This is a factual dispute, not just a framing one, and outlets split on how prominently they surfaced it.",
+    "outlets": [
+      {
+        "name": "Fox News",
+        "lean": "right",
+        "heat": 1,
+        "framing": "Live-blog coverage led with the administration's account: a deal is \"imminent,\" the canceled strike would have been the largest since World War II, and Iran has agreed to an \"immediate, complete, and total opening\" of the strait. Oil falling more than $5 a barrel was treated as the confirming evidence. Fox did carry Iran's foreign minister saying the Iran–Oman talks were in their final stages, but did not foreground the gap between \"Iran–Oman talks\" and Trump's claim of U.S.–Iran talks.",
+        "url": "https://www.foxnews.com/live-news/trump-iran-war-israel-hormuz-august-2"
+      },
+      {
+        "name": "Reuters (via Spokesman-Review)",
+        "lean": "center",
+        "heat": 3,
+        "framing": "Original reporting that cuts hardest against the announcement: a senior Iranian source and two regional officials told Reuters the deal actually on the table would give Tehran control over ships entering the Gulf — \"one of the biggest concessions yet to Iran\" — and those same sources \"pushed back against assertions by U.S. President Donald Trump that a deal reopening the strait was imminent.\" Reuters also reported the U.S. Army has used up nearly all of its long-range precision missiles, and noted Washington had no immediate reply on the proposed terms.",
+        "url": "https://www.spokesman.com/stories/2026/aug/04/proposed-hormuz-deal-would-give-iran-control-of-in/"
+      },
+      {
+        "name": "Bloomberg (via Spokesman-Review)",
+        "lean": "center",
+        "heat": 2,
+        "framing": "Straight market-and-diplomacy account that stated the discrepancy plainly without editorializing: Trump said talks with Iran would begin Monday, and \"there's as yet no clarity on what level of talks he was referring to or who would lead them.\" Added its own reporting that the Hormuz middle passage under discussion has been mined by Iran and may need clearing before regular use. Quoted the Iranian spokesman directly: \"We are not currently negotiating with the United States.\"",
+        "url": "https://www.spokesman.com/stories/2026/aug/03/iran-says-hormuz-talks-ongoing-after-trump-calls-o/"
+      },
+      {
+        "name": "AP (via PBS NewsHour)",
+        "lean": "leanleft",
+        "heat": 3,
+        "framing": "Rather than covering the cancellation as news, AP built a checkable timeline of every prior announcement — April 7, April 21, May 18, June 11, June 17, July 7, July 27, Aug. 1 — showing that each announced halt was \"upended by renewed attacks days or even hours afterward.\" The framing is not that Trump is wrong about this one, but that the pattern is the story. Documentary and verifiable rather than adjectival.",
+        "url": "https://www.pbs.org/newshour/politics/trump-frequently-announces-hes-halting-strikes-in-iran-but-they-keep-happening"
+      },
+      {
+        "name": "PolitiFact (via PBS NewsHour)",
+        "lean": "center",
+        "heat": 3,
+        "framing": "Directly fact-checked Trump's claim that the war is going \"extremely well,\" concluding key stated goals — denuclearization, regime change, reopening the strait — remain unmet. Quoted named experts across the spectrum, including Carnegie's Aaron David Miller calling it \"an 'incomplete'\" and, if the war ended today, \"a major strategic defeat by the administration's own metrics.\" Also supplied the hard numbers: $37.5B in direct military spending, 18 U.S. service members killed, gas about $1.15 above pre-war levels.",
+        "url": "https://www.pbs.org/newshour/world/fact-checking-trumps-claims-about-how-the-iran-war-is-going"
+      },
+      {
+        "name": "NPR",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "Short, blunt framing built entirely around the contradiction — headline and lede both lead with Iran denying the negotiations Trump announced. Reported that Trump posted the \"perimeters of a deal\" had been reached and that \"Iran did not confirm the statement,\" leaving the discrepancy stated rather than adjudicated.",
+        "url": "https://www.npr.org/2026/08/03/g-s1-136916/iran-war-trump-us-peace-negotiations"
+      },
+      {
+        "name": "CBS News",
+        "lean": "center",
+        "heat": 2,
+        "framing": "Live-updates format that gave the administration's own spokesman the frame: Rubio saying there has \"been progress made\" in the Iran–Oman talks \"but not finality yet.\" Ran Trump's harshest line (\"I want to give them every last chance before decapitation\") in the headline alongside it. Added a neutral status check the other outlets mostly skipped — that commercial traffic through the strait \"remains murky\" and both Iran and Oman claim control of the waterway.",
+        "url": "https://www.cbsnews.com/live-updates/iran-war-donald-trump-us-denies-negotiations-begin-strikes-called-off/"
+      },
+      {
+        "name": "Al Jazeera",
+        "lean": "left",
+        "heat": 2,
+        "framing": "Notable because the piece is bylined \"Al Jazeera Staff and AP\" and tagged AP as its source — so the sourcing is closer to wire copy than to an Al Jazeera editorial line. Gave extended direct quotation to Trump (\"Total Surrender,\" the \"Wall of Steel\" blockade, \"last chance\") and to the Iranian spokesman's rebuttal in roughly equal measure. Supplied regional detail absent from U.S. coverage, including Iran routing containers through Pakistani ports around the blockade.",
+        "url": "https://www.aljazeera.com/news/2026/8/3/trump-blasts-duplicitous-iran-after-tehran-denies-it-is-in-talks-with-the-us"
+      }
+    ],
+    "synthesis": [
+      {
+        "label": "Consistent across all 8:",
+        "text": "Trump canceled a planned strike over the weekend of Aug. 1–2 and said Saudi Arabia, the UAE, Qatar and Iran had asked him to. Iran's foreign ministry publicly said it is not negotiating with the United States and that its talks are with Oman over a temporary transit route. Oil fell sharply on the news. No outlet disputes any of that."
+      },
+      {
+        "label": "Where it splits:",
+        "text": "This one is a reporting finding, not a framing preference. Reuters spoke to a senior Iranian source and two regional officials who said the agreement actually under discussion would give Iran control over inbound traffic — the opposite of the \"immediate, complete, and total opening\" Trump described — and who directly disputed that a deal was imminent. Bloomberg separately reported there was no clarity on what talks Trump meant or who would lead them. Fox's news coverage relayed the administration's version and did carry the Iranian foreign minister, but framed the Iran–Oman track as evidence the deal was coming rather than as a contradiction of it."
+      },
+      {
+        "label": "Framing among outlets that agree on the facts:",
+        "text": "AP and PolitiFact both went documentary rather than rhetorical — AP with a dated timeline of eight prior announce-then-resume cycles since February, PolitiFact with named experts and dollar figures. NPR stated the contradiction and stopped there. CBS gave the frame to Rubio's own hedge (\"progress… but not finality yet\"), which is arguably the most administration-sourced skeptical note available. Al Jazeera, despite the outlet's lean, ran what is substantially AP copy here."
+      },
+      {
+        "label": "Gap in this pass:",
+        "text": "Checked 8 outlets. Only one right-leaning outlet (Fox News) — Washington Times and Washington Examiner both have same-week Iran coverage that could not be retrieved for this pass and would make the right-side comparison fairer. Also missing: CNN, NBC, Washington Post, BBC, Guardian, NYT, WSJ, Financial Times, The Economist, MS NOW, NewsNation, Deutsche Welle."
+      }
+    ]
+  },
+  {
     "id": "election-security-speech",
     "locations": [
       {
