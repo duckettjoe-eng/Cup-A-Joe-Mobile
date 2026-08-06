@@ -1319,81 +1319,206 @@ function renderWeatherContainer() {
   container.innerHTML = html;
 }
 
-function saveLocalArea(name) {
-  try { localStorage.setItem("cupajoe_local_area", name); } catch (e) { }
+/* ---------------- Local Update: area detection + headlines ----------------
+   Reliability notes:
+   - Mobile GPS cold-starts routinely exceed 8s, so the old timeout sent most
+     phone visitors to manual entry. Timeout raised and a cached fix accepted.
+   - DOMParser never throws on bad input, so an upstream HTML error page used
+     to render as "No local headlines found". Now detected and retried.
+   - Every network call has an explicit timeout; nothing can hang the panel.
+   - A saved area expires so a moving truck stops showing yesterday's town.
+   - Last good headlines are cached and shown if the live feed goes down.     */
+
+const LOCAL_AREA_KEY    = "cupajoe_local_area";
+const LOCAL_AREA_TS_KEY = "cupajoe_local_area_ts";
+const LOCAL_CACHE_KEY   = "cupajoe_local_headlines";
+const AREA_MAX_AGE_MS   = 12 * 60 * 60 * 1000;  // re-detect twice a day
+const HEADLINE_STALE_MS = 6  * 60 * 60 * 1000;  // how long a cached render may stand in
+
+let currentLocalArea = null;
+
+function fetchWithTimeout(url, ms, opts) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, Object.assign({}, opts || {}, { signal: ctrl.signal }))
+    .finally(() => clearTimeout(timer));
 }
+
+function saveLocalArea(name, manual) {
+  try {
+    localStorage.setItem(LOCAL_AREA_KEY, name);
+    // A hand-typed area is a deliberate choice - never expire it out from under them.
+    localStorage.setItem(LOCAL_AREA_TS_KEY, manual ? "manual" : String(Date.now()));
+  } catch (e) { }
+}
+
+// Returns the saved area only while it is still considered current.
 function loadSavedLocalArea() {
-  try { return localStorage.getItem("cupajoe_local_area"); } catch (e) { return null; }
+  try {
+    const name = localStorage.getItem(LOCAL_AREA_KEY);
+    if (!name) return null;
+    const ts = localStorage.getItem(LOCAL_AREA_TS_KEY);
+    if (ts === "manual") return name;
+    if (!ts || Date.now() - Number(ts) > AREA_MAX_AGE_MS) return null;
+    return name;
+  } catch (e) { return null; }
+}
+
+// Returns the saved area regardless of age - used as a fallback when detection fails.
+function peekSavedLocalArea() {
+  try { return localStorage.getItem(LOCAL_AREA_KEY); } catch (e) { return null; }
+}
+
+function cacheHeadlines(areaName, html) {
+  try {
+    localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify({ area: areaName, html: html, ts: Date.now() }));
+  } catch (e) { }
+}
+
+function readCachedHeadlines(areaName) {
+  try {
+    const raw = localStorage.getItem(LOCAL_CACHE_KEY);
+    if (!raw) return null;
+    const c = JSON.parse(raw);
+    if (!c || c.area !== areaName) return null;
+    if (Date.now() - c.ts > HEADLINE_STALE_MS) return null;
+    return c;
+  } catch (e) { return null; }
 }
 
 function initLocalNews() {
-  const saved = loadSavedLocalArea();
-  if (saved) {
-    loadLocalHeadlines(saved);
-    return;
-  }
+  const fresh = loadSavedLocalArea();
+  if (fresh) { loadLocalHeadlines(fresh); return; }
+
+  // Stale area still beats an empty panel: render it now, refresh in the background.
+  const stale = peekSavedLocalArea();
+  if (stale) loadLocalHeadlines(stale);
+
   if (!navigator.geolocation) {
-    showLocalManualInput("Location isn't available in this browser.");
+    if (!stale) showLocalManualInput("Location isn't available in this browser — type a city or county:");
     return;
   }
+
   navigator.geolocation.getCurrentPosition(
-    pos => resolveLocalArea(pos.coords.latitude, pos.coords.longitude),
-    () => showLocalManualInput("Location access declined — type a city or county:"),
-    { timeout: 8000 }
+    pos => resolveLocalArea(pos.coords.latitude, pos.coords.longitude, stale),
+    err => handleGeoError(err, stale),
+    // 20s because a cold mobile fix regularly needs >8s; a 10-min-old fix is
+    // plenty for city/county resolution, and high accuracy only costs time.
+    { timeout: 20000, maximumAge: 600000, enableHighAccuracy: false }
   );
 }
 
-async function resolveLocalArea(lat, lon) {
-  try {
-    const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
-    const geo = await res.json();
-    let county = null;
-    if (geo.localityInfo && geo.localityInfo.administrative) {
-      const match = geo.localityInfo.administrative.find(a => /county/i.test(a.name));
-      if (match) county = match.name;
-    }
-    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || "your area";
-    saveLocalArea(areaName);
-    loadLocalHeadlines(areaName);
-  } catch (e) {
-    showLocalManualInput("Couldn't detect your area — type a city or county:");
-  }
+function handleGeoError(err, stale) {
+  if (stale) return;  // already showing cached headlines - don't yank them away
+  const code = err && err.code;
+  const msg =
+    code === 1 ? "Location access declined — type a city or county:" :
+    code === 3 ? "Couldn't get a location fix in time — type a city or county:" :
+                 "Location unavailable — type a city or county:";
+  showLocalManualInput(msg);
 }
 
-async function loadLocalHeadlines(areaName) {
-  const label = document.getElementById("localLocLabel");
-  const list = document.getElementById("localHeadlines");
-  label.innerHTML = `${areaName} <button onclick="showLocalManualInput('Search a different area:')">change</button>`;
-  list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span>`;
-
-  const apiUrl = `/api/local-news?area=${encodeURIComponent(areaName)}`;
-
+async function resolveLocalArea(lat, lon, stale) {
   try {
-    const res = await fetch(apiUrl);
-    if (!res.ok) throw new Error(`local-news API responded with ${res.status}`);
-    const text = await res.text();
-    const xml = new DOMParser().parseFromString(text, "text/xml");
-    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+    const res = await fetchWithTimeout(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`,
+      8000
+    );
+    if (!res.ok) throw new Error(`reverse-geocode responded with ${res.status}`);
+    const geo = await res.json();
 
-    if (!items.length) {
-      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${areaName}" right now.</span>`;
+    let county = null;
+    const admin = geo.localityInfo && geo.localityInfo.administrative;
+    if (Array.isArray(admin)) {
+      // Walk narrowest-first so the nearest "... County" wins over a broader one.
+      const match = admin.slice().reverse().find(a => a && /\bcounty\b/i.test(a.name || ""));
+      if (match) county = match.name;
+    }
+
+    const areaName = county || geo.city || geo.locality || geo.principalSubdivision || null;
+
+    // Never fall through to the literal string "your area" - Google News happily
+    // returns 100 unrelated national stories for "your area news".
+    if (!areaName) {
+      if (!stale) showLocalManualInput("Couldn't name your area — type a city or county:");
       return;
     }
 
-    list.innerHTML = items.map(item => {
-      const title = item.querySelector("title")?.textContent || "Untitled";
-      const link = item.querySelector("link")?.textContent || "#";
-      const source = item.querySelector("source")?.textContent || "";
-      return `<a class="local-headline" href="${link}" target="_blank" rel="noopener">${title}${source ? `<span class="src">${source}</span>` : ""}</a>`;
-    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${areaName} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
+    saveLocalArea(areaName, false);
+    if (areaName !== stale) loadLocalHeadlines(areaName);
   } catch (e) {
-    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now — the news proxy may be down. Try again shortly.</span>`;
+    if (!stale) showLocalManualInput("Couldn't detect your area — type a city or county:");
   }
+}
+
+async function loadLocalHeadlines(areaName, attempt) {
+  attempt = attempt || 0;
+  currentLocalArea = areaName;
+
+  const label = document.getElementById("localLocLabel");
+  const list  = document.getElementById("localHeadlines");
+  if (!label || !list) return;
+
+  label.innerHTML = `${escapeHtml(areaName)} <button onclick="showLocalManualInput('Search a different area:')">change</button>`;
+  if (attempt === 0) {
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Loading local headlines…</span>`;
+  }
+
+  try {
+    const res = await fetchWithTimeout(`/api/local-news?area=${encodeURIComponent(areaName)}`, 12000);
+    if (!res.ok) throw new Error(`local-news API responded with ${res.status}`);
+
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, "text/xml");
+
+    // DOMParser hands back a <parsererror> document instead of throwing. Without
+    // this guard an upstream error page silently reads as "no headlines found".
+    if (xml.querySelector("parsererror") || !xml.querySelector("rss, feed")) {
+      throw new Error("local-news returned a non-RSS response");
+    }
+
+    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+
+    if (!items.length) {
+      list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">No local headlines found for "${escapeHtml(areaName)}" right now.</span>`;
+      return;
+    }
+
+    const html = items.map(item => {
+      const title  = item.querySelector("title")?.textContent || "Untitled";
+      const link   = item.querySelector("link")?.textContent || "#";
+      const source = item.querySelector("source")?.textContent || "";
+      // Only http(s) links get through - blocks javascript: and data: URLs.
+      const safeLink = /^https?:\/\//i.test(link) ? link : "#";
+      return `<a class="local-headline" href="${escapeHtml(safeLink)}" target="_blank" rel="noopener">${escapeHtml(title)}${source ? `<span class="src">${escapeHtml(source)}</span>` : ""}</a>`;
+    }).join("") + `<div class="local-fineprint">Pulled live from Google News for "${escapeHtml(areaName)} news" — headlines only, not filtered or verified by me the way tracked stories above are.</div>`;
+
+    list.innerHTML = html;
+    cacheHeadlines(areaName, html);
+  } catch (e) {
+    // Two quick retries cover the ordinary single-blip failure.
+    if (attempt < 2) {
+      setTimeout(() => loadLocalHeadlines(areaName, attempt + 1), 1200 * (attempt + 1));
+      return;
+    }
+    const cached = readCachedHeadlines(areaName);
+    if (cached) {
+      list.innerHTML = cached.html +
+        `<div class="local-fineprint">Showing the last headlines that loaded — the live feed is unavailable right now.</div>`;
+      return;
+    }
+    list.innerHTML = `<span class="mono" style="font-size:0.8rem; color:var(--ink-soft);">Couldn't load local headlines right now. <button onclick="retryLocalHeadlines()">Retry</button></span>`;
+  }
+}
+
+function retryLocalHeadlines() {
+  if (currentLocalArea) loadLocalHeadlines(currentLocalArea, 0);
 }
 
 function showLocalManualInput(message) {
   const label = document.getElementById("localLocLabel");
-  const list = document.getElementById("localHeadlines");
+  const list  = document.getElementById("localHeadlines");
+  if (!label || !list) return;
   label.textContent = "";
   list.innerHTML = `
     <div class="mono" style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.4rem;">${message}</div>
@@ -1408,10 +1533,9 @@ function submitLocalArea() {
   const input = document.getElementById("localAreaInput");
   const val = input.value.trim();
   if (!val) return;
-  saveLocalArea(val);
+  saveLocalArea(val, true);
   loadLocalHeadlines(val);
 }
-
 let fontStep = 0;
 function adjustFont(direction) {
   fontStep = Math.max(-2, Math.min(6, fontStep + direction));
@@ -1433,7 +1557,8 @@ function initTheme() {
   applyTheme(current);
 }
 
-const FACTCHECK_API_KEY = "AIzaSyBzA2bXyIEIzBNQ-LTOQRMxOgDfZdAUI6E";
+// The Fact Check API key now lives server-side in the FACTCHECK_API_KEY env
+// var and is used by /api/factcheck, so it never reaches the browser.
 
 function escapeHtml(str) {
   if (!str) return "";
@@ -1486,13 +1611,13 @@ async function runFactCheck() {
   input.disabled = true;
   results.innerHTML = `<div class="fc-loading">Searching fact-checkers…</div>`;
 
-  const url = `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${encodeURIComponent(query + " Trump")}&languageCode=en&key=${FACTCHECK_API_KEY}`;
+  const url = `/api/factcheck?query=${encodeURIComponent(query)}`;
 
   try {
     const res = await fetch(url);
     if (!res.ok) {
       let msg = `Couldn't reach the fact-check service (${res.status}).`;
-      if (res.status === 403) msg += " Double-check the API key's website restriction matches this domain.";
+      if (res.status === 403) msg += " The server's Fact Check API key was rejected — check it in Vercel's env vars.";
       else if (res.status === 429) msg += " The service is rate-limited right now — wait a moment and try again.";
       else msg += " Try again shortly.";
       results.innerHTML = `<div class="fc-error">${msg}</div>`;
