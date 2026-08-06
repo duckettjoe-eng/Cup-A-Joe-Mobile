@@ -454,6 +454,13 @@
     display: flex;
     gap: 0.4rem;
   }
+  .local-area-error {
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    color: var(--coffee);
+    margin-top: 0.35rem;
+    min-height: 0.9rem;
+  }
   .local-search-row input {
     font-family: var(--font-main);
     font-size: 0.75rem;
@@ -1397,7 +1404,7 @@ function initLocalNews() {
   if (stale) loadLocalHeadlines(stale);
 
   if (!navigator.geolocation) {
-    if (!stale) showLocalManualInput("Location isn't available in this browser — type a city or county:");
+    if (!stale) showLocalManualInput("Location isn't available in this browser — enter a city and state, or a ZIP:");
     return;
   }
 
@@ -1414,9 +1421,9 @@ function handleGeoError(err, stale) {
   if (stale) return;  // already showing cached headlines - don't yank them away
   const code = err && err.code;
   const msg =
-    code === 1 ? "Location access declined — type a city or county:" :
-    code === 3 ? "Couldn't get a location fix in time — type a city or county:" :
-                 "Location unavailable — type a city or county:";
+    code === 1 ? "Location access declined — enter a city and state, or a ZIP:" :
+    code === 3 ? "Couldn't get a location fix in time — enter a city and state, or a ZIP:" :
+                 "Location unavailable — enter a city and state, or a ZIP:";
   showLocalManualInput(msg);
 }
 
@@ -1442,14 +1449,14 @@ async function resolveLocalArea(lat, lon, stale) {
     // Never fall through to the literal string "your area" - Google News happily
     // returns 100 unrelated national stories for "your area news".
     if (!areaName) {
-      if (!stale) showLocalManualInput("Couldn't name your area — type a city or county:");
+      if (!stale) showLocalManualInput("Couldn't name your area — enter a city and state, or a ZIP:");
       return;
     }
 
     saveLocalArea(areaName, false);
     if (areaName !== stale) loadLocalHeadlines(areaName);
   } catch (e) {
-    if (!stale) showLocalManualInput("Couldn't detect your area — type a city or county:");
+    if (!stale) showLocalManualInput("Couldn't detect your area — enter a city and state, or a ZIP:");
   }
 }
 
@@ -1542,7 +1549,90 @@ function retryLocalHeadlines() {
   if (currentLocalArea) loadLocalHeadlines(currentLocalArea, 0);
 }
 
-function showLocalManualInput(message) {
+/* ---- Manual area entry: "City, ST" or a 5-digit ZIP ---------------------
+   Google News returns literally nothing for a bare ZIP, so a ZIP is resolved
+   to "City, ST" before it is ever searched. Anything that is neither is
+   rejected rather than sent upstream - that is how "your area news" used to
+   happen.                                                                  */
+
+const US_STATES = {
+  alabama:"AL", alaska:"AK", arizona:"AZ", arkansas:"AR", california:"CA",
+  colorado:"CO", connecticut:"CT", delaware:"DE", florida:"FL", georgia:"GA",
+  hawaii:"HI", idaho:"ID", illinois:"IL", indiana:"IN", iowa:"IA",
+  kansas:"KS", kentucky:"KY", louisiana:"LA", maine:"ME", maryland:"MD",
+  massachusetts:"MA", michigan:"MI", minnesota:"MN", mississippi:"MS",
+  missouri:"MO", montana:"MT", nebraska:"NE", nevada:"NV",
+  "new hampshire":"NH", "new jersey":"NJ", "new mexico":"NM", "new york":"NY",
+  "north carolina":"NC", "north dakota":"ND", ohio:"OH", oklahoma:"OK",
+  oregon:"OR", pennsylvania:"PA", "rhode island":"RI", "south carolina":"SC",
+  "south dakota":"SD", tennessee:"TN", texas:"TX", utah:"UT", vermont:"VT",
+  virginia:"VA", washington:"WA", "west virginia":"WV", wisconsin:"WI",
+  wyoming:"WY", "district of columbia":"DC"
+};
+const STATE_CODES = new Set(Object.keys(US_STATES).map(k => US_STATES[k]));
+
+function normalizeState(token) {
+  const t = (token || "").trim().replace(/\./g, "").toLowerCase();
+  if (!t) return null;
+  if (STATE_CODES.has(t.toUpperCase())) return t.toUpperCase();
+  if (US_STATES[t]) return US_STATES[t];
+
+  // Accept unambiguous abbreviations people actually write - Calif, Penn,
+  // Wash, Tenn. Requires 4+ chars and exactly one matching state, so "Miss"
+  // (Mississippi vs Missouri) is still rejected rather than guessed at.
+  if (t.length >= 4) {
+    const hits = Object.keys(US_STATES).filter(name => name.indexOf(t) === 0);
+    if (hits.length === 1) return US_STATES[hits[0]];
+  }
+  return null;
+}
+
+async function zipToArea(zip) {
+  const res = await fetchWithTimeout(`https://api.zippopotam.us/us/${zip}`, 8000);
+  if (!res.ok) return null;                       // 404 = no such ZIP
+  const data = await res.json();
+  const place = data && data.places && data.places[0];
+  if (!place) return null;
+  return `${place["place name"]}, ${place["state abbreviation"]}`;
+}
+
+// Accepts "Murphys, CA", "Murphys California", or "95247".
+// Resolves to { area } or { error }.
+async function parseAreaInput(rawValue) {
+  const raw = (rawValue || "").trim().replace(/\s+/g, " ");
+  if (!raw) return { error: "Enter a city and state, or a ZIP code." };
+
+  if (/^\d{5}$/.test(raw)) {
+    let area = null;
+    try { area = await zipToArea(raw); } catch (e) { area = null; }
+    return area ? { area } : { error: `Couldn't find ZIP ${raw}. Try a city and state instead.` };
+  }
+  if (/^\d+$/.test(raw)) {
+    return { error: "ZIP codes are 5 digits — or enter a city and state." };
+  }
+
+  let city = null, state = null;
+  const parts = raw.split(",");
+  if (parts.length >= 2) {
+    state = normalizeState(parts[parts.length - 1]);
+    city  = parts.slice(0, -1).join(",").trim();
+  } else {
+    // No comma: try the last two words as a state name, then the last one.
+    const words = raw.split(" ");
+    for (const take of [2, 1]) {
+      if (words.length > take) {
+        const cand = normalizeState(words.slice(-take).join(" "));
+        if (cand) { state = cand; city = words.slice(0, -take).join(" "); break; }
+      }
+    }
+  }
+
+  if (!state) return { error: 'Add a state — like "Murphys, CA" — or use a ZIP code.' };
+  if (!city)  return { error: 'Add a city before the state, like "Murphys, CA".' };
+  return { area: `${city}, ${state}` };
+}
+
+function showLocalManualInput(message, prefill) {
   const label = document.getElementById("localLocLabel");
   const list  = document.getElementById("localHeadlines");
   if (!label || !list) return;
@@ -1550,19 +1640,34 @@ function showLocalManualInput(message) {
   list.innerHTML = `
     <div class="mono" style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.4rem;">${message}</div>
     <div class="local-search-row">
-      <input type="text" id="localAreaInput" placeholder="City or county" />
+      <input type="text" id="localAreaInput" placeholder="City, ST or ZIP" value="${escapeHtml(prefill || "")}"
+             onkeydown="if(event.key==='Enter') submitLocalArea();" />
       <button onclick="submitLocalArea()">Go</button>
     </div>
+    <div id="localAreaError" class="local-area-error"></div>
   `;
+  const input = document.getElementById("localAreaInput");
+  if (input) input.focus();
 }
 
-function submitLocalArea() {
+async function submitLocalArea() {
   const input = document.getElementById("localAreaInput");
-  const val = input.value.trim();
-  if (!val) return;
-  saveLocalArea(val, true);
-  loadLocalHeadlines(val);
+  const err   = document.getElementById("localAreaError");
+  if (!input) return;
+  if (err) err.textContent = "";
+
+  const parsed = await parseAreaInput(input.value);
+  if (parsed.error) {
+    // Keep what they typed so they can correct it rather than retype it.
+    if (err) err.textContent = parsed.error;
+    input.focus();
+    return;
+  }
+
+  saveLocalArea(parsed.area, true);
+  loadLocalHeadlines(parsed.area);
 }
+
 let fontStep = 0;
 function adjustFont(direction) {
   fontStep = Math.max(-2, Math.min(6, fontStep + direction));
