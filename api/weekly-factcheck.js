@@ -26,7 +26,16 @@ async function searchClaims(query, maxAgeDays) {
   if (maxAgeDays) params.set("maxAgeDays", String(maxAgeDays));
 
   const res = await fetch(`https://factchecktools.googleapis.com/v1alpha1/claims:search?${params}`);
-  if (!res.ok) return [];
+
+  // Swallowing this used to turn an API failure into an empty result set,
+  // which then got committed over the previous week's good data. A key with
+  // an HTTP-referrer restriction 403s here on every run, because server-side
+  // requests send no referrer - and nothing surfaced it.
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`Fact Check API ${res.status} for "${query}": ${detail.slice(0, 200)}`);
+  }
+
   const data = await res.json();
   return data.claims || [];
 }
@@ -102,6 +111,17 @@ module.exports = async function handler(req, res) {
     }
 
     const results = Array.from(found.values()).slice(0, 30);
+
+    // Never overwrite a good week with an empty one. If every query came back
+    // empty, that is far more likely to be a broken key or quota than a week
+    // in which no Trump claim was fact-checked anywhere.
+    if (results.length === 0) {
+      return res.status(502).json({
+        error: "Every query returned zero claims — refusing to overwrite the stored results.",
+        hint: "Check FACTCHECK_API_KEY: a key restricted by HTTP referrer cannot be used server-side."
+      });
+    }
+
     const payload = { generatedAt: new Date().toISOString(), claims: results };
 
     await commitResultsToGitHub(payload);
