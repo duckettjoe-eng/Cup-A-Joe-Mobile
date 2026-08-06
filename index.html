@@ -1096,6 +1096,8 @@ const GLOBE_HOLD_MS    = 7000;   // pause the drift after a deliberate spin
 
 let globe = null;
 let globeLand = null;            // cached so a resize doesn't refetch
+let globeDriftTimer = null;      // outside `globe`: that object is replaced on
+                                 // resize, which used to start a second timer
 
 async function initStoryMap() {
   const el = document.getElementById("storyMap");
@@ -1117,6 +1119,8 @@ async function initStoryMap() {
       return;
     }
   }
+
+  if (globe && globe.spinTimer) globe.spinTimer.stop();
 
   el.innerHTML = "";
   const w = el.clientWidth  || 640;
@@ -1160,7 +1164,7 @@ async function initStoryMap() {
   };
 
   renderGlobe();
-  if (!globe.timer) globe.timer = d3.timer(driftGlobe);
+  if (!globeDriftTimer) globeDriftTimer = d3.timer(driftGlobe);
 }
 
 function renderGlobe() {
@@ -1196,29 +1200,46 @@ function driftGlobe(elapsed) {
 
 function spinToStory(storyId) {
   if (!globe) return;
-  if (globe.activeId === storyId && globe.spinning) return;
 
   const story = STORIES.find(s => s.id === storyId);
   const loc = story && (story.locations || [])[0];
   if (!loc) return;
 
   globe.activeId = storyId;
-  globe.spinning = true;
 
   const from = globe.projection.rotate();
   // Take the short way round instead of unwinding the long way past 180.
   let lambda = -loc.lon;
   while (lambda - from[0] >  180) lambda -= 360;
   while (lambda - from[0] < -180) lambda += 360;
+  const to = [lambda, -loc.lat, 0];
 
-  const interp = d3.interpolate(from, [lambda, -loc.lat, 0]);
+  // Hand-rolled rather than d3.transition. A transition that stalled without
+  // firing "end" left `spinning` true forever, and since `spinning` gates the
+  // drift, the globe froze the first time a story was opened. This version
+  // always terminates and always clears its own flag.
+  if (globe.spinTimer) globe.spinTimer.stop();
+  globe.spinning = true;
 
-  d3.transition().duration(950).ease(d3.easeCubicInOut)
-    .tween("globe-rotate", () => t => { globe.projection.rotate(interp(t)); renderGlobe(); })
-    .on("end interrupt", () => {
+  const DUR = 950;
+  globe.spinTimer = d3.timer(elapsed => {
+    const t = Math.min(1, elapsed / DUR);
+    const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;  // cubic in-out
+
+    globe.projection.rotate([
+      from[0] + (to[0] - from[0]) * e,
+      from[1] + (to[1] - from[1]) * e,
+      0
+    ]);
+    renderGlobe();
+
+    if (t >= 1) {
+      globe.spinTimer.stop();
+      globe.spinTimer = null;
       globe.spinning = false;
       globe.holdUntil = Date.now() + GLOBE_HOLD_MS;
-    });
+    }
+  });
 }
 
 // Opening a story card is what drives the globe.
