@@ -1404,7 +1404,7 @@ function initLocalNews() {
   if (stale) loadLocalHeadlines(stale);
 
   if (!navigator.geolocation) {
-    if (!stale) showLocalManualInput("Location isn't available in this browser — enter a city and state, or a ZIP:");
+    if (!stale) showLocalManualInput("Location isn't available in this browser — enter a city, ZIP, or county:");
     return;
   }
 
@@ -1421,9 +1421,9 @@ function handleGeoError(err, stale) {
   if (stale) return;  // already showing cached headlines - don't yank them away
   const code = err && err.code;
   const msg =
-    code === 1 ? "Location access declined — enter a city and state, or a ZIP:" :
-    code === 3 ? "Couldn't get a location fix in time — enter a city and state, or a ZIP:" :
-                 "Location unavailable — enter a city and state, or a ZIP:";
+    code === 1 ? "Location access declined — enter a city, ZIP, or county:" :
+    code === 3 ? "Couldn't get a location fix in time — enter a city, ZIP, or county:" :
+                 "Location unavailable — enter a city, ZIP, or county:";
   showLocalManualInput(msg);
 }
 
@@ -1449,14 +1449,14 @@ async function resolveLocalArea(lat, lon, stale) {
     // Never fall through to the literal string "your area" - Google News happily
     // returns 100 unrelated national stories for "your area news".
     if (!areaName) {
-      if (!stale) showLocalManualInput("Couldn't name your area — enter a city and state, or a ZIP:");
+      if (!stale) showLocalManualInput("Couldn't name your area — enter a city, ZIP, or county:");
       return;
     }
 
     saveLocalArea(areaName, false);
     if (areaName !== stale) loadLocalHeadlines(areaName);
   } catch (e) {
-    if (!stale) showLocalManualInput("Couldn't detect your area — enter a city and state, or a ZIP:");
+    if (!stale) showLocalManualInput("Couldn't detect your area — enter a city, ZIP, or county:");
   }
 }
 
@@ -1600,7 +1600,30 @@ async function zipToArea(zip) {
 // Resolves to { area } or { error }.
 async function parseAreaInput(rawValue) {
   const raw = (rawValue || "").trim().replace(/\s+/g, " ");
-  if (!raw) return { error: "Enter a city and state, or a ZIP code." };
+  if (!raw) return { error: "Enter a city and state, a ZIP code, or a county." };
+
+  // County / parish / borough. Kept typeable because auto-detection resolves
+  // to one, and a county returns markedly better local coverage than a town.
+  // The state is optional here - "Calaveras County" alone searches well.
+  if (/\b(county|parish|borough)\b/i.test(raw)) {
+    const parts = raw.split(",");
+    if (parts.length >= 2) {
+      const st   = normalizeState(parts[parts.length - 1]);
+      const name = parts.slice(0, -1).join(",").trim();
+      if (!st)   return { error: 'Check the state — like "Calaveras County, CA".' };
+      if (!name) return { error: 'Add a county name, like "Calaveras County, CA".' };
+      return { area: `${name}, ${st}` };
+    }
+    // No comma: peel off a trailing state if one is there, else take it as-is.
+    const words = raw.split(" ");
+    for (const take of [2, 1]) {
+      if (words.length > take + 1) {
+        const st = normalizeState(words.slice(-take).join(" "));
+        if (st) return { area: `${words.slice(0, -take).join(" ")}, ${st}` };
+      }
+    }
+    return { area: raw };
+  }
 
   if (/^\d{5}$/.test(raw)) {
     let area = null;
@@ -1627,7 +1650,7 @@ async function parseAreaInput(rawValue) {
     }
   }
 
-  if (!state) return { error: 'Add a state — like "Murphys, CA" — or use a ZIP code.' };
+  if (!state) return { error: 'Add a state — like "Murphys, CA" — or use a ZIP or county.' };
   if (!city)  return { error: 'Add a city before the state, like "Murphys, CA".' };
   return { area: `${city}, ${state}` };
 }
@@ -1640,7 +1663,7 @@ function showLocalManualInput(message, prefill) {
   list.innerHTML = `
     <div class="mono" style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.4rem;">${message}</div>
     <div class="local-search-row">
-      <input type="text" id="localAreaInput" placeholder="City, ST or ZIP" value="${escapeHtml(prefill || "")}"
+      <input type="text" id="localAreaInput" placeholder="City, ST / ZIP / county" value="${escapeHtml(prefill || "")}"
              onkeydown="if(event.key==='Enter') submitLocalArea();" />
       <button onclick="submitLocalArea()">Go</button>
     </div>
