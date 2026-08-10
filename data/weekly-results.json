@@ -1,4 +1,560 @@
 {
-  "generatedAt": "2026-08-03T13:53:30.229Z",
-  "claims": []
+  "generatedAt": "2026-08-10T13:31:39.809Z",
+  "claims": [
+    {
+      "text": "The United States sent 2,000 firefighters to Canada in 2026",
+      "claimant": "Canadian Voice for Freedom",
+      "claimDate": "2026-07-25T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.C3HZ2NQ",
+          "title": "Misinformation spreads about US aid to Canadian firefighting",
+          "reviewDate": "2026-08-03T18:39:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Donald Trump posted on Truth Social about Mark Carney and Epstein Island",
+      "claimant": "Multiple people",
+      "claimDate": "2026-02-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.94ZU6WE",
+          "title": "Fake Trump post on tariffs, Carney and Epstein circulates online",
+          "reviewDate": "2026-02-05T22:38:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Canada relies on the United States for 95% of its imports",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-02-26T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.36Z24H8",
+          "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
+          "reviewDate": "2025-03-05T16:26:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "The anti-tariff billboards across the US are paid for by Canada.",
+      "claimant": "Global Affairs Canada",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "WCNC",
+            "site": "wcnc.com"
+          },
+          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
+          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
+          "reviewDate": "2025-04-08T20:44:00Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "List shows Canada's tariffs on US goods before trade war",
+      "claimant": "Multiple people",
+      "claimDate": "2025-03-03T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
+          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
+          "reviewDate": "2025-03-06T16:10:00Z",
+          "textualRating": "Misleading",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Donald Trump imposes tariffs on Blue Jays games",
+      "claimant": "Multiple people",
+      "claimDate": "2025-10-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.79PD2CT",
+          "title": "Rumors of Trump tariff on Blue Jays wins are unsubstantiated",
+          "reviewDate": "2025-10-23T23:13:00Z",
+          "textualRating": "Unsubstantiated",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
+      "claimant": "Donald Trump",
+      "claimDate": "2018-08-27T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/08/u-s-trade-with-canada-not-smaller-than-with-mexico/",
+          "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
+          "reviewDate": "2018-08-28T21:11:21Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-08-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2025/08/factchecking-trumps-claims-about-mail-in-ballots-voting-machines-and-states-role/",
+          "title": "FactChecking Trump's Claims About Mail-In Ballots, Voting ...",
+          "reviewDate": "2025-08-19T00:00:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-08-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2025/08/factchecking-trumps-claims-about-mail-in-ballots-voting-machines-and-states-role/",
+          "title": "FactChecking Trump's Claims About Mail-In Ballots, Voting ...",
+          "reviewDate": "2025-08-19T00:00:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
+      "claimant": "Instagram post",
+      "claimDate": "2024-10-31T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
+          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
+          "textualRating": "Not the Whole Story",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "CNN clip shows \"HAMMER SCORECARD caught on camera in PA\" and votes getting \"taken from...Trump\" and \"given to Biden.\"",
+      "claimant": "Social media posts",
+      "claimDate": "2020-11-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/bogus-theory-claims-supercomputer-switched-votes-in-election/",
+          "title": "Bogus Theory Claims Supercomputer Switched Votes in Election",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
+      "claimant": "Kirstjen Nielsen",
+      "claimDate": "2018-07-19T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
+          },
+          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2018/07/23/kirstjen-nielsens-claim-that-u-s-election-systems-werent-targeted-to-favor-trump/",
+          "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
+          "reviewDate": "2018-07-23T12:35:41Z",
+          "textualRating": "Three Pinocchios",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
+      "claimant": "Hillary Clinton",
+      "claimDate": "2018-09-16T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
+          "title": "Clinton Goes Too Far in Criticizing Trump",
+          "reviewDate": "2018-09-20T19:21:38Z",
+          "textualRating": "Misleading",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“Mail-In Ballots will lead to massive electoral fraud and a rigged 2020 Election.”",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-07-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
+          },
+          "url": "https://www.washingtonpost.com/politics/2020/09/11/trumps-fusillade-falsehoods-mail-voting/",
+          "title": "Trump’s fusillade of falsehoods on mail voting",
+          "textualRating": "Four Pinocchios",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "Dominion Voting Systems \"DELETED 2.7 MILLION TRUMP VOTES NATIONWIDE.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-12T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/trump-tweets-conspiracy-theory-about-deleted-votes/",
+          "title": "Trump Tweets Conspiracy Theory About Deleted Votes",
+          "textualRating": "No Evidence",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“9% of American citizens don't have the identification that the SAVE act requires to vote. Almost 1 in 10.”",
+      "claimant": "Sen. Tammy Duckworth",
+      "claimDate": "2026-03-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2026/mar/20/tammy-duckworth/save-america-act-voter-id-drivers-licenses-real-id/",
+          "title": "Do 1 in 10 Americans lack ID needed under SAVE America Act?",
+          "reviewDate": "2026-03-20T00:00:00Z",
+          "textualRating": "Mostly True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "The SAVE America Act “requires everyone to re-register to vote in person and your driver’s license, REAL ID, or military ID aren’t even good enough.”",
+      "claimant": "Sen. Mark Kelly",
+      "claimDate": "2026-03-17T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2026/mar/24/mark-kelly/reregister-vote-elections-save-america-act/",
+          "title": "SAVE America Act wouldn't make everyone reregister to vote, but ...",
+          "reviewDate": "2026-03-24T00:00:00Z",
+          "textualRating": "Half True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "The SAVE America Act “would force Americans to register (to vote) only in person, something only 5% of Americans do today.\"",
+      "claimant": "Chuck Schumer",
+      "claimDate": "2026-03-17T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2026/mar/19/charles-schumer/voter-registration-save-america-act-in-person/",
+          "title": "Fact-checking Chuck Schumer about SAVE America Act, how many ...",
+          "reviewDate": "2026-03-19T00:00:00Z",
+          "textualRating": "Half True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "More than 250,000 non-U.S. citizens are registered to vote across California, Nevada, New Jersey and Pennyslvania.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/dhs-250k-noncitizens-registered-vote/",
+          "title": "DHS claimed 250K noncitizens are registered to vote across 4 states ...",
+          "reviewDate": "2026-07-28T14:13:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "Identification requirements make it easier to buy a firearm than to vote",
+      "claimant": "Rebekah Jones",
+      "claimDate": "2026-02-12T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.98EL6KE",
+          "title": "Maps mislead on state identification requirements to vote, purchase ...",
+          "reviewDate": "2026-02-25T21:24:00Z",
+          "textualRating": "Misleading",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "\"Mail-in voting means mail-in cheating.”",
+      "claimant": "President Donald Trump",
+      "claimDate": "2026-03-23T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2026/mar/25/donald-trump/trump-voted-by-mail-in-florida-the-same-month-he-f/",
+          "title": "After voting by mail in Florida, Trump said mail-in voting means ...",
+          "reviewDate": "2026-03-25T00:00:00Z",
+          "textualRating": "Pants on Fire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
+          "title": "Trump said US is only country that allows mail-in ballots. Here's the ...",
+          "reviewDate": "2026-02-23T08:00:06Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "As of April 20, 2026, Senate Majority Leader John Thune is refusing to bring the SAVE America Act up for debate or for a vote in the Senate.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/thune-save-america-act/",
+          "title": "Is John Thune 'no longer considering' SAVE America Act in Senate ...",
+          "reviewDate": "2026-04-21T17:04:37Z",
+          "textualRating": "Mostly False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "In August 2026, Iran's government announced that it would only reopen the Strait of Hormuz if U.S. President Donald Trump admitted he lost the 2020 presidential election.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/iran-open-hormuz-trump-lost-election/",
+          "title": "Did Iran say it'd only reopen Strait of Hormuz if Trump admits he lost 2020 election?",
+          "reviewDate": "2026-08-07T13:14:22Z",
+          "textualRating": "Labeled Satire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Trump filed an emergency motion to \"stop his own lawsuit against the BBC\"",
+      "claimant": "x.com",
+      "claimDate": "2026-08-07T16:46:40Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/08/fact-check-trump-did-not-file-emergency-motion-to-stop-his-own-lawsuit-against-bbc.html",
+          "title": "Fact Check: Trump Did NOT File Emergency Motion To 'Stop His Own Lawsuit Against BBC' -- He Is Trying To Shield His Finances",
+          "reviewDate": "2026-08-07T16:46:40Z",
+          "textualRating": "Stop Discovery",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    }
+  ]
 }
