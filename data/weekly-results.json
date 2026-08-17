@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T13:31:39.809Z",
+  "generatedAt": "2026-08-17T13:01:21.929Z",
   "claims": [
     {
       "text": "The United States sent 2,000 firefighters to Canada in 2026",
@@ -40,13 +40,32 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "dw.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
       "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
       "claimant": "Donald Trump",
       "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "DW.com",
+            "name": "dw.com",
             "site": "dw.com"
           },
           "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
@@ -59,19 +78,18 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
+      "text": "The anti-tariff billboards across the US are paid for by Canada.",
+      "claimant": "Global Affairs Canada",
       "claimReview": [
         {
           "publisher": {
-            "name": "DW.com",
-            "site": "dw.com"
+            "name": "WCNC",
+            "site": "wcnc.com"
           },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
+          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
+          "reviewDate": "2025-04-08T20:44:00Z",
+          "textualRating": "True",
           "languageCode": "en"
         }
       ],
@@ -97,18 +115,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "The anti-tariff billboards across the US are paid for by Canada.",
-      "claimant": "Global Affairs Canada",
+      "text": "Donald Trump imposes tariffs on Blue Jays games",
+      "claimant": "Multiple people",
+      "claimDate": "2025-10-18T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "WCNC",
-            "site": "wcnc.com"
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
           },
-          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
-          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
-          "reviewDate": "2025-04-08T20:44:00Z",
-          "textualRating": "True",
+          "url": "https://factcheck.afp.com/doc.afp.com.79PD2CT",
+          "title": "Rumors of Trump tariff on Blue Jays wins are unsubstantiated",
+          "reviewDate": "2025-10-23T23:13:00Z",
+          "textualRating": "Unsubstantiated",
           "languageCode": "en"
         }
       ],
@@ -134,44 +153,6 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "List shows Canada's tariffs on US goods before trade war",
-      "claimant": "Multiple people",
-      "claimDate": "2025-03-03T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
-          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
-          "reviewDate": "2025-03-06T16:10:00Z",
-          "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "Donald Trump imposes tariffs on Blue Jays games",
-      "claimant": "Multiple people",
-      "claimDate": "2025-10-18T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.79PD2CT",
-          "title": "Rumors of Trump tariff on Blue Jays wins are unsubstantiated",
-          "reviewDate": "2025-10-23T23:13:00Z",
-          "textualRating": "Unsubstantiated",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
       "claimant": "Donald Trump",
       "claimDate": "2018-08-27T00:00:00Z",
@@ -185,6 +166,25 @@
           "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
           "reviewDate": "2018-08-28T21:11:21Z",
           "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "List shows Canada's tariffs on US goods before trade war",
+      "claimant": "Multiple people",
+      "claimDate": "2025-03-03T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
+          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
+          "reviewDate": "2025-03-06T16:10:00Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
@@ -229,24 +229,6 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
-      "claimant": "Instagram post",
-      "claimDate": "2024-10-31T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
-          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
-          "textualRating": "Not the Whole Story",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
       "text": "CNN clip shows \"HAMMER SCORECARD caught on camera in PA\" and votes getting \"taken from...Trump\" and \"given to Biden.\"",
       "claimant": "Social media posts",
       "claimDate": "2020-11-10T00:00:00Z",
@@ -265,36 +247,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-11-29T00:00:00Z",
+      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
+      "claimant": "Instagram post",
+      "claimDate": "2024-10-31T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
-          "title": "Trump Repeats Baseless, False Claims About the Election",
-          "textualRating": "No Evidence",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
-      "claimant": "Threads post",
-      "claimDate": "2024-11-10T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
-          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
-          "textualRating": "Unsupported",
+          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
+          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
+          "textualRating": "Not the Whole Story",
           "languageCode": "en"
         }
       ],
@@ -320,6 +284,42 @@
       "matchedTopic": "Trump election security"
     },
     {
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
       "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
       "claimant": "Hillary Clinton",
       "claimDate": "2018-09-16T00:00:00Z",
@@ -333,24 +333,6 @@
           "title": "Clinton Goes Too Far in Criticizing Trump",
           "reviewDate": "2018-09-20T19:21:38Z",
           "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "“Mail-In Ballots will lead to massive electoral fraud and a rigged 2020 Election.”",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-07-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "The Washington Post",
-            "site": "washingtonpost.com"
-          },
-          "url": "https://www.washingtonpost.com/politics/2020/09/11/trumps-fusillade-falsehoods-mail-voting/",
-          "title": "Trump’s fusillade of falsehoods on mail voting",
-          "textualRating": "Four Pinocchios",
           "languageCode": "en"
         }
       ],
@@ -432,66 +414,11 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "More than 250,000 non-U.S. citizens are registered to vote across California, Nevada, New Jersey and Pennyslvania.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/dhs-250k-noncitizens-registered-vote/",
-          "title": "DHS claimed 250K noncitizens are registered to vote across 4 states ...",
-          "reviewDate": "2026-07-28T14:13:00Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
-      "text": "Identification requirements make it easier to buy a firearm than to vote",
-      "claimant": "Rebekah Jones",
-      "claimDate": "2026-02-12T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.98EL6KE",
-          "title": "Maps mislead on state identification requirements to vote, purchase ...",
-          "reviewDate": "2026-02-25T21:24:00Z",
-          "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
-      "text": "\"Mail-in voting means mail-in cheating.”",
-      "claimant": "President Donald Trump",
-      "claimDate": "2026-03-23T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "PolitiFact",
-            "site": "politifact.com"
-          },
-          "url": "https://politifact.com/factchecks/2026/mar/25/donald-trump/trump-voted-by-mail-in-florida-the-same-month-he-f/",
-          "title": "After voting by mail in Florida, Trump said mail-in voting means ...",
-          "reviewDate": "2026-03-25T00:00:00Z",
-          "textualRating": "Pants on Fire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
       "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
+            "name": "Snopes.com",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
@@ -521,36 +448,108 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "In August 2026, Iran's government announced that it would only reopen the Strait of Hormuz if U.S. President Donald Trump admitted he lost the 2020 presidential election.",
+      "text": "A company linked to U.S. President Donald Trump began setting up an oil drilling operation in Greenland without the government's permission.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/iran-open-hormuz-trump-lost-election/",
-          "title": "Did Iran say it'd only reopen Strait of Hormuz if Trump admits he lost 2020 election?",
-          "reviewDate": "2026-08-07T13:14:22Z",
-          "textualRating": "Labeled Satire",
+          "url": "https://www.snopes.com/fact-check/trump-greenland-drilling-oil/",
+          "title": "Did Trump-linked oil company set up drilling operation in Greenland without permission?",
+          "reviewDate": "2026-08-14T08:00:08Z",
+          "textualRating": "Mixture",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "Trump filed an emergency motion to \"stop his own lawsuit against the BBC\"",
+      "text": "A video authentically shows U.S. President Donald Trump waking himself up with a fart during a maternal healthcare announcement in the Oval Office on May 11, 2026.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/video-trump-farting-awake/",
+          "title": "Is video of Trump 'waking himself up' with a fart in Oval Office real?",
+          "reviewDate": "2026-08-13T03:00:09Z",
+          "textualRating": "Fake",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Real photo shows athletes with medals flipping the bird to President Trump's back during the Patriot Games",
       "claimant": "x.com",
-      "claimDate": "2026-08-07T16:46:40Z",
+      "claimDate": "2026-08-13T20:09:14Z",
       "claimReview": [
         {
           "publisher": {
             "name": "Lead Stories",
             "site": "leadstories.com"
           },
-          "url": "https://leadstories.com/hoax-alert/2026/08/fact-check-trump-did-not-file-emergency-motion-to-stop-his-own-lawsuit-against-bbc.html",
-          "title": "Fact Check: Trump Did NOT File Emergency Motion To 'Stop His Own Lawsuit Against BBC' -- He Is Trying To Shield His Finances",
-          "reviewDate": "2026-08-07T16:46:40Z",
-          "textualRating": "Stop Discovery",
+          "url": "https://leadstories.com/hoax-alert/2026/08/fact-check-fake-photo-falsely-shows-athletes-with-medals-flipping-the-bird-to-president-trumps-back-during-patriot-games.html",
+          "title": "Fact Check: FAKE Photo Shows Athletes With Medals Flipping The Bird To President Trump's Back During Patriot Games",
+          "reviewDate": "2026-08-13T20:09:14Z",
+          "textualRating": "Digital Birds",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "\"Susan Collins voted to support Donald Trump on the largest Medicaid cut in history.\"",
+      "claimant": "Affordable Maine",
+      "claimDate": "2026-08-06T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2026/08/collins-did-not-support-obbbas-medicaid-cuts-as-democratic-ad-claims/",
+          "title": "Collins Did Not 'Support' OBBBA's Medicaid Cuts, as Democratic Ad Claims",
+          "reviewDate": "2026-08-12T00:00:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "In August 2026, the Trump administration paid German energy company RWE $1.2 billion to stop building wind farms.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-rwe-wind-farms/",
+          "title": "Did Trump admin pay German energy company RWE $1.2B to stop building offshore wind farms?",
+          "reviewDate": "2026-08-12T06:00:10Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Trump reduced number of required vaccines for children from 72 to 11",
+      "claimant": "White House",
+      "claimDate": "2026-08-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.C4EJ79E",
+          "title": "Misleading childhood vaccine claims resurface as Trump seeks recommendation overhaul",
+          "reviewDate": "2026-08-11T23:10:00Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
