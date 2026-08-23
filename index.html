@@ -561,7 +561,9 @@
     text-transform: uppercase;
     padding: 0.15rem 0.5rem;
     border-radius: var(--radius-xs);
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 100%;
   }
   .fc-rating.true-ish { background: color-mix(in srgb, var(--ink) 15%, transparent); color: var(--ink); border: 1px solid var(--ink); }
   .fc-rating.false-ish { background: color-mix(in srgb, var(--heat-hot) 15%, transparent); color: var(--heat-hot); border: 1px solid var(--heat-hot); }
