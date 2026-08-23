@@ -1,5 +1,151 @@
 [
   {
+    "id": "canada-tariffs-paused-deal-unclear",
+    "locations": [
+      {
+        "name": "Washington, DC",
+        "lat": 38.9072,
+        "lon": -77.0369
+      },
+      {
+        "name": "Ottawa, Canada",
+        "lat": 45.4215,
+        "lon": -75.6972
+      }
+    ],
+    "date": "AUGUST 22, 2026",
+    "title": "Trump's three-day Canada tariff pause expires after talks collapse and the 50% duties take effect",
+    "summary": "The White House's Aug. 18 proclamation only moved the effective date of Trump's new Section 338 tariffs on certain Canadian goods from Aug. 19 to 12:01 a.m. Eastern on Aug. 22, citing officials' view that Canada had expressed a commitment to remove the disputed barriers while negotiations continued. By Aug. 22, those talks had collapsed, the 50% duties took effect on roughly $20 billion in Canadian goods, and both governments blamed the other for blowing up the deal. The reporting split is no longer over whether a deal existed; it is over why it failed, what Washington had really offered, and how quickly the trade fight will escalate further.",
+    "outlets": [
+      {
+        "name": "Fox Business",
+        "lean": "right",
+        "heat": 2,
+        "framing": "Fox Business treated the collapse mainly as a negotiations story: Carney suspended talks, promised dollar-for-dollar retaliation, and blamed \"unfair\" U.S. changes, while Jamieson Greer said Canada walked back commitments and turned down unusually favorable treatment. The piece gave readers the administration's claimed offer — lower tariffs on steel, aluminum, autos and lumber plus a wider economic-security partnership — more concretely than most outlets, so the emphasis stayed on a missed deal rather than on downstream consumer costs.",
+        "url": "https://www.foxbusiness.com/economy/us-canada-trade-negotiations-suspended-carney-vows-dollar-for-dollar-retaliation-against-trumps-50-tariffs"
+      },
+      {
+        "name": "AP (via PBS News)",
+        "lean": "center",
+        "heat": 3,
+        "framing": "AP framed the outcome as a deeper bilateral rupture: negotiations collapsed, blame was spread openly, no further talks were planned, and the new tariffs would likely raise prices on both sides of the border. It also widened the lens beyond the midnight deadline, stressing the political damage to a historically cooperative alliance and Carney's language that Washington was using \"economic integration as a weapon.\"",
+        "url": "https://pbs.org/newshour/world/u-s-imposes-50-tariffs-on-20-billion-worth-of-canadian-products-canada-says-it-will-retaliate"
+      },
+      {
+        "name": "BBC News",
+        "lean": "center",
+        "heat": 2,
+        "framing": "The BBC centered the last-minute breakdown itself. It walked readers from Trump's earlier pause and optimism to Carney's decision to suspend negotiations minutes before the deadline, then laid out the apparent near-deal terms that had been under discussion, including reduced U.S. tariffs on Canadian steel, aluminum and autos and the possible return of U.S. alcohol to Canadian shelves. That made the collapse feel like a failed almost-agreement, not just a tariff activation.",
+        "url": "https://www.bbc.com/news/articles/cvgvyy4x2mvo"
+      },
+      {
+        "name": "CNBC",
+        "lean": "center",
+        "heat": 2,
+        "framing": "CNBC wrote the story as a market-and-policy break: the talks failed, the 50% tariffs hit about $20 billion in imports, and Canada said its retaliation would come later, on Sept. 8. Compared with the other outlets here, CNBC was especially useful on the product categories affected and on the legal mechanism — three Section 338 proclamations using a power not deployed since 1949 — while still presenting both governments' blame narratives side by side.",
+        "url": "https://www.cnbc.com/2026/08/22/us-canada-trade-talks-collapse-ushering-in-wave-of-new-tariffs.html"
+      },
+      {
+        "name": "POLITICO",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "Politico led hardest with the collapse itself as a setback in the trade war and quoted Greer's accusation that Canada introduced new demands and walk-backs after terms had been agreed earlier in the week. Its brief, late-night framing was the most Washington-insider version of events in this set: a failed deal, a missed opportunity, and tariffs now landing on products ranging from alcohol to hockey skates.",
+        "url": "https://www.politico.com/news/2026/08/22/canada-us-trade-deal-tariffs-01046723"
+      }
+    ],
+    "synthesis": [
+      {
+        "label": "Consistent across the current reporting and the White House baseline:",
+        "text": "Trump's Aug. 18 proclamation did not cancel the Section 338 tariffs; it suspended them for three days and changed the effective date from Aug. 19 to 12:01 a.m. Eastern on Aug. 22. The proclamation said senior officials believed Canada had expressed a commitment to remove the disputed barriers and that the public interest favored a short suspension while talks continued. By Aug. 22, all outlets checked agreed that no final deal was signed, the 50% duties took effect on roughly $20 billion in Canadian goods, and Canada announced dollar-for-dollar retaliation."
+      },
+      {
+        "label": "What changed since the Aug. 19 pause story:",
+        "text": "The earlier uncertainty about whether Trump had announced a real deal is overtaken by events. The verified outcome now is that the pause expired, negotiations collapsed, and both sides publicly blamed the other. The live question in current coverage is not whether the tariffs landed; it is why the apparent near-deal failed in the last hours and what terms each side refused to accept."
+      },
+      {
+        "label": "Where the outlet comparisons now diverge:",
+        "text": "Fox Business and Politico gave the most room to the administration's version that Canada walked back commitments after being offered unusually favorable treatment, while AP, BBC and CNBC more explicitly balanced that against Carney's claim that Washington made unfair late changes and asked too much. AP also pushed furthest beyond the bargaining-room dispute to the broader break in U.S.-Canada trust and the likelihood of higher prices, while CNBC supplied the clearest policy and product-scope detail."
+      },
+      {
+        "label": "What remains unresolved after the deadline passed:",
+        "text": "The public reporting still does not provide a released final term sheet for the deal that failed. The outlets describe pieces of the package — possible tariff reductions on steel, aluminum and autos; pressure to restore U.S. alcohol sales; and broader digital-trade or economic-security provisions — but the exact final sticking points remain contested. Also still open is how far the retaliation cycle goes after Canada's promised response and whether either side resumes talks after saying none are currently scheduled."
+      }
+    ]
+  },
+  {
+    "id": "south-korea-drills-cut-kim-iran",
+    "locations": [
+      {
+        "name": "Washington, DC",
+        "lat": 38.9072,
+        "lon": -77.0369
+      },
+      {
+        "name": "Seoul, South Korea",
+        "lat": 37.5665,
+        "lon": 126.978
+      }
+    ],
+    "date": "AUGUST 16, 2026",
+    "title": "Trump orders South Korea drills reduced, citing Kim ties and Seoul's refusal to join the Iran campaign",
+    "summary": "Trump said on Aug. 16 that he had instructed the Pentagon to \"substantially reduce\" joint military exercises with South Korea because the drills were costly, hostile to North Korea, and because Seoul declined to join the U.S. effort against Iran. The post itself is undisputed. Coverage diverges over what, if anything, changed operationally right away: some reports treated the reduction order as the story, while others emphasized that the annual Ulchi Freedom Shield exercises still began on schedule and that the extent of any actual cutback was unclear.",
+    "outlets": [
+      {
+        "name": "Fox News",
+        "lean": "right",
+        "heat": 2,
+        "framing": "Fox presented the move as a firm presidential order to scale back the drills, tying it to North Korea's missile activity and Pyongyang's usual denunciations of the exercises. It treated the announcement primarily as a hard national-security decision and gave comparatively little space to uncertainty about how much of the exercise would actually be pared down in practice. ",
+        "url": "https://www.foxnews.com/politics/trump-orders-major-cut-us-south-korea-drills-north-korea-ramps-up-missile-tests.print"
+      },
+      {
+        "name": "USA Today",
+        "lean": "center",
+        "heat": 2,
+        "framing": "USA Today wrote a compact explainer built around the timing, the quoted Truth Social post, and the drill's published purpose — countering drones, GPS jamming and cyberattacks. It largely described the order and the planned exercise rather than arguing out its strategic implications. ",
+        "url": "https://www.usatoday.com/story/news/politics/2026/08/16/trump-united-states-south-korea-military-exercises-iran/91331282007/"
+      },
+      {
+        "name": "ABC News",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "The AP wire carried by ABC stayed close to the documentary baseline: Trump's order, his Iran quote, the number of South Korean troops involved, and the exercise's readiness purpose. Its key contribution is specificity about what the planned joint training was supposed to include, without going as far as CNN in pressing the implementation question. ",
+        "url": "https://www-cdn.abcnews.com/US/wireStory/trump-orders-pentagon-scale-back-joint-exercises-south-135694217"
+      },
+      {
+        "name": "CNN",
+        "lean": "leanleft",
+        "heat": 3,
+        "framing": "CNN made the implementation uncertainty the center of gravity. It reported that South Korea's Joint Chiefs said Ulchi Freedom Shield began as planned and that it was still unclear what had actually been reduced, then widened out to the alliance stakes and Seoul's statement that it was still coordinating with Washington. ",
+        "url": "https://www.cnn.com/2026/08/16/middleeast/trump-south-korea-military-exercises"
+      },
+      {
+        "name": "The New York Times",
+        "lean": "leanleft",
+        "heat": 3,
+        "framing": "The Times used the announcement to tell a larger alliance story: Asian allies worrying about U.S. commitments, resources shifting from Asia to the Middle East, and Trump recasting Kim as \"unthreatening and respectful\" despite their earlier history. The order itself is the hook, but the article's real frame is strategic credibility. ",
+        "url": "https://www.nytimes.com/2026/08/16/us/politics/trump-south-korea-military-exercises.html"
+      }
+    ],
+    "synthesis": [
+      {
+        "label": "Consistent across the reporting and the primary post:",
+        "text": "Trump publicly said on Aug. 16 that he had instructed Secretary Pete Hegseth to \"substantially reduce\" the joint U.S.-South Korea military exercises. He explicitly cited his \"very good relationship\" with Kim Jong Un, said the drills were costly and hostile in signal, and complained that South Korea had said \"No thanks!\" when asked to join the U.S. campaign to denuclearize Iran. All outlets checked agree those statements were made and that Ulchi Freedom Shield was about to begin with roughly 18,000 South Korean personnel involved."
+      },
+      {
+        "label": "Where the accounts diverge:",
+        "text": "The main split is practical, not rhetorical: what changed on the ground. Fox and USA Today largely treated the reduction order as the operative fact. CNN emphasized that South Korea said the drills began as planned and that the scope of any reduction was still unclear. ABC/AP documented the planned exercise and the order itself but stopped short of the stronger implementation skepticism in CNN. The New York Times treated the immediate operational question as secondary to the strategic signal sent to allies."
+      },
+      {
+        "label": "Framing differences around the same announcement:",
+        "text": "Fox framed the move through North Korea's missile activity and the president's decision-making authority. USA Today framed it as a concise policy explainer. ABC/AP framed it as a straight wire account with operational detail about the exercise plan. CNN framed it as a live contradiction between Washington's announcement and Seoul's initial posture. The Times framed it as a stress test of U.S. alliance credibility in Asia while the Iran war pulls resources westward."
+      },
+      {
+        "label": "Gap in this pass:",
+        "text": "Checked 5 outlets plus Trump's archived Aug. 16 post. Not fully checked here: Reuters, NBC News, PBS NewsHour, Washington Post, WSJ, Financial Times, Stars and Stripes, Japan Times, Korea Herald, and any later Pentagon clarification describing exactly what parts of the exercise were reduced after the announcement."
+      }
+    ]
+  },
+  {
     "id": "blanche-ag-nomination-advances",
     "locations": [
       {
