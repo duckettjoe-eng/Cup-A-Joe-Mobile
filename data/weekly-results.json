@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T13:01:21.929Z",
+  "generatedAt": "2026-08-24T13:22:41.919Z",
   "claims": [
     {
       "text": "The United States sent 2,000 firefighters to Canada in 2026",
@@ -40,32 +40,13 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "dw.com",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
       "claimant": "Donald Trump",
       "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "dw.com",
+            "name": "DW.com",
             "site": "dw.com"
           },
           "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
@@ -78,18 +59,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "The anti-tariff billboards across the US are paid for by Canada.",
-      "claimant": "Global Affairs Canada",
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "WCNC",
-            "site": "wcnc.com"
+            "name": "DW.com",
+            "site": "dw.com"
           },
-          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
-          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
-          "reviewDate": "2025-04-08T20:44:00Z",
-          "textualRating": "True",
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
           "languageCode": "en"
         }
       ],
@@ -115,6 +97,24 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
+      "text": "The anti-tariff billboards across the US are paid for by Canada.",
+      "claimant": "Global Affairs Canada",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "WCNC",
+            "site": "wcnc.com"
+          },
+          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
+          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
+          "reviewDate": "2025-04-08T20:44:00Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
       "text": "Donald Trump imposes tariffs on Blue Jays games",
       "claimant": "Multiple people",
       "claimDate": "2025-10-18T00:00:00Z",
@@ -134,25 +134,6 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-01-30T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
-          "title": "Trump on U.S. Imports of Oil and Lumber",
-          "reviewDate": "2025-02-11T00:00:00Z",
-          "textualRating": "Experts Say It's Not That Simple",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
       "claimant": "Donald Trump",
       "claimDate": "2018-08-27T00:00:00Z",
@@ -166,6 +147,25 @@
           "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
           "reviewDate": "2018-08-28T21:11:21Z",
           "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -265,6 +265,24 @@
       "matchedTopic": "Trump election security"
     },
     {
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
       "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
       "claimant": "Kirstjen Nielsen",
       "claimDate": "2018-07-19T00:00:00Z",
@@ -302,78 +320,22 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "text": "“Mail-In Ballots will lead to massive electoral fraud and a rigged 2020 Election.”",
       "claimant": "Donald Trump",
-      "claimDate": "2020-11-29T00:00:00Z",
+      "claimDate": "2020-07-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
           },
-          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
-          "title": "Trump Repeats Baseless, False Claims About the Election",
-          "textualRating": "No Evidence",
+          "url": "https://www.washingtonpost.com/politics/2020/09/11/trumps-fusillade-falsehoods-mail-voting/",
+          "title": "Trump’s fusillade of falsehoods on mail voting",
+          "textualRating": "Four Pinocchios",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
-      "claimant": "Hillary Clinton",
-      "claimDate": "2018-09-16T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
-          "title": "Clinton Goes Too Far in Criticizing Trump",
-          "reviewDate": "2018-09-20T19:21:38Z",
-          "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "Dominion Voting Systems \"DELETED 2.7 MILLION TRUMP VOTES NATIONWIDE.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-11-12T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2020/11/trump-tweets-conspiracy-theory-about-deleted-votes/",
-          "title": "Trump Tweets Conspiracy Theory About Deleted Votes",
-          "textualRating": "No Evidence",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "“9% of American citizens don't have the identification that the SAVE act requires to vote. Almost 1 in 10.”",
-      "claimant": "Sen. Tammy Duckworth",
-      "claimDate": "2026-03-18T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "PolitiFact",
-            "site": "politifact.com"
-          },
-          "url": "https://politifact.com/factchecks/2026/mar/20/tammy-duckworth/save-america-act-voter-id-drivers-licenses-real-id/",
-          "title": "Do 1 in 10 Americans lack ID needed under SAVE America Act?",
-          "reviewDate": "2026-03-20T00:00:00Z",
-          "textualRating": "Mostly True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
     },
     {
       "text": "The SAVE America Act “requires everyone to re-register to vote in person and your driver’s license, REAL ID, or military ID aren’t even good enough.”",
@@ -389,6 +351,25 @@
           "title": "SAVE America Act wouldn't make everyone reregister to vote, but ...",
           "reviewDate": "2026-03-24T00:00:00Z",
           "textualRating": "Half True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "“9% of American citizens don't have the identification that the SAVE act requires to vote. Almost 1 in 10.”",
+      "claimant": "Sen. Tammy Duckworth",
+      "claimDate": "2026-03-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2026/mar/20/tammy-duckworth/save-america-act-voter-id-drivers-licenses-real-id/",
+          "title": "Do 1 in 10 Americans lack ID needed under SAVE America Act?",
+          "reviewDate": "2026-03-20T00:00:00Z",
+          "textualRating": "Mostly True",
           "languageCode": "en"
         }
       ],
@@ -414,23 +395,6 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
-          "title": "Trump said US is only country that allows mail-in ballots. Here's the ...",
-          "reviewDate": "2026-02-23T08:00:06Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
       "text": "As of April 20, 2026, Senate Majority Leader John Thune is refusing to bring the SAVE America Act up for debate or for a vote in the Senate.",
       "claimReview": [
         {
@@ -448,71 +412,52 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "A company linked to U.S. President Donald Trump began setting up an oil drilling operation in Greenland without the government's permission.",
+      "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
+          "title": "Trump said US is only country that allows mail-in ballots. Here's the ...",
+          "reviewDate": "2026-02-23T08:00:06Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "A photograph authentically shows U.S. President Donald Trump in Moscow in 1987, when he was 41, at the invitation of Yuri Dubinin, the Soviet ambassador to the U.S.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-greenland-drilling-oil/",
-          "title": "Did Trump-linked oil company set up drilling operation in Greenland without permission?",
-          "reviewDate": "2026-08-14T08:00:08Z",
-          "textualRating": "Mixture",
+          "url": "https://www.snopes.com/fact-check/trump-moscow-visit-1987-photo/",
+          "title": "Photo of Trump in Moscow is real, but not from his first visit in 1987",
+          "reviewDate": "2026-08-22T19:00:08Z",
+          "textualRating": "Miscaptioned",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "A video authentically shows U.S. President Donald Trump waking himself up with a fart during a maternal healthcare announcement in the Oval Office on May 11, 2026.",
+      "text": "US Census Bureau analysis proves 24,000 noncitizens voted illegally",
+      "claimant": "Donald Trump",
+      "claimDate": "2026-08-18T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
           },
-          "url": "https://www.snopes.com/fact-check/video-trump-farting-awake/",
-          "title": "Is video of Trump 'waking himself up' with a fart in Oval Office real?",
-          "reviewDate": "2026-08-13T03:00:09Z",
-          "textualRating": "Fake",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Real photo shows athletes with medals flipping the bird to President Trump's back during the Patriot Games",
-      "claimant": "x.com",
-      "claimDate": "2026-08-13T20:09:14Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/08/fact-check-fake-photo-falsely-shows-athletes-with-medals-flipping-the-bird-to-president-trumps-back-during-patriot-games.html",
-          "title": "Fact Check: FAKE Photo Shows Athletes With Medals Flipping The Bird To President Trump's Back During Patriot Games",
-          "reviewDate": "2026-08-13T20:09:14Z",
-          "textualRating": "Digital Birds",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "\"Susan Collins voted to support Donald Trump on the largest Medicaid cut in history.\"",
-      "claimant": "Affordable Maine",
-      "claimDate": "2026-08-06T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2026/08/collins-did-not-support-obbbas-medicaid-cuts-as-democratic-ad-claims/",
-          "title": "Collins Did Not 'Support' OBBBA's Medicaid Cuts, as Democratic Ad Claims",
-          "reviewDate": "2026-08-12T00:00:00Z",
+          "url": "https://factcheck.afp.com/doc.afp.com.C66V6T4",
+          "title": "Experts question US Census Bureau report on noncitizen voting",
+          "reviewDate": "2026-08-21T22:19:00Z",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -520,16 +465,52 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "In August 2026, the Trump administration paid German energy company RWE $1.2 billion to stop building wind farms.",
+      "text": "U.S. President Donald Trump demanded to equip all Navy ships with sails and considered adding cannons.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-rwe-wind-farms/",
-          "title": "Did Trump admin pay German energy company RWE $1.2B to stop building offshore wind farms?",
-          "reviewDate": "2026-08-12T06:00:10Z",
+          "url": "https://www.snopes.com/fact-check/trump-navy-ships-sails-cannons/",
+          "title": "Did Trump demand sails on US Navy ships and consider adding cannons? Here's the truth",
+          "reviewDate": "2026-08-20T04:00:09Z",
+          "textualRating": "Originated as Satire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "The post shows Donald Trump talking about implementing EVM system in the US.",
+      "claimant": "Twitter",
+      "claimDate": "2026-08-20T11:19:39Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "The Quint",
+            "site": "thequint.com"
+          },
+          "url": "https://www.thequint.com/news/webqoof/donald-trump-post-about-implementing-evm-system-in-america-false-claim-fact-check",
+          "title": "Did US President Donald Trump Post About Implementing EVM System in America? No!",
+          "reviewDate": "2026-08-20T11:19:39Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "An image authentically shows part of a handwritten letter from the U.S. Department of Justice's Epstein files releases alleging that U.S. President Donald Trump was involved in sex trafficking.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-epstein-files-sex-trafficking-allegations/",
+          "title": "Letter in Epstein files details unproven sex trafficking allegations against Trump",
+          "reviewDate": "2026-08-20T11:52:29Z",
           "textualRating": "True",
           "languageCode": "en"
         }
@@ -537,19 +518,37 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "Trump reduced number of required vaccines for children from 72 to 11",
-      "claimant": "White House",
-      "claimDate": "2026-08-10T00:00:00Z",
+      "text": "Donald Trump praised India’s polls and endorsed the use of EVMs for the 2028 elections.",
+      "claimant": "Social Media users",
+      "claimDate": "2026-08-20T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "India Today",
+            "site": "indiatoday.in"
+          },
+          "url": "https://www.indiatoday.in/fact-check/story/trump-india-evms-fact-check-viral-post-fake-2028-us-election-2976015-2026-08-20",
+          "title": "Fact Check: Did Trump say he’s in talks with India to use EVMs in US polls?",
+          "textualRating": "Mostly false",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Trump is making USS Lincoln sailors sign an NDA before they can leave ship",
+      "claimant": "Multiple Individuals",
+      "claimDate": "2026-08-16T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "AFP Fact Check",
             "site": "factcheck.afp.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.C4EJ79E",
-          "title": "Misleading childhood vaccine claims resurface as Trump seeks recommendation overhaul",
-          "reviewDate": "2026-08-11T23:10:00Z",
-          "textualRating": "Misleading",
+          "url": "https://factcheck.afp.com/doc.afp.com.C62M9CR",
+          "title": "Claims of NDAs for USS Lincoln sailors started on satire page",
+          "reviewDate": "2026-08-20T21:30:00Z",
+          "textualRating": "Satire",
           "languageCode": "en"
         }
       ],
