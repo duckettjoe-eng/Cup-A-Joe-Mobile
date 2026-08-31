@@ -1,20 +1,39 @@
 {
-  "generatedAt": "2026-08-24T13:22:41.919Z",
+  "generatedAt": "2026-08-31T13:28:39.134Z",
   "claims": [
     {
-      "text": "The United States sent 2,000 firefighters to Canada in 2026",
-      "claimant": "Canadian Voice for Freedom",
-      "claimDate": "2026-07-25T00:00:00Z",
+      "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
+      "claimant": "Donald Trump",
+      "claimDate": "2026-08-24T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "AFP Fact Check",
             "site": "factcheck.afp.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.C3HZ2NQ",
-          "title": "Misinformation spreads about US aid to Canadian firefighting",
-          "reviewDate": "2026-08-03T18:39:00Z",
+          "url": "https://factcheck.afp.com/doc.afp.com.C6GK9ZQ",
+          "title": "Fact-checking Trump's August 2026 claims on US-Canada trade",
+          "reviewDate": "2026-08-26T21:15:00Z",
           "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Trump said the US will end all trade talks with Canada",
+      "claimant": "Multiple people",
+      "claimDate": "2026-07-12T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.C2ZC9WG",
+          "title": "Old clip used to falsely claim Trump cut Canada trade talks",
+          "reviewDate": "2026-07-24T17:48:00Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
@@ -40,25 +59,6 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW.com",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
       "claimant": "Donald Trump",
       "claimDate": "2025-04-02T00:00:00Z",
@@ -78,6 +78,44 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
+      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
+      "claimant": "Donald Trump",
+      "claimDate": "2018-08-27T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/08/u-s-trade-with-canada-not-smaller-than-with-mexico/",
+          "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
+          "reviewDate": "2018-08-28T21:11:21Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
       "text": "Canada relies on the United States for 95% of its imports",
       "claimant": "Donald Trump",
       "claimDate": "2025-02-26T00:00:00Z",
@@ -91,6 +129,25 @@
           "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
           "reviewDate": "2025-03-05T16:26:00Z",
           "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -134,64 +191,7 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
-      "claimant": "Donald Trump",
-      "claimDate": "2018-08-27T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2018/08/u-s-trade-with-canada-not-smaller-than-with-mexico/",
-          "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
-          "reviewDate": "2018-08-28T21:11:21Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-01-30T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
-          "title": "Trump on U.S. Imports of Oil and Lumber",
-          "reviewDate": "2025-02-11T00:00:00Z",
-          "textualRating": "Experts Say It's Not That Simple",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "List shows Canada's tariffs on US goods before trade war",
-      "claimant": "Multiple people",
-      "claimDate": "2025-03-03T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
-          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
-          "reviewDate": "2025-03-06T16:10:00Z",
-          "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
+      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -210,7 +210,7 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
+      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -283,6 +283,24 @@
       "matchedTopic": "Trump election security"
     },
     {
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
       "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
       "claimant": "Kirstjen Nielsen",
       "claimDate": "2018-07-19T00:00:00Z",
@@ -296,24 +314,6 @@
           "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
           "reviewDate": "2018-07-23T12:35:41Z",
           "textualRating": "Three Pinocchios",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
-      "claimant": "Threads post",
-      "claimDate": "2024-11-10T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
-          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
-          "textualRating": "Unsupported",
           "languageCode": "en"
         }
       ],
@@ -376,42 +376,6 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "The SAVE America Act “would force Americans to register (to vote) only in person, something only 5% of Americans do today.\"",
-      "claimant": "Chuck Schumer",
-      "claimDate": "2026-03-17T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "PolitiFact",
-            "site": "politifact.com"
-          },
-          "url": "https://politifact.com/factchecks/2026/mar/19/charles-schumer/voter-registration-save-america-act-in-person/",
-          "title": "Fact-checking Chuck Schumer about SAVE America Act, how many ...",
-          "reviewDate": "2026-03-19T00:00:00Z",
-          "textualRating": "Half True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
-      "text": "As of April 20, 2026, Senate Majority Leader John Thune is refusing to bring the SAVE America Act up for debate or for a vote in the Senate.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/thune-save-america-act/",
-          "title": "Is John Thune 'no longer considering' SAVE America Act in Senate ...",
-          "reviewDate": "2026-04-21T17:04:37Z",
-          "textualRating": "Mostly False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
       "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
       "claimReview": [
         {
@@ -429,35 +393,35 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "A photograph authentically shows U.S. President Donald Trump in Moscow in 1987, when he was 41, at the invitation of Yuri Dubinin, the Soviet ambassador to the U.S.",
+      "text": "The U.S. Department of Agriculture recalled 30,000 pounds of Argentine beef that the administration of President Donald Trump had imported to bring down domestic beef prices.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-moscow-visit-1987-photo/",
-          "title": "Photo of Trump in Moscow is real, but not from his first visit in 1987",
-          "reviewDate": "2026-08-22T19:00:08Z",
-          "textualRating": "Miscaptioned",
+          "url": "https://www.snopes.com/fact-check/trump-argentina-beef-recall/",
+          "title": "USDA recalled 30K pounds of beef from Argentina. Trump's import plan wasn't to blame",
+          "reviewDate": "2026-08-28T12:46:52Z",
+          "textualRating": "Mixture",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "US Census Bureau analysis proves 24,000 noncitizens voted illegally",
-      "claimant": "Donald Trump",
-      "claimDate": "2026-08-18T00:00:00Z",
+      "text": "Trump posted an image of him dressed as a Mountie, arresting Carney",
+      "claimant": "Multiple people",
+      "claimDate": "2026-08-26T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "AFP Fact Check",
             "site": "factcheck.afp.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.C66V6T4",
-          "title": "Experts question US Census Bureau report on noncitizen voting",
-          "reviewDate": "2026-08-21T22:19:00Z",
+          "url": "https://factcheck.afp.com/doc.afp.com.C6NK7T3",
+          "title": "Trump did not post image of him dressed as Mountie, arresting Carney",
+          "reviewDate": "2026-08-28T19:34:00Z",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -465,52 +429,16 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "U.S. President Donald Trump demanded to equip all Navy ships with sails and considered adding cannons.",
+      "text": "U.S. President Donald Trump bought up to $500,000 in Boeing stock the same day the U.S. Navy awarded the aerospace company with an $880 million contract.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-navy-ships-sails-cannons/",
-          "title": "Did Trump demand sails on US Navy ships and consider adding cannons? Here's the truth",
-          "reviewDate": "2026-08-20T04:00:09Z",
-          "textualRating": "Originated as Satire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "The post shows Donald Trump talking about implementing EVM system in the US.",
-      "claimant": "Twitter",
-      "claimDate": "2026-08-20T11:19:39Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "The Quint",
-            "site": "thequint.com"
-          },
-          "url": "https://www.thequint.com/news/webqoof/donald-trump-post-about-implementing-evm-system-in-america-false-claim-fact-check",
-          "title": "Did US President Donald Trump Post About Implementing EVM System in America? No!",
-          "reviewDate": "2026-08-20T11:19:39Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "An image authentically shows part of a handwritten letter from the U.S. Department of Justice's Epstein files releases alleging that U.S. President Donald Trump was involved in sex trafficking.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-epstein-files-sex-trafficking-allegations/",
-          "title": "Letter in Epstein files details unproven sex trafficking allegations against Trump",
-          "reviewDate": "2026-08-20T11:52:29Z",
+          "url": "https://www.snopes.com/fact-check/trump-boeing-navy-contract/",
+          "title": "Trump bought Boeing stock on same day Navy gave company $880M contract. Here's proof",
+          "reviewDate": "2026-08-27T04:00:09Z",
           "textualRating": "True",
           "languageCode": "en"
         }
@@ -518,37 +446,106 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "Donald Trump praised India’s polls and endorsed the use of EVMs for the 2028 elections.",
-      "claimant": "Social Media users",
-      "claimDate": "2026-08-20T00:00:00Z",
+      "text": "Project 2025, The Heritage Foundation's plan for a conservative presidency that U.S. President Donald Trump has largely used as a blueprint for his second administration, calls for culling wild horses to cut costs.",
       "claimReview": [
         {
           "publisher": {
-            "name": "India Today",
-            "site": "indiatoday.in"
+            "name": "Snopes",
+            "site": "snopes.com"
           },
-          "url": "https://www.indiatoday.in/fact-check/story/trump-india-evms-fact-check-viral-post-fake-2028-us-election-2976015-2026-08-20",
-          "title": "Fact Check: Did Trump say he’s in talks with India to use EVMs in US polls?",
-          "textualRating": "Mostly false",
+          "url": "https://www.snopes.com/fact-check/project-2025-wild-horses/",
+          "title": "Project 2025 recommended culling wild horses. Here's why",
+          "reviewDate": "2026-08-26T03:00:09Z",
+          "textualRating": "Mixture",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "Trump is making USS Lincoln sailors sign an NDA before they can leave ship",
-      "claimant": "Multiple Individuals",
-      "claimDate": "2026-08-16T00:00:00Z",
+      "text": "A screenshot shows an authentic Truth Social post from U.S. President Donald Trump that says: \"The United States is giving serious consideration to changing the name of Lake Ontario to Lake America in that we don’t expect to be doing much business with Ontario any longer.\"",
       "claimReview": [
         {
           "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
+            "name": "Snopes",
+            "site": "snopes.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.C62M9CR",
-          "title": "Claims of NDAs for USS Lincoln sailors started on satire page",
-          "reviewDate": "2026-08-20T21:30:00Z",
-          "textualRating": "Satire",
+          "url": "https://www.snopes.com/fact-check/lake-america-trump/",
+          "title": "Trump posted US is giving 'serious consideration' to changing Lake Ontario's name to Lake America",
+          "reviewDate": "2026-08-25T11:27:18Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "“This past filing season, 440,000 tipped workers right here in Nevada saved an average of $10,000 on their taxes\" because of the \"no tax on tips\" policy.",
+      "claimant": "Donald Trump",
+      "claimDate": "2026-08-05T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2026/08/trumps-no-tax-on-tips-claim-doesnt-add-up/",
+          "title": "Trump's 'No Tax on Tips' Claim Doesn't Add Up",
+          "reviewDate": "2026-08-25T00:00:00Z",
+          "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "In August 2026, U.S. President Donald Trump said, “We were a dumb, stupid country, led by a very, very stupid person a year ago.”",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-dumb-stupid-country-quote/",
+          "title": "Did Trump say US was 'dumb' country led by 'very stupid person' one year ago?",
+          "reviewDate": "2026-08-25T14:36:38Z",
+          "textualRating": "Mixture",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Trump's Truth Social account posted an image of him walking on water with the caption \"Pastor. President. Protector.\"",
+      "claimant": "threads.com",
+      "claimDate": "2026-08-25T21:26:50Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/08/fact-check-trumps-truth-social-account-did-not-post-image-of-him-walking-on-water-with-caption-pastor-president-protector.html",
+          "title": "Fact Check: Trump's Truth Social Account Did NOT Post Image Of Him Walking On Water With Caption 'Pastor. President. Protector.'",
+          "reviewDate": "2026-08-25T21:26:50Z",
+          "textualRating": "Not By Trump",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "U.S. President Donald Trump proposed eliminating property taxes for people age 65 and older who have paid off their mortgages.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-property-tax-seniors/",
+          "title": "Did Trump propose eliminating property taxes for some seniors?",
+          "reviewDate": "2026-08-24T16:12:55Z",
+          "textualRating": "False",
           "languageCode": "en"
         }
       ],
