@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T13:38:41.736Z",
+  "generatedAt": "2026-09-14T13:38:42.229Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -59,38 +59,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "DW News",
-            "site": "dw.com"
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
           },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW News",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -110,25 +91,6 @@
           "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
           "reviewDate": "2025-03-05T16:26:00Z",
           "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-01-30T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
-          "title": "Trump on U.S. Imports of Oil and Lumber",
-          "reviewDate": "2025-02-11T00:00:00Z",
-          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -191,7 +153,45 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
+      "text": "A CNN broadcast shows Justin Trudeau crying over Donald Trump's tariffs",
+      "claimant": "Multiple people",
+      "claimDate": "2024-11-29T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.36P73GF",
+          "title": "Teary-eyed Trudeau video is years old, unrelated to Trump tariffs",
+          "reviewDate": "2024-12-03T19:03:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "An ad from the government of Ontario, Canada, “misrepresents” President Ronald Reagan’s April 25, 1987, address about tariffs.",
+      "claimant": "Ronald Reagan Presidential Foundation and Institute",
+      "claimDate": "2025-10-23T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2025/oct/24/ronald-reagan-presidential-foundation-and-institut/canada-ad-ronald-reagan-tariffs-trump/",
+          "title": "Fact-check: Did Canadian ad about U.S. tariffs mislead about ...",
+          "reviewDate": "2025-10-24T00:00:00Z",
+          "textualRating": "Mostly False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -210,7 +210,7 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
+      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -265,24 +265,6 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
-      "claimant": "Threads post",
-      "claimDate": "2024-11-10T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
-          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
-          "textualRating": "Unsupported",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
       "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
       "claimant": "Donald Trump",
       "claimDate": "2020-11-29T00:00:00Z",
@@ -314,6 +296,61 @@
           "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
           "reviewDate": "2018-07-23T12:35:41Z",
           "textualRating": "Three Pinocchios",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“Mail-In Ballots will lead to massive electoral fraud and a rigged 2020 Election.”",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-07-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
+          },
+          "url": "https://www.washingtonpost.com/politics/2020/09/11/trumps-fusillade-falsehoods-mail-voting/",
+          "title": "Trump’s fusillade of falsehoods on mail voting",
+          "textualRating": "Four Pinocchios",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
+      "claimant": "Hillary Clinton",
+      "claimDate": "2018-09-16T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
+          "title": "Clinton Goes Too Far in Criticizing Trump",
+          "reviewDate": "2018-09-20T19:21:38Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
@@ -381,7 +418,7 @@
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes.com",
+            "name": "Snopes",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
@@ -394,33 +431,84 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "In early September 2026, U.S. President Donald Trump signed an executive order to change the name of New Mexico to \"New America.\"",
+      "text": "As of April 20, 2026, Senate Majority Leader John Thune is refusing to bring the SAVE America Act up for debate or for a vote in the Senate.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/thune-save-america-act/",
+          "title": "Is John Thune 'no longer considering' SAVE America Act in Senate ...",
+          "reviewDate": "2026-04-21T17:04:37Z",
+          "textualRating": "Mostly False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump SAVE America Act"
+    },
+    {
+      "text": "U.S. President Donald Trump drafted written instructions in case he dies in office, requesting a simple funeral and calling for: \"No gold. No extravagance. No expensive casket. Military honors only.\"",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/rename-new-mexico-to-new-america/",
-          "title": "Did Trump sign executive order changing name of New Mexico to 'New America'? Here's the truth",
-          "reviewDate": "2026-09-05T06:00:11Z",
-          "textualRating": "Originated as Satire",
+          "url": "https://www.snopes.com/fact-check/trump-simple-funeral-requests/",
+          "title": "Did Trump write these requests for 'simple' funeral if he dies in office?",
+          "reviewDate": "2026-09-14T03:00:10Z",
+          "textualRating": "False",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "A screenshot authentically shows a post U.S. President Donald Trump made to Truth Social saying that there were \"too many non-working holidays in America\" that cost the country \"billions of dollars\" to keep businesses closed.",
+      "text": "On Sept. 8, 2026, U.S. President Donald Trump said in a speech that he helped save victims of the 1912 sinking of the RMS Titanic.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-non-working-holidays-post/",
-          "title": "Did Trump say US has 'too many non-working holidays' that cost country 'billions'?",
-          "reviewDate": "2026-09-03T15:51:20Z",
+          "url": "https://www.snopes.com/fact-check/trump-titanic-quote/",
+          "title": "Did Trump say he saved people on Titanic? Here's the truth",
+          "reviewDate": "2026-09-11T07:27:04Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "An image authentically shows U.S. President Donald Trump’s Fordham University transcript with a grade point average of 1.28.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-fordham-grades/",
+          "title": "Does image show Trump's low grades at Fordham University?",
+          "reviewDate": "2026-09-11T06:00:12Z",
+          "textualRating": "Fake",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "U.S. President Donald Trump has promised $5,000 to every American adult if the Republicans win majority control of the Senate and House of Representatives in the 2026 midterm elections.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-5000-dollar-dividend/",
+          "title": "Trump pledged $5K 'dividend' to every US adult if GOP wins midterms. Can he do that?",
+          "reviewDate": "2026-09-10T16:09:14Z",
           "textualRating": "True",
           "languageCode": "en"
         }
@@ -428,123 +516,36 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "Pop Base posted \"President Trump has died at the age of 80.\"",
+      "text": "A screenshot authentically shows a social media post from U.S. President Donald Trump that said, “Unless Canada agrees to pay a 100% TARIFF on Niagara Falls, we will be turning off the tap to the falls. That's right — NO WATER FOR CANADA!\"",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-niagara-falls-post/",
+          "title": "Did Trump threaten to turn off Niagara Falls water unless Canada pays tariff?",
+          "reviewDate": "2026-09-10T15:44:35Z",
+          "textualRating": "Fake",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Donald Trump posted \"No more free Niagara Falls for Canada\"",
       "claimant": "x.com",
-      "claimDate": "2026-09-03T22:08:43Z",
+      "claimDate": "2026-09-10T14:46:38Z",
       "claimReview": [
         {
           "publisher": {
             "name": "Lead Stories",
             "site": "leadstories.com"
           },
-          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-no-evidence-pop-base-posted-president-trump-has-died-at-the-age-of-80.html",
-          "title": "Fact Check: Donald Trump Did NOT die on Sept. 3, 2026",
-          "reviewDate": "2026-09-03T22:08:43Z",
-          "textualRating": "Still Alive",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Former White House chef Andre Rush said Trump is a \"worker\" who is always friendly to the staff.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-white-house-chef-andre-rush/",
-          "title": "What former White House chef Andre Rush has said about Trump's work ethic, demeanor",
-          "reviewDate": "2026-09-03T03:00:10Z",
-          "textualRating": "Mixture",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "A screenshot authentically shows a Truth Social post from U.S. President Donald Trump announcing the construction of the \"Melania Canal\" to connect to \"Lake America,\" also known as Lake Ontario.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-melania-canal/",
-          "title": "Trump didn't post about building 'Melania Canal,' despite claims",
-          "reviewDate": "2026-09-03T04:00:08Z",
-          "textualRating": "Labeled Satire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Donald Trump wrote \"too many non-working holidays in America\" ahead of Labor Day 2026",
-      "claimant": "x.com",
-      "claimDate": "2026-09-03T18:40:50Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-trump-did-not-write-too-many-non-working-holidays-in-america-ahead-of-labor-day-2026-post-is-from-summer-2025.html",
-          "title": "Fact Check: Trump Did NOT Write 'Too Many Non-Working Holidays In America' Ahead Of Labor Day 2026 -- Post Is From Summer 2025",
-          "reviewDate": "2026-09-03T18:40:50Z",
-          "textualRating": "Old Post",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "In August 2026, U.S. President Donald Trump posted an image showing a six-fingered U.S. Navy sailor eating a burger with the caption, \"OUR MILITARY EATS THE BEST! Nobody feeds our brave troops better than me. The food is AMAZING--the best military food EVER! Other countries wish they could feed their soldiers this well. TOTAL WIN!\"",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-navy-sailor-ai-photo/",
-          "title": "Did Trump post AI photo of 6-fingered Navy sailor?",
-          "reviewDate": "2026-09-02T07:57:27Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "In the summer of 2026, U.S. President Donald Trump ordered the removal of weeping willow trees outside the John F. Kennedy Memorial Center for the Performing Arts in Washington, D.C.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/weeping-willows-kennedy-center/",
-          "title": "Did Trump order that weeping willows be cut down outside Kennedy Center?",
-          "reviewDate": "2026-09-02T13:48:56Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "U.S. President Donald Trump's Environmental Protection Agency approved the use of the pesticide trifludimoxazin, a known carcinogen and a PFAS \"forever chemical.\"",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trifludimoxazin-epa-approval/",
-          "title": "What to know about EPA approving pesticide trifludimoxazin",
-          "reviewDate": "2026-09-02T09:02:16Z",
-          "textualRating": "Mostly True",
+          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-trump-did-not-post-no-more-niagara-falls-for-canada.html",
+          "title": "Fact Check: Trump Did NOT Post 'No More Free Niagara Falls For Canada!' -- It Is A Made-Up Screenshot",
+          "reviewDate": "2026-09-10T14:46:38Z",
+          "textualRating": "Fake POTUS",
           "languageCode": "en"
         }
       ],
