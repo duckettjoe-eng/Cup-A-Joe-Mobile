@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T13:38:42.229Z",
+  "generatedAt": "2026-09-28T13:38:42.250Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -59,19 +59,38 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-01-30T00:00:00Z",
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
+            "name": "DW News",
+            "site": "dw.com"
           },
-          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
-          "title": "Trump on U.S. Imports of Oil and Lumber",
-          "reviewDate": "2025-02-11T00:00:00Z",
-          "textualRating": "Experts Say It's Not That Simple",
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW News",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
           "languageCode": "en"
         }
       ],
@@ -116,19 +135,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "List shows Canada's tariffs on US goods before trade war",
-      "claimant": "Multiple people",
-      "claimDate": "2025-03-03T00:00:00Z",
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
-          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
-          "reviewDate": "2025-03-06T16:10:00Z",
-          "textualRating": "Misleading",
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -153,56 +172,36 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "A CNN broadcast shows Justin Trudeau crying over Donald Trump's tariffs",
+      "text": "List shows Canada's tariffs on US goods before trade war",
       "claimant": "Multiple people",
-      "claimDate": "2024-11-29T00:00:00Z",
+      "claimDate": "2025-03-03T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "AFP Fact Check",
             "site": "factcheck.afp.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.36P73GF",
-          "title": "Teary-eyed Trudeau video is years old, unrelated to Trump tariffs",
-          "reviewDate": "2024-12-03T19:03:00Z",
-          "textualRating": "False",
+          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
+          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
+          "reviewDate": "2025-03-06T16:10:00Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "An ad from the government of Ontario, Canada, “misrepresents” President Ronald Reagan’s April 25, 1987, address about tariffs.",
-      "claimant": "Ronald Reagan Presidential Foundation and Institute",
-      "claimDate": "2025-10-23T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "PolitiFact",
-            "site": "politifact.com"
-          },
-          "url": "https://politifact.com/factchecks/2025/oct/24/ronald-reagan-presidential-foundation-and-institut/canada-ad-ronald-reagan-tariffs-trump/",
-          "title": "Fact-check: Did Canadian ad about U.S. tariffs mislead about ...",
-          "reviewDate": "2025-10-24T00:00:00Z",
-          "textualRating": "Mostly False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-08-18T00:00:00Z",
+      "text": "CNN clip shows \"HAMMER SCORECARD caught on camera in PA\" and votes getting \"taken from...Trump\" and \"given to Biden.\"",
+      "claimant": "Social media posts",
+      "claimDate": "2020-11-10T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2025/08/factchecking-trumps-claims-about-mail-in-ballots-voting-machines-and-states-role/",
-          "title": "FactChecking Trump's Claims About Mail-In Ballots, Voting ...",
-          "reviewDate": "2025-08-19T00:00:00Z",
+          "url": "https://www.factcheck.org/2020/11/bogus-theory-claims-supercomputer-switched-votes-in-election/",
+          "title": "Bogus Theory Claims Supercomputer Switched Votes in Election",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -229,18 +228,38 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "CNN clip shows \"HAMMER SCORECARD caught on camera in PA\" and votes getting \"taken from...Trump\" and \"given to Biden.\"",
-      "claimant": "Social media posts",
-      "claimDate": "2020-11-10T00:00:00Z",
+      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2020/11/bogus-theory-claims-supercomputer-switched-votes-in-election/",
-          "title": "Bogus Theory Claims Supercomputer Switched Votes in Election",
+          "url": "https://www.factcheck.org/2025/08/factchecking-trumps-claims-about-mail-in-ballots-voting-machines-and-states-role/",
+          "title": "FactChecking Trump's Claims About Mail-In Ballots, Voting ...",
+          "reviewDate": "2025-08-19T00:00:00Z",
           "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
+      "claimant": "Kirstjen Nielsen",
+      "claimDate": "2018-07-19T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
+          },
+          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2018/07/23/kirstjen-nielsens-claim-that-u-s-election-systems-werent-targeted-to-favor-trump/",
+          "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
+          "reviewDate": "2018-07-23T12:35:41Z",
+          "textualRating": "Three Pinocchios",
           "languageCode": "en"
         }
       ],
@@ -283,43 +302,6 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
-      "claimant": "Kirstjen Nielsen",
-      "claimDate": "2018-07-19T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "The Washington Post",
-            "site": "washingtonpost.com"
-          },
-          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2018/07/23/kirstjen-nielsens-claim-that-u-s-election-systems-werent-targeted-to-favor-trump/",
-          "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
-          "reviewDate": "2018-07-23T12:35:41Z",
-          "textualRating": "Three Pinocchios",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
-      "claimant": "Threads post",
-      "claimDate": "2024-11-10T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
-          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
-          "textualRating": "Unsupported",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
       "text": "“Mail-In Ballots will lead to massive electoral fraud and a rigged 2020 Election.”",
       "claimant": "Donald Trump",
       "claimDate": "2020-07-02T00:00:00Z",
@@ -338,19 +320,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
-      "claimant": "Hillary Clinton",
-      "claimDate": "2018-09-16T00:00:00Z",
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
-          "title": "Clinton Goes Too Far in Criticizing Trump",
-          "reviewDate": "2018-09-20T19:21:38Z",
-          "textualRating": "Misleading",
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
           "languageCode": "en"
         }
       ],
@@ -418,7 +399,7 @@
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
+            "name": "Snopes.com",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
@@ -435,7 +416,7 @@
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes.com",
+            "name": "Snopes",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/thune-save-america-act/",
@@ -448,16 +429,18 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "U.S. President Donald Trump drafted written instructions in case he dies in office, requesting a simple funeral and calling for: \"No gold. No extravagance. No expensive casket. Military honors only.\"",
+      "text": "Australian PM pretended a year-old selfie with Trump was taken at 2026 UN",
+      "claimant": "Multiple sources",
+      "claimDate": "2026-09-23T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-simple-funeral-requests/",
-          "title": "Did Trump write these requests for 'simple' funeral if he dies in office?",
-          "reviewDate": "2026-09-14T03:00:10Z",
+          "url": "https://factcheck.afp.com/doc.afp.com.C98C864",
+          "title": "Albanese's critics falsely claim that selfie with Trump is old",
+          "reviewDate": "2026-09-25T05:11:00Z",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -465,50 +448,16 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "On Sept. 8, 2026, U.S. President Donald Trump said in a speech that he helped save victims of the 1912 sinking of the RMS Titanic.",
+      "text": "A photograph taken in September 2026 authentically shows U.S. President Donald Trump and first lady Melania Trump staring at the camera and frowning.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-titanic-quote/",
-          "title": "Did Trump say he saved people on Titanic? Here's the truth",
-          "reviewDate": "2026-09-11T07:27:04Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "An image authentically shows U.S. President Donald Trump’s Fordham University transcript with a grade point average of 1.28.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-fordham-grades/",
-          "title": "Does image show Trump's low grades at Fordham University?",
-          "reviewDate": "2026-09-11T06:00:12Z",
-          "textualRating": "Fake",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "U.S. President Donald Trump has promised $5,000 to every American adult if the Republicans win majority control of the Senate and House of Representatives in the 2026 midterm elections.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-5000-dollar-dividend/",
-          "title": "Trump pledged $5K 'dividend' to every US adult if GOP wins midterms. Can he do that?",
-          "reviewDate": "2026-09-10T16:09:14Z",
+          "url": "https://www.snopes.com/fact-check/donald-melania-trump-frowning-photo/",
+          "title": "Is photo of Donald and Melania Trump frowning real?",
+          "reviewDate": "2026-09-25T13:17:18Z",
           "textualRating": "True",
           "languageCode": "en"
         }
@@ -516,36 +465,89 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "A screenshot authentically shows a social media post from U.S. President Donald Trump that said, “Unless Canada agrees to pay a 100% TARIFF on Niagara Falls, we will be turning off the tap to the falls. That's right — NO WATER FOR CANADA!\"",
+      "text": "Canadian Prime Minister Mark Carney said in September 2026 that he had prepared for the chance that U.S. President Donald Trump might order military action against Canada.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-niagara-falls-post/",
-          "title": "Did Trump threaten to turn off Niagara Falls water unless Canada pays tariff?",
-          "reviewDate": "2026-09-10T15:44:35Z",
-          "textualRating": "Fake",
+          "url": "https://www.snopes.com/fact-check/canada-mark-carney-us-invasion-quote/",
+          "title": "Did Canada's Mark Carney say he was prepared for US invasion?",
+          "reviewDate": "2026-09-25T09:47:30Z",
+          "textualRating": "True",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "Donald Trump posted \"No more free Niagara Falls for Canada\"",
+      "text": "There is a real photo of President Trump, President of China Xi Jinping, Elon Musk and Jeff Bezos at the head table at the White House State Dinner on September 24, 2026.",
       "claimant": "x.com",
-      "claimDate": "2026-09-10T14:46:38Z",
+      "claimDate": "2026-09-25T20:44:32Z",
       "claimReview": [
         {
           "publisher": {
             "name": "Lead Stories",
             "site": "leadstories.com"
           },
-          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-trump-did-not-post-no-more-niagara-falls-for-canada.html",
-          "title": "Fact Check: Trump Did NOT Post 'No More Free Niagara Falls For Canada!' -- It Is A Made-Up Screenshot",
-          "reviewDate": "2026-09-10T14:46:38Z",
-          "textualRating": "Fake POTUS",
+          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-fake-photo-trump-state-dinner-xi-elon-musk-jeff-bezos-head-table-ai-generated.html",
+          "title": "Fact Check: FAKE Photo Of Trump State Dinner With Xi, Elon Musk, Jeff Bezos At The Head Table Is Al-Generated",
+          "reviewDate": "2026-09-25T20:44:32Z",
+          "textualRating": "AI-Generated",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "In September 2026, a Trump-branded gas station opened in Branson, Missouri, selling gasoline for around $20 a gallon.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-gas-station-20-gallon/",
+          "title": "Is 'Trump Fuel' station selling gas for nearly $20 per gallon?",
+          "reviewDate": "2026-09-24T03:00:11Z",
+          "textualRating": "Labeled Satire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "A video and a screenshot from that footage authentically show the overflow crowd at a Minnesota rally for U.S. President Donald Trump in September 2026.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/minnesota-trump-rally-overflow-crowd/",
+          "title": "Does footage show 'overflow' crowd at 2026 Minnesota Trump rally? Here's the real story",
+          "reviewDate": "2026-09-24T04:00:12Z",
+          "textualRating": "Miscaptioned",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "New Epstein files release shows Trump visited Epstein island 345 times",
+      "claimant": "threads.com",
+      "claimDate": "2026-09-24T20:59:31Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-fake-post-falsely-claims-new-epstein-files-release-shows-trump-visited-epstein-island-345-times.html",
+          "title": "Fact Check: FAKE Post Falsely Claims New Epstein Files Release Shows Trump Visited Epstein Island 345 Times",
+          "reviewDate": "2026-09-24T20:59:31Z",
+          "textualRating": "Not On File",
           "languageCode": "en"
         }
       ],
