@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T13:38:42.250Z",
+  "generatedAt": "2026-10-05T13:38:42.479Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -40,6 +40,44 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
+      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
       "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
       "claimant": "Donald Trump",
       "claimDate": "2018-08-27T00:00:00Z",
@@ -53,44 +91,6 @@
           "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
           "reviewDate": "2018-08-28T21:11:21Z",
           "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW News",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW News",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
           "languageCode": "en"
         }
       ],
@@ -191,24 +191,6 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "CNN clip shows \"HAMMER SCORECARD caught on camera in PA\" and votes getting \"taken from...Trump\" and \"given to Biden.\"",
-      "claimant": "Social media posts",
-      "claimDate": "2020-11-10T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2020/11/bogus-theory-claims-supercomputer-switched-votes-in-election/",
-          "title": "Bogus Theory Claims Supercomputer Switched Votes in Election",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
       "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
@@ -240,6 +222,24 @@
           "url": "https://www.factcheck.org/2025/08/factchecking-trumps-claims-about-mail-in-ballots-voting-machines-and-states-role/",
           "title": "FactChecking Trump's Claims About Mail-In Ballots, Voting ...",
           "reviewDate": "2025-08-19T00:00:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "CNN clip shows \"HAMMER SCORECARD caught on camera in PA\" and votes getting \"taken from...Trump\" and \"given to Biden.\"",
+      "claimant": "Social media posts",
+      "claimDate": "2020-11-10T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/bogus-theory-claims-supercomputer-switched-votes-in-election/",
+          "title": "Bogus Theory Claims Supercomputer Switched Votes in Election",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -284,18 +284,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-11-29T00:00:00Z",
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
-          "title": "Trump Repeats Baseless, False Claims About the Election",
-          "textualRating": "No Evidence",
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
           "languageCode": "en"
         }
       ],
@@ -320,18 +320,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
-      "claimant": "Threads post",
-      "claimDate": "2024-11-10T00:00:00Z",
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
-          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
-          "textualRating": "Unsupported",
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
           "languageCode": "en"
         }
       ],
@@ -429,18 +429,18 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "Australian PM pretended a year-old selfie with Trump was taken at 2026 UN",
-      "claimant": "Multiple sources",
-      "claimDate": "2026-09-23T00:00:00Z",
+      "text": "Trump posted to ban the Canadian band Rush's music in the United States",
+      "claimant": "Multiple people",
+      "claimDate": "2026-09-30T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "AFP Fact Check",
             "site": "factcheck.afp.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.C98C864",
-          "title": "Albanese's critics falsely claim that selfie with Trump is old",
-          "reviewDate": "2026-09-25T05:11:00Z",
+          "url": "https://factcheck.afp.com/doc.afp.com.D23Z9WF",
+          "title": "Fake Trump post on Canadian rock band spreads amid trade war",
+          "reviewDate": "2026-10-02T23:19:00Z",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -448,86 +448,16 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "A photograph taken in September 2026 authentically shows U.S. President Donald Trump and first lady Melania Trump staring at the camera and frowning.",
+      "text": "A video posted online in late September 2026 authentically shows U.S. President Donald Trump saying Iowans are \"really troubled people\" at a White House event.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/donald-melania-trump-frowning-photo/",
-          "title": "Is photo of Donald and Melania Trump frowning real?",
-          "reviewDate": "2026-09-25T13:17:18Z",
-          "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Canadian Prime Minister Mark Carney said in September 2026 that he had prepared for the chance that U.S. President Donald Trump might order military action against Canada.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/canada-mark-carney-us-invasion-quote/",
-          "title": "Did Canada's Mark Carney say he was prepared for US invasion?",
-          "reviewDate": "2026-09-25T09:47:30Z",
-          "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "There is a real photo of President Trump, President of China Xi Jinping, Elon Musk and Jeff Bezos at the head table at the White House State Dinner on September 24, 2026.",
-      "claimant": "x.com",
-      "claimDate": "2026-09-25T20:44:32Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-fake-photo-trump-state-dinner-xi-elon-musk-jeff-bezos-head-table-ai-generated.html",
-          "title": "Fact Check: FAKE Photo Of Trump State Dinner With Xi, Elon Musk, Jeff Bezos At The Head Table Is Al-Generated",
-          "reviewDate": "2026-09-25T20:44:32Z",
-          "textualRating": "AI-Generated",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "In September 2026, a Trump-branded gas station opened in Branson, Missouri, selling gasoline for around $20 a gallon.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-gas-station-20-gallon/",
-          "title": "Is 'Trump Fuel' station selling gas for nearly $20 per gallon?",
-          "reviewDate": "2026-09-24T03:00:11Z",
-          "textualRating": "Labeled Satire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "A video and a screenshot from that footage authentically show the overflow crowd at a Minnesota rally for U.S. President Donald Trump in September 2026.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/minnesota-trump-rally-overflow-crowd/",
-          "title": "Does footage show 'overflow' crowd at 2026 Minnesota Trump rally? Here's the real story",
-          "reviewDate": "2026-09-24T04:00:12Z",
+          "url": "https://www.snopes.com/fact-check/trump-iowans-troubled-people/",
+          "title": "Did Trump say Iowans are 'really troubled people'?",
+          "reviewDate": "2026-10-01T16:23:32Z",
           "textualRating": "Miscaptioned",
           "languageCode": "en"
         }
@@ -535,19 +465,88 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "New Epstein files release shows Trump visited Epstein island 345 times",
-      "claimant": "threads.com",
-      "claimDate": "2026-09-24T20:59:31Z",
+      "text": "This video shows FlyDubai Flight 1073’s co-pilot shouting: ‘I'm going to bomb the plane. Death to America. Death to Trump. Allahu Akbar.’",
+      "claimant": "Social Media users",
+      "claimDate": "2026-10-01T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "India Today",
+            "site": "indiatoday.in"
+          },
+          "url": "https://www.indiatoday.in/fact-check/story/flydubai-flight-1073-viral-video-fact-check-easyjet-london-glasgow-clip-misidentified-3007429-2026-10-01",
+          "title": "Fact Check: This is NOT flydubai co-pilot shouting ‘Allahu Akbar’ and ‘death to America’",
+          "textualRating": "Half true",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "A screenshot authentically showed a social media post from U.S. President Donald Trump that banned listening to the Canadian rock band Rush starting Oct. 1.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-band-rush-canada-trade-war/",
+          "title": "Did Trump ban people from listening to Canadian band Rush amid trade war?",
+          "reviewDate": "2026-10-01T09:55:22Z",
+          "textualRating": "Fake",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "America.gov — an artificial intelligence chatbot the U.S. government launched in September 2026 — stated that U.S. President Donald Trump lost the 2020 presidential election, contradicting his longstanding claim that he won three elections.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-ai-lost-2020-election/",
+          "title": "Did Trump's AI tool say he lost the 2020 election, contradicting his claims that he won?",
+          "reviewDate": "2026-09-30T17:00:24Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "The administration of U.S. President Donald Trump is cutting access to student loans for degrees that have low earning potential, including social work.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-cutting-student-loans/",
+          "title": "Trump admin will cut student loan eligibility for some degrees. How will they choose?",
+          "reviewDate": "2026-09-30T13:35:42Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Trump's \"super intelligence\" accord with tech executives misspells \"Unites States\".",
+      "claimant": "x.com",
+      "claimDate": "2026-09-30T16:37:13Z",
       "claimReview": [
         {
           "publisher": {
             "name": "Lead Stories",
             "site": "leadstories.com"
           },
-          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-fake-post-falsely-claims-new-epstein-files-release-shows-trump-visited-epstein-island-345-times.html",
-          "title": "Fact Check: FAKE Post Falsely Claims New Epstein Files Release Shows Trump Visited Epstein Island 345 Times",
-          "reviewDate": "2026-09-24T20:59:31Z",
-          "textualRating": "Not On File",
+          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-trumps-super-intelligence-accord-did-misspell-countrys-name-as-unites-states.html",
+          "title": "Fact Check: Trump's 'Super Intelligence' Accord DID Misspell Country's Name As 'Unites States'",
+          "reviewDate": "2026-09-30T16:37:13Z",
+          "textualRating": "Real Error",
           "languageCode": "en"
         }
       ],
