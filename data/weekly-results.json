@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T13:38:42.479Z",
+  "generatedAt": "2026-10-12T13:38:42.293Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -40,25 +40,6 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW.com",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
       "claimant": "Donald Trump",
       "claimDate": "2025-04-02T00:00:00Z",
@@ -72,6 +53,25 @@
           "title": "Fact check: Trump's false claims about tariffs",
           "reviewDate": "2025-04-04T00:00:00Z",
           "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW.com",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
           "languageCode": "en"
         }
       ],
@@ -97,25 +97,6 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "Canada relies on the United States for 95% of its imports",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-02-26T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.36Z24H8",
-          "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
-          "reviewDate": "2025-03-05T16:26:00Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "Donald Trump imposes tariffs on Blue Jays games",
       "claimant": "Multiple people",
       "claimDate": "2025-10-18T00:00:00Z",
@@ -129,6 +110,25 @@
           "title": "Rumors of Trump tariff on Blue Jays wins are unsubstantiated",
           "reviewDate": "2025-10-23T23:13:00Z",
           "textualRating": "Unsubstantiated",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Canada relies on the United States for 95% of its imports",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-02-26T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.36Z24H8",
+          "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
+          "reviewDate": "2025-03-05T16:26:00Z",
+          "textualRating": "False",
           "languageCode": "en"
         }
       ],
@@ -191,7 +191,7 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
+      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -210,7 +210,7 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
+      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -284,18 +284,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
-      "claimant": "Threads post",
-      "claimDate": "2024-11-10T00:00:00Z",
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
-          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
-          "textualRating": "Unsupported",
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
           "languageCode": "en"
         }
       ],
@@ -320,18 +320,37 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-11-29T00:00:00Z",
+      "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
+      "claimant": "Threads post",
+      "claimDate": "2024-11-10T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
-          "title": "Trump Repeats Baseless, False Claims About the Election",
-          "textualRating": "No Evidence",
+          "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
+          "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
+          "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
+      "claimant": "Hillary Clinton",
+      "claimDate": "2018-09-16T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
+          "title": "Clinton Goes Too Far in Criticizing Trump",
+          "reviewDate": "2018-09-20T19:21:38Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
@@ -429,124 +448,106 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "Trump posted to ban the Canadian band Rush's music in the United States",
-      "claimant": "Multiple people",
-      "claimDate": "2026-09-30T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.D23Z9WF",
-          "title": "Fake Trump post on Canadian rock band spreads amid trade war",
-          "reviewDate": "2026-10-02T23:19:00Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "A video posted online in late September 2026 authentically shows U.S. President Donald Trump saying Iowans are \"really troubled people\" at a White House event.",
+      "text": "Oscar-winning actor Denzel Washington said, \"I've worked with a lot of people in my life, and I've never met anyone braver, smarter, or who cares more about America than Donald Trump. He's a great friend and an even better president. I'm proud to be a steadfast supporter, and I'll never apologize for it. God Bless America and our president.\"",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-iowans-troubled-people/",
-          "title": "Did Trump say Iowans are 'really troubled people'?",
-          "reviewDate": "2026-10-01T16:23:32Z",
-          "textualRating": "Miscaptioned",
+          "url": "https://www.snopes.com/fact-check/trump-denzel-washington-quote/",
+          "title": "Did Denzel Washington say he's 'never met anyone braver, smarter' than Trump?",
+          "reviewDate": "2026-10-10T16:00:11Z",
+          "textualRating": "Incorrect Attribution",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "This video shows FlyDubai Flight 1073’s co-pilot shouting: ‘I'm going to bomb the plane. Death to America. Death to Trump. Allahu Akbar.’",
-      "claimant": "Social Media users",
-      "claimDate": "2026-10-01T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "India Today",
-            "site": "indiatoday.in"
-          },
-          "url": "https://www.indiatoday.in/fact-check/story/flydubai-flight-1073-viral-video-fact-check-easyjet-london-glasgow-clip-misidentified-3007429-2026-10-01",
-          "title": "Fact Check: This is NOT flydubai co-pilot shouting ‘Allahu Akbar’ and ‘death to America’",
-          "textualRating": "Half true",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "A screenshot authentically showed a social media post from U.S. President Donald Trump that banned listening to the Canadian rock band Rush starting Oct. 1.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-band-rush-canada-trade-war/",
-          "title": "Did Trump ban people from listening to Canadian band Rush amid trade war?",
-          "reviewDate": "2026-10-01T09:55:22Z",
-          "textualRating": "Fake",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "America.gov — an artificial intelligence chatbot the U.S. government launched in September 2026 — stated that U.S. President Donald Trump lost the 2020 presidential election, contradicting his longstanding claim that he won three elections.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-ai-lost-2020-election/",
-          "title": "Did Trump's AI tool say he lost the 2020 election, contradicting his claims that he won?",
-          "reviewDate": "2026-09-30T17:00:24Z",
-          "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "The administration of U.S. President Donald Trump is cutting access to student loans for degrees that have low earning potential, including social work.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-cutting-student-loans/",
-          "title": "Trump admin will cut student loan eligibility for some degrees. How will they choose?",
-          "reviewDate": "2026-09-30T13:35:42Z",
-          "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Trump's \"super intelligence\" accord with tech executives misspells \"Unites States\".",
+      "text": "Iranian officials say they will soon release the audio of Donald Trump begging them to open up the Strait of Hormuz so gas prices will go down before Americans vote on November 3.",
       "claimant": "x.com",
-      "claimDate": "2026-09-30T16:37:13Z",
+      "claimDate": "2026-10-08T23:58:18Z",
       "claimReview": [
         {
           "publisher": {
             "name": "Lead Stories",
             "site": "leadstories.com"
           },
-          "url": "https://leadstories.com/hoax-alert/2026/09/fact-check-trumps-super-intelligence-accord-did-misspell-countrys-name-as-unites-states.html",
-          "title": "Fact Check: Trump's 'Super Intelligence' Accord DID Misspell Country's Name As 'Unites States'",
-          "reviewDate": "2026-09-30T16:37:13Z",
-          "textualRating": "Real Error",
+          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-iranian-officials-did-not-promise-to-release-audio-of-trump-begging-them-to-open-strait-of-hormuz.html",
+          "title": "Fact Check: Iranian Officials Did NOT Promise To Release Audio Of Trump Begging Them To Open Strait Of Hormuz So Gas Prices Lower Before Midterms -- Satire Post",
+          "reviewDate": "2026-10-08T23:58:18Z",
+          "textualRating": "Satire Origin",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Screenshot shows real Trump Truth Social message where he claims to have spoken to God about a golden throne, an ocean filled with blood and Armageddon",
+      "claimant": "x.com",
+      "claimDate": "2026-10-07T18:55:17Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-trump-did-not-write-truth-social-message-claiming-he-spoke-to-god-about-a-golden-throne-an-ocean-filled-with-blood-and-armageddon.html",
+          "title": "Fact Check: Trump Did NOT Post A Truth Social Message Claiming He Spoke To God About A Golden Throne, An Ocean Filled With Blood And Armageddon",
+          "reviewDate": "2026-10-07T18:55:17Z",
+          "textualRating": "No Revelation",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Photos authentically show a gold-covered statue depicting a naked U.S. President Donald Trump on display at the European Parliament in Strasbourg, France, in early October.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-gold-naked-statue/",
+          "title": "Do photos show gold statue of naked Trump at European Parliament?",
+          "reviewDate": "2026-10-07T13:58:16Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "While speaking about the Iran war on Oct. 5, U.S. President Donald Trump said, \"They [Iran] can take out a city. Let 'em take out Los Angeles, let 'em take out San Diego. This is a very small price to pay and it's going to be over with very soon.\"",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-iran-take-out-la-san-diego/",
+          "title": "Did Trump say of Iran, 'Let 'em take out' LA and San Diego?",
+          "reviewDate": "2026-10-06T17:21:08Z",
+          "textualRating": "Correct Attribution",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "In 2026, U.S. President Donald Trump's administration denied protections under the Endangered Species Act to monarch butterflies until 2030.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/monarch-butterfly-protections-trump/",
+          "title": "Why Endangered Species Act protections for monarch butterflies are in limbo under Trump",
+          "reviewDate": "2026-10-06T04:00:11Z",
+          "textualRating": "Mixture",
           "languageCode": "en"
         }
       ],
