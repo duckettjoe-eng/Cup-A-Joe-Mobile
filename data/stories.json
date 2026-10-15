@@ -1,5 +1,118 @@
 [
   {
+    "id": "russia-diesel-deal-energy-ceasefire",
+    "locations": [
+      {
+        "name": "Washington, DC",
+        "lat": 38.9072,
+        "lon": -77.0369
+      },
+      {
+        "name": "Kyiv, Ukraine",
+        "lat": 50.4501,
+        "lon": 30.5234
+      },
+      {
+        "name": "Moscow, Russia",
+        "lat": 55.7558,
+        "lon": 37.6173
+      }
+    ],
+    "date": "OCTOBER 11, 2026",
+    "title": "Trump eases sanctions to buy Russian diesel, draws bipartisan fire, then announces an \"energy ceasefire\" Moscow has not confirmed",
+    "summary": "Over three days Trump announced a deal with Putin for Russian diesel (Oct. 9), said Ukraine should \"get a new leader who can make a deal\" (Oct. 10), and posted that \"there is an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed\" (Oct. 11). The diesel arrangement rests on a Treasury license easing sanctions; seven senators from both parties, including four Republicans, demanded he reverse course, and Sen. Thom Tillis said there is a legitimate case that the president is not following the law, while Treasury Secretary Scott Bessent says existing authority covers it. The ceasefire post carried no terms, start time or verification, no outlet read here reported a Russian confirmation, and Zelenskyy told Axios it \"was news for me.\" The reporting divergence is less about the facts than about how much weight each outlet put on three things: that a nearly identical claim on Sept. 14 did not stop the strikes, that Russian attacks on Ukrainian energy sites continued after the post, and whether Trump's account of why diesel is expensive holds up.",
+    "outlets": [
+      {
+        "name": "AP (via PBS NewsHour)",
+        "lean": "center",
+        "heat": 3,
+        "framing": "AP's ceasefire story was headlined \"Trump claims\" and \"despite continued attacks,\" and it used its space to test the claim: it reported that Moscow had not immediately commented, that Trump made a similar claim on Sept. 14 and \"nothing came of\" it, and that a Kharkiv power plant was attacked after the post, which Ukraine's presidential office confirmed. It also described Trump as having sought to blame Ukraine rather than the U.S.-led war in Iran for high energy prices. Zelenskyy's offer of elections after a 60-day total ceasefire and his view that Putin had answered every de-escalation proposal with \"nyet\" got full room.",
+        "url": "https://www.pbs.org/newshour/world/trump-claims-russia-and-ukraine-agree-to-energy-ceasefire-despite-continued-attacks"
+      },
+      {
+        "name": "Reuters (via The Spokesman-Review)",
+        "lean": "center",
+        "heat": 2,
+        "framing": "Reuters wrote the diesel fight as a political story: a shift from near-unanimous Republican support for Trump's foreign policy to bipartisan criticism three weeks before the Nov. 3 midterms. It named the seven senators, quoted their line that \"Congress explicitly banned Russian energy imports in 2022,\" and carried both the administration defense (Bessent: existing legal authority covers it and critics citing older law are wrong) and Sen. John Barrasso's backing. The ceasefire is a short paragraph: no details given, Zelenskyy waiting for them, Moscow silent.",
+        "url": "https://www.spokesman.com/stories/2026/oct/11/republicans-democrats-want-trump-to-reverse-course/"
+      },
+      {
+        "name": "Axios",
+        "lean": "center",
+        "heat": 2,
+        "framing": "Axios built the story around Zelenskyy's reaction (\"news for me\"), stating that it was unclear whether Russia had agreed and that neither side confirmed a deal after Trump's similar September announcement. It also called the post a \"dramatic diplomatic breakthrough\" in the same breath as saying its status was unclear, a tension between its headline-level framing and its own caveats. It sequenced the diesel deal and the call for a new Ukrainian leader as the immediate backdrop.",
+        "url": "https://www.axios.com/2026/10/11/trump-russia-ukraine-energy-ceasefire-zelensky"
+      },
+      {
+        "name": "TIME",
+        "lean": "leanleft",
+        "heat": 3,
+        "framing": "TIME was the most explicitly corrective: it wrote that Trump \"falsely implied\" Ukraine's refinery strikes are a primary cause of global diesel shortages, and pointed to the Iran war and disruption at the Strait of Hormuz as the main driver. It also surfaced the legal question most prominently, noting a 2022 law lets the Russian-energy ban end only if the president certifies certain conditions, and that it could not establish those had been met. Analysts it quoted called the Russian volumes \"minuscule\" and the measures \"Band-Aids,\" and it quoted Tillis's warning that the deal has \"deadly consequences.\"",
+        "url": "https://time.com/article/2026/10/11/trump-claims-russia-and-ukraine-have-agreed-to-an-energy-ceasefire-/"
+      },
+      {
+        "name": "CBS News",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "CBS put \"energy ceasefire\" in quotation marks in its headline and led with Zelenskyy saying Russia was still striking Ukrainian energy sites. It reported that the White House had not responded to a request for clarity, relayed Foreign Minister Sybiha's defense of Zelenskyy's popular support, and noted that Trump \"has sought to blame\" Ukraine for diesel prices while the broader increase is tied to the Iran war. It included the allied reactions (Carney backing a ceasefire but criticizing the diesel deal) and the senators' objection that Congress was not consulted.",
+        "url": "https://www.cbsnews.com/news/zelenskyy-trump-new-ukrainian-president/"
+      },
+      {
+        "name": "Al Jazeera",
+        "lean": "leanleft",
+        "heat": 2,
+        "framing": "Al Jazeera's piece (Al Jazeera staff with Reuters and AP) was headlined on legality: a Republican senator says the deal \"may be illegal.\" It listed the bipartisan senators, Rep. Don Bacon's \"morally wrong\" line and Carney's office's statement, and framed the administration's easing of sanctions as a response to record fuel prices tied to the U.S.-Israel war on Iran. It noted Tillis is retiring and tied his support for Trump's priorities to a reversal, while the administration's side appears mainly as Bessent's brief defense. It did not cover the ceasefire claim in the piece read.",
+        "url": "https://www.aljazeera.com/news/2026/10/11/republican-senator-says-trump-diesel-agreement-with-russia-may-be-illegal"
+      },
+      {
+        "name": "Fox News",
+        "lean": "right",
+        "heat": 2,
+        "framing": "Fox News's headline stated the claim as settled (\"Trump announces Russia-Ukraine energy ceasefire, both sides agree\"), while the body noted that the White House did not respond to a comment request, that an energy ceasefire is not a comprehensive deal, that monitoring and enforcement are unclear, and that Moscow did not publicly confirm Trump's similar September announcement. It presented the diesel deal as Trump's price-cutting measure with Zelenskyy's criticism attached. The article did not report whether strikes continued after the post or any Russian reaction.",
+        "url": "https://www.foxnews.com/politics/trump-announces-immediate-energy-ceasefire-between-russia-ukraine"
+      },
+      {
+        "name": "Fox Business",
+        "lean": "right",
+        "heat": 1,
+        "framing": "Fox Business covered the Oct. 9 diesel announcement almost entirely in Trump's words: the 300,000, 500,000, 1,000,000 and 3,000,000-ton tranches, his \"highly successful discussion\" with Putin and his prediction that prices would \"come tumbling.\" It reported that the White House gave no pricing, contract or delivery detail, but included no critic, no analyst, and nothing on sanctions or Treasury. It did tie high diesel prices to both the Iran and Ukraine wars.",
+        "url": "https://www.foxbusiness.com/politics/trump-says-russia-agreed-deliver-millions-diesel-fuel-highly-successful-discussion.amp"
+      },
+      {
+        "name": "Breitbart",
+        "lean": "right",
+        "heat": 1,
+        "framing": "Breitbart led with Trump's announcement and ran Zelenskyy's offer to hold elections as a response to it. It described the Oct. 10 exchange as a \"public spat\" and gave Kyiv's refinery campaign its own rationale, including a Ukrainian claim that 51 percent of Russian refining capacity was offline, hedged as \"purportedly.\" It reported no Kremlin response, said nothing on whether strikes stopped, did not mention the Sept. 14 precedent, and left Tillis's illegality claim to a sidebar headline.",
+        "url": "https://www.breitbart.com/europe/2026/10/11/trump-announces-ukraine-russia-ceasefire-on-strikes-against-energy-infrastructure/"
+      },
+      {
+        "name": "Washington Examiner",
+        "lean": "right",
+        "heat": 2,
+        "framing": "The Washington Examiner's short piece (partly paywalled when read) led with the senators' demand that Trump \"immediately reverse course,\" and stressed that opposition came \"from both sides of the aisle,\" quoting their line that the U.S. should not give Putin \"a financial lifeline.\" It gave the deal's rationale as lowering gas prices and did not raise the legal question or carry an administration response. A separate Examiner item the same evening reported Rep. Thomas Massie backing the deal despite his fraught relationship with Trump.",
+        "url": "https://www.washingtonexaminer.com/news/senate/4762586/six-senators-trump-reverse-course-russian-diesel/"
+      }
+    ],
+    "synthesis": [
+      {
+        "label": "Consistent across all ten:",
+        "text": "On Oct. 9 Trump announced a deal with Putin under which Russia would supply diesel (over 300,000 tons immediately, 500,000 in November, 1 million after, then a further 3 million, per his post), and the stated goal was lower fuel prices. Of the seven outlets that covered the Oct. 11 ceasefire post (AP, Reuters, Axios, TIME, CBS, Fox News, Breitbart), all quoted \"energy ceasefire\" and none reported a Russian confirmation or any terms, start time or verification mechanism. Outlets that carried the senators' letter (Reuters, Al Jazeera, TIME, CBS, Washington Examiner) agree it was bipartisan and called on the administration to \"immediately reverse course.\""
+      },
+      {
+        "label": "Where it splits — reporting differences, not just framing:",
+        "text": "Whether anything changed on the ground after the post. AP, TIME and CBS reported Russian strikes on Ukrainian energy sites continuing, including the Kharkiv power plant that Ukraine's presidential office said was hit after the post; Axios cited Zelenskyy saying strikes continued. Fox News and Breitbart reported neither way. On the Sept. 14 precedent, AP, TIME, Axios and Fox News noted a similar claim that was not confirmed by Moscow, and AP, TIME and Axios reported strikes continued; Breitbart did not mention it. On the cause of high diesel prices, TIME wrote that Trump \"falsely implied\" Ukraine's refinery strikes are a main driver and identified the Iran war and Hormuz disruption instead; AP and CBS described Trump as having \"sought to blame\" Ukraine while tying the broader rise to the Iran war; Fox News relayed Trump's argument that the strikes raised prices without testing it. That is a checkable disagreement, though not a clean one: AP also reported Russia has banned diesel exports since July because of Ukrainian refinery attacks, so Ukrainian strikes plausibly do reduce Russian supply even if they are not the main cause of U.S. prices."
+      },
+      {
+        "label": "Where it splits on framing, among outlets that agree on the facts:",
+        "text": "Headline verbs differed: AP and TIME wrote \"claims,\" Axios \"says,\" CBS \"announces\" with quotation marks around the term and a \"but\" clause, Fox News and Breitbart \"announces,\" with Fox's headline adding \"both sides agree\" even though its own body reported no Russian response. Reuters, Al Jazeera and the Washington Examiner framed the story as a Washington political and legal fight; AP, CBS and Axios framed it around Zelenskyy's reaction and the war; Fox Business reported only Trump's announcement. Lean again did not map cleanly: the Washington Examiner opened with a bipartisan Senate rebuke, while Al Jazeera and TIME made the legal question prominent and CBS did not."
+      },
+      {
+        "label": "What no one has established:",
+        "text": "No outlet reported what Russia agreed to, if anything, or on what timeline; the Kremlin account of the Oct. 9 call as relayed by AP spoke of readiness to supply oil products and said nothing about a ceasefire. No outlet resolved the legal dispute: critics cite the 2022 ban on Russian energy imports and the new Russia sanctions law, the administration says it has authority, and TIME noted it could not establish whether the statutory conditions for lifting the ban were met. Counts of senators differ across outlets (six at CBS and the Washington Examiner, seven at Reuters and TIME, with Wyden among the signers in the Reuters list). Analysts quoted by AP, TIME and Al Jazeera doubt the diesel volumes will move prices much, and no outlet showed that deliveries could arrive before the midterms."
+      }
+    ]
+  },
+  {
     "id": "canada-tariffs-paused-deal-unclear",
     "locations": [
       {
