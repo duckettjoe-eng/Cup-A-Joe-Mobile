@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T13:38:42.293Z",
+  "generatedAt": "2026-10-19T13:38:41.499Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -33,6 +33,25 @@
           "url": "https://factcheck.afp.com/doc.afp.com.94ZU6WE",
           "title": "Fake Trump post on tariffs, Carney and Epstein circulates online",
           "reviewDate": "2026-02-05T22:38:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
+      "claimant": "Donald Trump",
+      "claimDate": "2018-08-27T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/08/u-s-trade-with-canada-not-smaller-than-with-mexico/",
+          "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
+          "reviewDate": "2018-08-28T21:11:21Z",
           "textualRating": "False",
           "languageCode": "en"
         }
@@ -78,19 +97,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "Canada is a \"smaller segment\" in terms of trade than Mexico.",
-      "claimant": "Donald Trump",
-      "claimDate": "2018-08-27T00:00:00Z",
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2018/08/u-s-trade-with-canada-not-smaller-than-with-mexico/",
-          "title": "U.S. Trade with Canada Not 'Smaller' Than With Mexico",
-          "reviewDate": "2018-08-28T21:11:21Z",
-          "textualRating": "False",
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -135,19 +154,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-01-30T00:00:00Z",
+      "text": "List shows Canada's tariffs on US goods before trade war",
+      "claimant": "Multiple people",
+      "claimDate": "2025-03-03T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
           },
-          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
-          "title": "Trump on U.S. Imports of Oil and Lumber",
-          "reviewDate": "2025-02-11T00:00:00Z",
-          "textualRating": "Experts Say It's Not That Simple",
+          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
+          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
+          "reviewDate": "2025-03-06T16:10:00Z",
+          "textualRating": "Misleading",
           "languageCode": "en"
         }
       ],
@@ -172,26 +191,7 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "List shows Canada's tariffs on US goods before trade war",
-      "claimant": "Multiple people",
-      "claimDate": "2025-03-03T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
-          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
-          "reviewDate": "2025-03-06T16:10:00Z",
-          "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
+      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -210,7 +210,7 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "\"States are merely an 'agent' for the Federal Government in counting and tabulating the votes. They must do what the Federal Government, as represented by the President of the United States, tells them, FOR THE GOOD OF OUR COUNTRY, to do.\"",
+      "text": "President Trump said the U.S. is \"now the only Country in the World that uses Mail-in Voting.”",
       "claimant": "President Donald Trump",
       "claimDate": "2025-08-18T00:00:00Z",
       "claimReview": [
@@ -338,25 +338,6 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
-      "claimant": "Hillary Clinton",
-      "claimDate": "2018-09-16T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
-          "title": "Clinton Goes Too Far in Criticizing Trump",
-          "reviewDate": "2018-09-20T19:21:38Z",
-          "textualRating": "Misleading",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
       "text": "The SAVE America Act “requires everyone to re-register to vote in person and your driver’s license, REAL ID, or military ID aren’t even good enough.”",
       "claimant": "Sen. Mark Kelly",
       "claimDate": "2026-03-17T00:00:00Z",
@@ -414,28 +395,11 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
-          "title": "Trump said US is only country that allows mail-in ballots. Here's the ...",
-          "reviewDate": "2026-02-23T08:00:06Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
       "text": "As of April 20, 2026, Senate Majority Leader John Thune is refusing to bring the SAVE America Act up for debate or for a vote in the Senate.",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
+            "name": "Snopes.com",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/thune-save-america-act/",
@@ -448,71 +412,33 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "Oscar-winning actor Denzel Washington said, \"I've worked with a lot of people in my life, and I've never met anyone braver, smarter, or who cares more about America than Donald Trump. He's a great friend and an even better president. I'm proud to be a steadfast supporter, and I'll never apologize for it. God Bless America and our president.\"",
+      "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-denzel-washington-quote/",
-          "title": "Did Denzel Washington say he's 'never met anyone braver, smarter' than Trump?",
-          "reviewDate": "2026-10-10T16:00:11Z",
-          "textualRating": "Incorrect Attribution",
+          "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
+          "title": "Trump said US is only country that allows mail-in ballots. Here's the ...",
+          "reviewDate": "2026-02-23T08:00:06Z",
+          "textualRating": "False",
           "languageCode": "en"
         }
       ],
-      "matchedTopic": "new this week"
+      "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "Iranian officials say they will soon release the audio of Donald Trump begging them to open up the Strait of Hormuz so gas prices will go down before Americans vote on November 3.",
-      "claimant": "x.com",
-      "claimDate": "2026-10-08T23:58:18Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-iranian-officials-did-not-promise-to-release-audio-of-trump-begging-them-to-open-strait-of-hormuz.html",
-          "title": "Fact Check: Iranian Officials Did NOT Promise To Release Audio Of Trump Begging Them To Open Strait Of Hormuz So Gas Prices Lower Before Midterms -- Satire Post",
-          "reviewDate": "2026-10-08T23:58:18Z",
-          "textualRating": "Satire Origin",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Screenshot shows real Trump Truth Social message where he claims to have spoken to God about a golden throne, an ocean filled with blood and Armageddon",
-      "claimant": "x.com",
-      "claimDate": "2026-10-07T18:55:17Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-trump-did-not-write-truth-social-message-claiming-he-spoke-to-god-about-a-golden-throne-an-ocean-filled-with-blood-and-armageddon.html",
-          "title": "Fact Check: Trump Did NOT Post A Truth Social Message Claiming He Spoke To God About A Golden Throne, An Ocean Filled With Blood And Armageddon",
-          "reviewDate": "2026-10-07T18:55:17Z",
-          "textualRating": "No Revelation",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Photos authentically show a gold-covered statue depicting a naked U.S. President Donald Trump on display at the European Parliament in Strasbourg, France, in early October.",
+      "text": "An image shared on social media authentically shows a post by former U.S. Rep. Marjorie Talyor Greene criticizing President Donald Trump's \"broken campaign promises.\"",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-gold-naked-statue/",
-          "title": "Do photos show gold statue of naked Trump at European Parliament?",
-          "reviewDate": "2026-10-07T13:58:16Z",
+          "url": "https://www.snopes.com/fact-check/marjorie-taylor-greene-response-trump/",
+          "title": "'You are the snake': Marjorie Taylor Greene post criticizes Trump's 'broken campaign promises'",
+          "reviewDate": "2026-10-16T08:00:12Z",
           "textualRating": "True",
           "languageCode": "en"
         }
@@ -520,34 +446,108 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "While speaking about the Iran war on Oct. 5, U.S. President Donald Trump said, \"They [Iran] can take out a city. Let 'em take out Los Angeles, let 'em take out San Diego. This is a very small price to pay and it's going to be over with very soon.\"",
+      "text": "President Trump posted a Truth Social message that included \"LEAVE THE REFINERIES ALONE\"",
+      "claimant": "x.com",
+      "claimDate": "2026-10-16T19:40:46Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
+            "name": "Lead Stories",
+            "site": "leadstories.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-iran-take-out-la-san-diego/",
-          "title": "Did Trump say of Iran, 'Let 'em take out' LA and San Diego?",
-          "reviewDate": "2026-10-06T17:21:08Z",
-          "textualRating": "Correct Attribution",
+          "url": "https://leadstories.com/hoax-alert/2026/10/trump-did-not-post-truth-social-message-leave-refineries-alone-fabricated-screenshot.html",
+          "title": "Fact Check: Trump Did NOT Post A Truth Social Message That Included 'LEAVE THE REFINERIES ALONE' -- It Is A Fabricated Screenshot",
+          "reviewDate": "2026-10-16T19:40:46Z",
+          "textualRating": "Not His Words",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "In 2026, U.S. President Donald Trump's administration denied protections under the Endangered Species Act to monarch butterflies until 2030.",
+      "text": "Last weekend, U.S. President Donald Trump's administration chopped down 430 trees and planned to cut down hundreds more from East Potomac Park in Washington, D.C., the same site where Trump plans to renovate a golf course, court documents confirm.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-cut-down-430-trees/",
+          "title": "Trump admin cut down 430 trees at DC golf course renovation site, court docs confirm",
+          "reviewDate": "2026-10-16T11:38:11Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "U.S. President Donald Trump accused Ukraine of midterm election interference after it struck “bot farms” in Russia in October 2026.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes.com",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/monarch-butterfly-protections-trump/",
-          "title": "Why Endangered Species Act protections for monarch butterflies are in limbo under Trump",
-          "reviewDate": "2026-10-06T04:00:11Z",
-          "textualRating": "Mixture",
+          "url": "https://www.snopes.com/fact-check/ukraine-russia-bot-farms-satire/",
+          "title": "Trump didn't accuse Ukraine of election interference after strikes on Russian 'bot farms,' despite claims",
+          "reviewDate": "2026-10-16T13:35:26Z",
+          "textualRating": "Originated as Satire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "President Trump posted on Truth Social about Peter Girnus after he pretended to be on the Nobel committee.",
+      "claimant": "x.com",
+      "claimDate": "2026-10-15T16:21:16Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-trump-did-not-post-on-truth-social-about-peter-girnus.html",
+          "title": "Fact Check: Trump Did NOT Post On Truth Social About 'Peter Girnus' -- The Fake Nobel Committee Member",
+          "reviewDate": "2026-10-15T16:21:16Z",
+          "textualRating": "No Such Post",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Trump Accuses Ukraine Of Midterm Election Interference After Russian Bot Farm Strikes",
+      "claimant": "betootaadvocate.com",
+      "claimDate": "2026-10-15T16:37:17Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/10/trump-did-not-accuse-ukraine-of-midterm-election-interference-after-russian-bot-farm-strikes-it-is-a-satire-website.html",
+          "title": "Fact Check: Trump Did NOT Accuse Ukraine Of Midterm Election Interference After Russian Bot Farm Strikes -- It Is A Satire Website",
+          "reviewDate": "2026-10-15T16:37:17Z",
+          "textualRating": "Parody News",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "An image authentically shows attendees at one of U.S. President Donald Trump's rallies punching the face of a protester wearing a shirt that says \"RELEASE THE EPSTEIN FILES.\"",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-rally-epstein-protester/",
+          "title": "Fake image depicting real attack on protester at Trump rally spreads online",
+          "reviewDate": "2026-10-15T14:51:55Z",
+          "textualRating": "Fake",
           "languageCode": "en"
         }
       ],
