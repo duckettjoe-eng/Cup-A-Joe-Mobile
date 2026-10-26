@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T13:38:41.499Z",
+  "generatedAt": "2026-10-26T13:38:41.864Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -59,13 +59,32 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
+      "text": "Canada relies on the United States for 95% of its imports",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-02-26T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.36Z24H8",
+          "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
+          "reviewDate": "2025-03-05T16:26:00Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
       "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
       "claimant": "Donald Trump",
       "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "DW.com",
+            "name": "DW News",
             "site": "dw.com"
           },
           "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
@@ -84,32 +103,13 @@
       "claimReview": [
         {
           "publisher": {
-            "name": "DW.com",
+            "name": "DW News",
             "site": "dw.com"
           },
           "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
           "title": "Fact check: Trump's false claims about tariffs",
           "reviewDate": "2025-04-04T00:00:00Z",
           "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
-      "claimant": "President Donald Trump",
-      "claimDate": "2025-01-30T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
-          "title": "Trump on U.S. Imports of Oil and Lumber",
-          "reviewDate": "2025-02-11T00:00:00Z",
-          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -135,38 +135,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "Canada relies on the United States for 95% of its imports",
+      "text": "\"At the court in Canada, we always lose. Well, the judges are three Canadians and two Americans. We always lose.\"",
       "claimant": "Donald Trump",
-      "claimDate": "2025-02-26T00:00:00Z",
+      "claimDate": "2017-05-04T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.36Z24H8",
-          "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
-          "reviewDate": "2025-03-05T16:26:00Z",
-          "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "List shows Canada's tariffs on US goods before trade war",
-      "claimant": "Multiple people",
-      "claimDate": "2025-03-03T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
-          },
-          "url": "https://factcheck.afp.com/doc.afp.com.36ZB6AD",
-          "title": "Inaccurate list of Canadian tariffs circulates amid US trade war",
-          "reviewDate": "2025-03-06T16:10:00Z",
-          "textualRating": "Misleading",
+          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2017/05/22/president-trumps-claim-that-we-always-lose-in-u-s-canada-trade-disputes/",
+          "title": "Analysis | President Trump's claim that 'we always lose' in U.S. ...",
+          "reviewDate": "2017-05-22T10:51:25Z",
+          "textualRating": "Three Pinocchios",
           "languageCode": "en"
         }
       ],
@@ -185,6 +166,25 @@
           "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
           "reviewDate": "2025-04-08T20:44:00Z",
           "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"[W]e don’t need the products that [Canada and Mexico] have. We have all the oil you need. We have all the trees you need, meaning the lumber.\"",
+      "claimant": "President Donald Trump",
+      "claimDate": "2025-01-30T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2025/02/trump-on-u-s-imports-of-oil-and-lumber/",
+          "title": "Trump on U.S. Imports of Oil and Lumber",
+          "reviewDate": "2025-02-11T00:00:00Z",
+          "textualRating": "Experts Say It's Not That Simple",
           "languageCode": "en"
         }
       ],
@@ -247,37 +247,17 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
-      "claimant": "Kirstjen Nielsen",
-      "claimDate": "2018-07-19T00:00:00Z",
+      "text": "U.S. President Donald Trump's administration declined to invite observers from Europe's Organization for Security and Co-operation for the 2026 midterm elections, marking the first time the OSCE had not received an invitation to observe a federal U.S. election since 2002.",
       "claimReview": [
         {
           "publisher": {
-            "name": "The Washington Post",
-            "site": "washingtonpost.com"
+            "name": "Snopes",
+            "site": "snopes.com"
           },
-          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2018/07/23/kirstjen-nielsens-claim-that-u-s-election-systems-werent-targeted-to-favor-trump/",
-          "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
-          "reviewDate": "2018-07-23T12:35:41Z",
-          "textualRating": "Three Pinocchios",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
-      "claimant": "Instagram post",
-      "claimDate": "2024-10-31T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
-          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
-          "textualRating": "Not the Whole Story",
+          "url": "https://www.snopes.com/fact-check/trump-election-observers-midterms/",
+          "title": "Trump admin is skipping international election observers for 2026 ...",
+          "reviewDate": "2026-10-12T19:52:25Z",
+          "textualRating": "True",
           "languageCode": "en"
         }
       ],
@@ -302,18 +282,37 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "“Mail-In Ballots will lead to massive electoral fraud and a rigged 2020 Election.”",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-07-02T00:00:00Z",
+      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
+      "claimant": "Instagram post",
+      "claimDate": "2024-10-31T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
+          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
+          "textualRating": "Not the Whole Story",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“I haven’t seen any evidence that the attempts to interfere in our election infrastructure was to favor a particular political party. I think what we’ve seen on the foreign influence side is they were attempting to intervene and cause chaos on both sides.”",
+      "claimant": "Kirstjen Nielsen",
+      "claimDate": "2018-07-19T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "The Washington Post",
             "site": "washingtonpost.com"
           },
-          "url": "https://www.washingtonpost.com/politics/2020/09/11/trumps-fusillade-falsehoods-mail-voting/",
-          "title": "Trump’s fusillade of falsehoods on mail voting",
-          "textualRating": "Four Pinocchios",
+          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2018/07/23/kirstjen-nielsens-claim-that-u-s-election-systems-werent-targeted-to-favor-trump/",
+          "title": "Analysis | Kirstjen Nielsen's claim that U.S. election systems weren't ...",
+          "reviewDate": "2018-07-23T12:35:41Z",
+          "textualRating": "Three Pinocchios",
           "languageCode": "en"
         }
       ],
@@ -429,16 +428,50 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "An image shared on social media authentically shows a post by former U.S. Rep. Marjorie Talyor Greene criticizing President Donald Trump's \"broken campaign promises.\"",
+      "text": "A video authentically shows U.S. President Donald Trump waving to and saluting nobody prior to boarding his helicopter, Marine One, on Oct. 19.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-waving-nobody-helicopter/",
+          "title": "Does video show Trump waving at, saluting nobody before boarding Marine One?",
+          "reviewDate": "2026-10-24T16:00:12Z",
+          "textualRating": "Miscaptioned",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "In October 2026, the town of Mexico, New York, announced it would change its name to \"Epstein List\" to avoid being renamed by U.S. President Donald Trump.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/mexico-ny-epstein-list-name-change/",
+          "title": "Did Mexico, NY, change its name to 'Epstein List' to avoid being renamed by Trump?",
+          "reviewDate": "2026-10-23T05:23:23Z",
+          "textualRating": "Labeled Satire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "Video authentically shows U.S. President Donald Trump making a strange \"EHHH!\" sound midsentence during a speech at an Oct. 21 campaign rally for Sen. Darline Graham in South Carolina.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/marjorie-taylor-greene-response-trump/",
-          "title": "'You are the snake': Marjorie Taylor Greene post criticizes Trump's 'broken campaign promises'",
-          "reviewDate": "2026-10-16T08:00:12Z",
+          "url": "https://www.snopes.com/fact-check/trump-makes-strange-noise-rally/",
+          "title": "Does video show Trump making strange noise during South Carolina rally?",
+          "reviewDate": "2026-10-23T16:13:49Z",
           "textualRating": "True",
           "languageCode": "en"
         }
@@ -446,108 +479,72 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "President Trump posted a Truth Social message that included \"LEAVE THE REFINERIES ALONE\"",
+      "text": "Anna Kelly is officially President Trump's next White House Press Secretary.",
       "claimant": "x.com",
-      "claimDate": "2026-10-16T19:40:46Z",
+      "claimDate": "2026-10-23T17:08:42Z",
       "claimReview": [
         {
           "publisher": {
             "name": "Lead Stories",
             "site": "leadstories.com"
           },
-          "url": "https://leadstories.com/hoax-alert/2026/10/trump-did-not-post-truth-social-message-leave-refineries-alone-fabricated-screenshot.html",
-          "title": "Fact Check: Trump Did NOT Post A Truth Social Message That Included 'LEAVE THE REFINERIES ALONE' -- It Is A Fabricated Screenshot",
-          "reviewDate": "2026-10-16T19:40:46Z",
-          "textualRating": "Not His Words",
+          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-anna-kelly-is-not-officially-the-next-white-house-press-secretary-for-president-trump.html",
+          "title": "Fact Check: Anna Kelly Is NOT Officially Trump's Next White House Press Secretary -- No Successor Named",
+          "reviewDate": "2026-10-23T17:08:42Z",
+          "textualRating": "No One Named",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "Last weekend, U.S. President Donald Trump's administration chopped down 430 trees and planned to cut down hundreds more from East Potomac Park in Washington, D.C., the same site where Trump plans to renovate a golf course, court documents confirm.",
+      "text": "Video proves Donald Trump waved to nobody before boarding Marine One",
+      "claimant": "x.com",
+      "claimDate": "2026-10-21T23:50:25Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-video-does-not-prove-trump-waved-to-nobody-before-boarding-marine-one-people-are-outside-camera-view.html",
+          "title": "Fact Check: Video Does NOT Prove Trump Waved To Nobody Before Boarding Marine One -- People Are Outside Camera View",
+          "reviewDate": "2026-10-21T23:50:25Z",
+          "textualRating": "Out Of View",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "U.S. President Donald Trump said that if Democrats win, \"You’re going to be thrown into a system where everyone gets healthcare.\"",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-cut-down-430-trees/",
-          "title": "Trump admin cut down 430 trees at DC golf course renovation site, court docs confirm",
-          "reviewDate": "2026-10-16T11:38:11Z",
+          "url": "https://www.snopes.com/fact-check/trump-healthcare-democrats-win-quote/",
+          "title": "Did Trump say 'everyone gets healthcare' if Democrats win?",
+          "reviewDate": "2026-10-20T16:25:50Z",
+          "textualRating": "Correct Attribution",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "A video authentically shows U.S. President Donald Trump neglecting to salute two Marines upon disembarking Marine One on Oct. 20.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes.com",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-forgets-salute-marines/",
+          "title": "Does video show Trump neglecting to salute US Marines after departing Marine One?",
+          "reviewDate": "2026-10-21T16:52:48Z",
           "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "U.S. President Donald Trump accused Ukraine of midterm election interference after it struck “bot farms” in Russia in October 2026.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/ukraine-russia-bot-farms-satire/",
-          "title": "Trump didn't accuse Ukraine of election interference after strikes on Russian 'bot farms,' despite claims",
-          "reviewDate": "2026-10-16T13:35:26Z",
-          "textualRating": "Originated as Satire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "President Trump posted on Truth Social about Peter Girnus after he pretended to be on the Nobel committee.",
-      "claimant": "x.com",
-      "claimDate": "2026-10-15T16:21:16Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-trump-did-not-post-on-truth-social-about-peter-girnus.html",
-          "title": "Fact Check: Trump Did NOT Post On Truth Social About 'Peter Girnus' -- The Fake Nobel Committee Member",
-          "reviewDate": "2026-10-15T16:21:16Z",
-          "textualRating": "No Such Post",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Trump Accuses Ukraine Of Midterm Election Interference After Russian Bot Farm Strikes",
-      "claimant": "betootaadvocate.com",
-      "claimDate": "2026-10-15T16:37:17Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/trump-did-not-accuse-ukraine-of-midterm-election-interference-after-russian-bot-farm-strikes-it-is-a-satire-website.html",
-          "title": "Fact Check: Trump Did NOT Accuse Ukraine Of Midterm Election Interference After Russian Bot Farm Strikes -- It Is A Satire Website",
-          "reviewDate": "2026-10-15T16:37:17Z",
-          "textualRating": "Parody News",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "An image authentically shows attendees at one of U.S. President Donald Trump's rallies punching the face of a protester wearing a shirt that says \"RELEASE THE EPSTEIN FILES.\"",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-rally-epstein-protester/",
-          "title": "Fake image depicting real attack on protester at Trump rally spreads online",
-          "reviewDate": "2026-10-15T14:51:55Z",
-          "textualRating": "Fake",
           "languageCode": "en"
         }
       ],
