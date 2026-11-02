@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T13:38:41.864Z",
+  "generatedAt": "2026-11-02T13:38:42.263Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -78,32 +78,13 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW News",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
       "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
       "claimant": "Donald Trump",
       "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "DW News",
+            "name": "DW.com",
             "site": "dw.com"
           },
           "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
@@ -116,19 +97,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "Donald Trump imposes tariffs on Blue Jays games",
-      "claimant": "Multiple people",
-      "claimDate": "2025-10-18T00:00:00Z",
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "AFP Fact Check",
-            "site": "factcheck.afp.com"
+            "name": "DW.com",
+            "site": "dw.com"
           },
-          "url": "https://factcheck.afp.com/doc.afp.com.79PD2CT",
-          "title": "Rumors of Trump tariff on Blue Jays wins are unsubstantiated",
-          "reviewDate": "2025-10-23T23:13:00Z",
-          "textualRating": "Unsubstantiated",
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
           "languageCode": "en"
         }
       ],
@@ -148,6 +129,25 @@
           "title": "Analysis | President Trump's claim that 'we always lose' in U.S. ...",
           "reviewDate": "2017-05-22T10:51:25Z",
           "textualRating": "Three Pinocchios",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "Donald Trump imposes tariffs on Blue Jays games",
+      "claimant": "Multiple people",
+      "claimDate": "2025-10-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/doc.afp.com.79PD2CT",
+          "title": "Rumors of Trump tariff on Blue Jays wins are unsubstantiated",
+          "reviewDate": "2025-10-23T23:13:00Z",
+          "textualRating": "Unsubstantiated",
           "languageCode": "en"
         }
       ],
@@ -247,41 +247,6 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "U.S. President Donald Trump's administration declined to invite observers from Europe's Organization for Security and Co-operation for the 2026 midterm elections, marking the first time the OSCE had not received an invitation to observe a federal U.S. election since 2002.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-election-observers-midterms/",
-          "title": "Trump admin is skipping international election observers for 2026 ...",
-          "reviewDate": "2026-10-12T19:52:25Z",
-          "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
-      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-11-29T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "FactCheck.org",
-            "site": "factcheck.org"
-          },
-          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
-          "title": "Trump Repeats Baseless, False Claims About the Election",
-          "textualRating": "No Evidence",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump election security"
-    },
-    {
       "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
       "claimant": "Instagram post",
       "claimDate": "2024-10-31T00:00:00Z",
@@ -319,6 +284,60 @@
       "matchedTopic": "Trump election security"
     },
     {
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "President Trump has shown a \"complete unwillingness to stop\" Russian interference in U.S. elections.",
+      "claimant": "Hillary Clinton",
+      "claimDate": "2018-09-16T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "FactCheck.org",
+            "site": "factcheck.org"
+          },
+          "url": "https://www.factcheck.org/2018/09/clinton-goes-too-far-in-criticizing-trump/",
+          "title": "Clinton Goes Too Far in Criticizing Trump",
+          "reviewDate": "2018-09-20T19:21:38Z",
+          "textualRating": "Misleading",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "U.S. President Donald Trump's administration declined to invite observers from Europe's Organization for Security and Co-operation for the 2026 midterm elections, marking the first time the OSCE had not received an invitation to observe a federal U.S. election since 2002.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-election-observers-midterms/",
+          "title": "Trump admin is skipping international election observers for 2026 ...",
+          "reviewDate": "2026-10-12T19:52:25Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
       "text": "\"Musk’s Starlink uploaded votes in swing states\" during the 2024 election.",
       "claimant": "Threads post",
       "claimDate": "2024-11-10T00:00:00Z",
@@ -331,6 +350,24 @@
           "url": "https://www.factcheck.org/2024/11/musks-starlink-was-not-connected-to-vote-tabulation-contrary-to-online-claims/",
           "title": "Musk's Starlink Was Not Connected to Vote Tabulation, Contrary to ...",
           "textualRating": "Unsupported",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump election security"
+    },
+    {
+      "text": "“The recent statement by Chris Krebs on the security of the 2020 Election was highly inaccurate, in that there were massive improprieties and fraud.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://politifact.com/factchecks/2020/nov/18/donald-trump/fact-checking-donald-trumps-tweet-firing-christoph/",
+          "title": "Fact-checking Donald Trump's tweet firing Christopher Krebs ...",
+          "textualRating": "Pants on Fire",
           "languageCode": "en"
         }
       ],
@@ -375,47 +412,11 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "The SAVE America Act “would force Americans to register (to vote) only in person, something only 5% of Americans do today.\"",
-      "claimant": "Chuck Schumer",
-      "claimDate": "2026-03-17T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "PolitiFact",
-            "site": "politifact.com"
-          },
-          "url": "https://politifact.com/factchecks/2026/mar/19/charles-schumer/voter-registration-save-america-act-in-person/",
-          "title": "Fact-checking Chuck Schumer about SAVE America Act, how many ...",
-          "reviewDate": "2026-03-19T00:00:00Z",
-          "textualRating": "Half True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
-      "text": "As of April 20, 2026, Senate Majority Leader John Thune is refusing to bring the SAVE America Act up for debate or for a vote in the Senate.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/thune-save-america-act/",
-          "title": "Is John Thune 'no longer considering' SAVE America Act in Senate ...",
-          "reviewDate": "2026-04-21T17:04:37Z",
-          "textualRating": "Mostly False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump SAVE America Act"
-    },
-    {
       "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
+            "name": "Snopes.com",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
@@ -428,105 +429,33 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "A video authentically shows U.S. President Donald Trump waving to and saluting nobody prior to boarding his helicopter, Marine One, on Oct. 19.",
+      "text": "U.S. President Donald Trump's administration cut down a 250-year-old cottonwood tree on the southern border in Lochiel, Arizona, to make way for border wall construction.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes.com",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-waving-nobody-helicopter/",
-          "title": "Does video show Trump waving at, saluting nobody before boarding Marine One?",
-          "reviewDate": "2026-10-24T16:00:12Z",
-          "textualRating": "Miscaptioned",
+          "url": "https://www.snopes.com/fact-check/trump-grandmother-tree-border-wall/",
+          "title": "Did Trump cut down 250-year-old 'grandmother' tree to pave way for ...",
+          "reviewDate": "2026-11-02T04:00:11Z",
+          "textualRating": "Mostly True",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "In October 2026, the town of Mexico, New York, announced it would change its name to \"Epstein List\" to avoid being renamed by U.S. President Donald Trump.",
+      "text": "U.S. President Donald Trump said, “We're making money like this country has never made before,” in reference to the high cost of oil in 2026.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes.com",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/mexico-ny-epstein-list-name-change/",
-          "title": "Did Mexico, NY, change its name to 'Epstein List' to avoid being renamed by Trump?",
-          "reviewDate": "2026-10-23T05:23:23Z",
-          "textualRating": "Labeled Satire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Video authentically shows U.S. President Donald Trump making a strange \"EHHH!\" sound midsentence during a speech at an Oct. 21 campaign rally for Sen. Darline Graham in South Carolina.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-makes-strange-noise-rally/",
-          "title": "Does video show Trump making strange noise during South Carolina rally?",
-          "reviewDate": "2026-10-23T16:13:49Z",
-          "textualRating": "True",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Anna Kelly is officially President Trump's next White House Press Secretary.",
-      "claimant": "x.com",
-      "claimDate": "2026-10-23T17:08:42Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-anna-kelly-is-not-officially-the-next-white-house-press-secretary-for-president-trump.html",
-          "title": "Fact Check: Anna Kelly Is NOT Officially Trump's Next White House Press Secretary -- No Successor Named",
-          "reviewDate": "2026-10-23T17:08:42Z",
-          "textualRating": "No One Named",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "Video proves Donald Trump waved to nobody before boarding Marine One",
-      "claimant": "x.com",
-      "claimDate": "2026-10-21T23:50:25Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-video-does-not-prove-trump-waved-to-nobody-before-boarding-marine-one-people-are-outside-camera-view.html",
-          "title": "Fact Check: Video Does NOT Prove Trump Waved To Nobody Before Boarding Marine One -- People Are Outside Camera View",
-          "reviewDate": "2026-10-21T23:50:25Z",
-          "textualRating": "Out Of View",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "U.S. President Donald Trump said that if Democrats win, \"You’re going to be thrown into a system where everyone gets healthcare.\"",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/trump-healthcare-democrats-win-quote/",
-          "title": "Did Trump say 'everyone gets healthcare' if Democrats win?",
-          "reviewDate": "2026-10-20T16:25:50Z",
+          "url": "https://www.snopes.com/fact-check/trump-us-making-fortune-oil-gas/",
+          "title": "Did Trump say US is 'making money' like it never has before while ...",
+          "reviewDate": "2026-11-02T03:00:13Z",
           "textualRating": "Correct Attribution",
           "languageCode": "en"
         }
@@ -534,17 +463,87 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "A video authentically shows U.S. President Donald Trump neglecting to salute two Marines upon disembarking Marine One on Oct. 20.",
+      "text": "A screenshot authentically shows a social media post by U.S. President Donald Trump, in which he said the state of Montana should be renamed to \"Mountain.\"",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes.com",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-forgets-salute-marines/",
-          "title": "Does video show Trump neglecting to salute US Marines after departing Marine One?",
-          "reviewDate": "2026-10-21T16:52:48Z",
-          "textualRating": "True",
+          "url": "https://www.snopes.com/fact-check/trump-montana-mountain-post/",
+          "title": "Did Trump say he wanted to rename Montana to 'Mountain'?",
+          "reviewDate": "2026-11-01T16:00:13Z",
+          "textualRating": "Fake",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "President Donald Trump walked an old woman home after his Iowa rally on October 22, 2026.",
+      "claimant": "x.com",
+      "claimDate": "2026-10-31T15:47:10Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Lead Stories",
+            "site": "leadstories.com"
+          },
+          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-trump-did-not-walk-elderly-woman-home-after-iowa-rally-oct-22-2026.html",
+          "title": "Fact Check: Trump Did NOT Walk 'Old Woman' Home After Iowa Rally -- Image Is AI-Generated",
+          "reviewDate": "2026-10-31T15:47:10Z",
+          "textualRating": "Satire Account",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "A video within a news broadcast authentically shows U.S. President Donald Trump telling a crowd of his supporters that he has a husband.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/video-trump-husband/",
+          "title": "Does video show Trump saying he has a husband?",
+          "reviewDate": "2026-10-30T03:00:14Z",
+          "textualRating": "Originated as Satire",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "An open letter circulating online in which Katie Couric criticizes U.S. President Donald Trump a week before the 2026 midterm elections is authentic.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/katie-couric-open-letter-trump/",
+          "title": "Katie Couric wrote open letter criticizing Trump, but edited version is circulating",
+          "reviewDate": "2026-10-30T16:25:09Z",
+          "textualRating": "Mixture",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "A post about Donald Trump’s efforts to be awarded the Nobel Peace Prize was written by a Nobel Committee member.",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Full Fact",
+            "site": "fullfact.org"
+          },
+          "url": "https://fullfact.org/us/nobel-peace-prize-trump-satire/",
+          "title": "Post from ‘Nobel Committee member’ is satire – Full Fact",
+          "reviewDate": "2026-10-30T00:00:00Z",
+          "textualRating": "This is a satirical post. It was first shared on X by an account that describes themselves as a “satirist” and regularly creates similar content from fictional insiders.",
           "languageCode": "en"
         }
       ],
