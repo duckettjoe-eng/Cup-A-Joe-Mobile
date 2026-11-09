@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T13:38:42.263Z",
+  "generatedAt": "2026-11-09T13:38:42.076Z",
   "claims": [
     {
       "text": "Canada's unemployment rate is at 10 percent and rapidly rising",
@@ -59,6 +59,62 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
+      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW News",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2025-04-02T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "DW News",
+            "site": "dw.com"
+          },
+          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
+          "title": "Fact check: Trump's false claims about tariffs",
+          "reviewDate": "2025-04-04T00:00:00Z",
+          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
+      "text": "The anti-tariff billboards across the US are paid for by Canada.",
+      "claimant": "Global Affairs Canada",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "WCNC",
+            "site": "wcnc.com"
+          },
+          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
+          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
+          "reviewDate": "2025-04-08T20:44:00Z",
+          "textualRating": "True",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "Trump tariffs Canada"
+    },
+    {
       "text": "Canada relies on the United States for 95% of its imports",
       "claimant": "Donald Trump",
       "claimDate": "2025-02-26T00:00:00Z",
@@ -72,63 +128,6 @@
           "title": "Fact-checking Trump's claims about Canada used to justify tariffs",
           "reviewDate": "2025-03-05T16:26:00Z",
           "textualRating": "False",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"The European Union, shown at the second position, charges 39% tariffs on imports from the US.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW.com",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. according to the World Trade Organisation, the EU's trade-weighted average tariff rate is 2.7%. The highest average tariff rate that the European Union charges some countries is 30% on dairy products.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"Canada by the way imposes a 250-300% tariff on many of our dairy products, the first can of milk, the first little carton of milk, very low price, after that, it gets bad.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2025-04-02T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "DW.com",
-            "site": "dw.com"
-          },
-          "url": "https://www.dw.com/en/fact-check-trumps-false-claims-about-tariffs/a-72137021",
-          "title": "Fact check: Trump's false claims about tariffs",
-          "reviewDate": "2025-04-04T00:00:00Z",
-          "textualRating": "False. The tariffs Canada imposes on US dairy products are arranged in the United States-Mexico-Canada Agreement (USMCA). It applies to 14 categories of dairy products, such as milk, butter, cheese, yogurt, and ice cream.    As agreed in the USMCA, a certain number of US dairy products is allowed to enter the Canadian market tariff-free. When this limit is reached, other tariff calculations kick in to protect domestic producers. These over-quota tariffs are between 200 and 300%. However, according to the USMCA, Canada has guaranteed that tens of thousands of metric tons of imported US milk per year will face zero tariffs.",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "Trump tariffs Canada"
-    },
-    {
-      "text": "\"At the court in Canada, we always lose. Well, the judges are three Canadians and two Americans. We always lose.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2017-05-04T00:00:00Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "The Washington Post",
-            "site": "washingtonpost.com"
-          },
-          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2017/05/22/president-trumps-claim-that-we-always-lose-in-u-s-canada-trade-disputes/",
-          "title": "Analysis | President Trump's claim that 'we always lose' in U.S. ...",
-          "reviewDate": "2017-05-22T10:51:25Z",
-          "textualRating": "Three Pinocchios",
           "languageCode": "en"
         }
       ],
@@ -154,18 +153,19 @@
       "matchedTopic": "Trump tariffs Canada"
     },
     {
-      "text": "The anti-tariff billboards across the US are paid for by Canada.",
-      "claimant": "Global Affairs Canada",
+      "text": "\"At the court in Canada, we always lose. Well, the judges are three Canadians and two Americans. We always lose.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2017-05-04T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "WCNC",
-            "site": "wcnc.com"
+            "name": "The Washington Post",
+            "site": "washingtonpost.com"
           },
-          "url": "https://www.wcnc.com/article/news/verify/canada-anti-tariff-billboards-north-carolina-trump-tax-political-battle/275-35b6c5f9-c89d-4f1b-a84f-660e0b3552b5",
-          "title": "Canadian government behind anti-tariff billboards in Charlotte ...",
-          "reviewDate": "2025-04-08T20:44:00Z",
-          "textualRating": "True",
+          "url": "https://www.washingtonpost.com/news/fact-checker/wp/2017/05/22/president-trumps-claim-that-we-always-lose-in-u-s-canada-trade-disputes/",
+          "title": "Analysis | President Trump's claim that 'we always lose' in U.S. ...",
+          "reviewDate": "2017-05-22T10:51:25Z",
+          "textualRating": "Three Pinocchios",
           "languageCode": "en"
         }
       ],
@@ -247,18 +247,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
-      "claimant": "Instagram post",
-      "claimDate": "2024-10-31T00:00:00Z",
+      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2020-11-29T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
-          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
-          "textualRating": "Not the Whole Story",
+          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
+          "title": "Trump Repeats Baseless, False Claims About the Election",
+          "textualRating": "No Evidence",
           "languageCode": "en"
         }
       ],
@@ -284,18 +284,18 @@
       "matchedTopic": "Trump election security"
     },
     {
-      "text": "Dominion Voting Systems \"had glitches where they moved thousands of votes from my account to Biden’s account.\"",
-      "claimant": "Donald Trump",
-      "claimDate": "2020-11-29T00:00:00Z",
+      "text": "Voter machines in Kentucky are automatically selecting ‘Harris-Walz’ despite voter’s NUMEROUS attempts to select ‘Trump-Vance.’ This is election interference.",
+      "claimant": "Instagram post",
+      "claimDate": "2024-10-31T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
             "name": "FactCheck.org",
             "site": "factcheck.org"
           },
-          "url": "https://www.factcheck.org/2020/11/trump-repeats-baseless-false-claims-about-the-election/",
-          "title": "Trump Repeats Baseless, False Claims About the Election",
-          "textualRating": "No Evidence",
+          "url": "https://www.factcheck.org/2024/11/video-shows-voter-error-not-election-interference-in-kentucky/",
+          "title": "Video Shows 'Voter Error,' Not 'Election Interference' in Kentucky",
+          "textualRating": "Not the Whole Story",
           "languageCode": "en"
         }
       ],
@@ -325,7 +325,7 @@
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes",
+            "name": "Snopes.com",
             "site": "snopes.com"
           },
           "url": "https://www.snopes.com/fact-check/trump-election-observers-midterms/",
@@ -412,67 +412,88 @@
       "matchedTopic": "Trump SAVE America Act"
     },
     {
-      "text": "As of February 2026, the United States is the only country in the world that allows mail-in ballots, as U.S. President Donald Trump claimed.",
+      "text": "The video shows US President Donald Trump destroying his office after the 2026 midterm elections.",
+      "claimDate": "2026-11-09T00:00:00Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
+            "name": "Telugu Post",
+            "site": "telugupost.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-mail-in-voting/",
-          "title": "Trump said US is only country that allows mail-in ballots. Here's the ...",
-          "reviewDate": "2026-02-23T08:00:06Z",
+          "url": "https://www.telugupost.com/english-factcheck/fact-check-trump-office-destruction-us-midterm-election-ai-video-1625433",
+          "title": "Fact Check: Viral Video of Donald Trump Destroying His Office Is AI ...",
           "textualRating": "False",
           "languageCode": "en"
         }
       ],
-      "matchedTopic": "Trump SAVE America Act"
+      "matchedTopic": "new this week"
     },
     {
-      "text": "U.S. President Donald Trump's administration cut down a 250-year-old cottonwood tree on the southern border in Lochiel, Arizona, to make way for border wall construction.",
+      "text": "A clean, \"15% band\" formula perfectly calculates the vote share of 2026 Republican senate candidates by taking 85% of Trump's 2024 election result.",
+      "claimant": "x.com",
+      "claimDate": "2026-11-08T14:48:20Z",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes.com",
-            "site": "snopes.com"
+            "name": "Lead Stories",
+            "site": "leadstories.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-grandmother-tree-border-wall/",
-          "title": "Did Trump cut down 250-year-old 'grandmother' tree to pave way for ...",
-          "reviewDate": "2026-11-02T04:00:11Z",
-          "textualRating": "Mostly True",
+          "url": "https://leadstories.com/hoax-alert/2026/11/fact-check-15-percent-band-trump-senate-2022-2024.html",
+          "title": "Fact Check: NO Uniform '15% Band' Formula Mapping Trump's 2024 Result Exactly Onto 2026 Senate Race -- Results Show Variations",
+          "reviewDate": "2026-11-08T14:48:20Z",
+          "textualRating": "More Variation",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "U.S. President Donald Trump said, “We're making money like this country has never made before,” in reference to the high cost of oil in 2026.",
+      "text": "In November, Time magazine published a cover image of U.S. President Donald Trump with an \"I Voted\" sticker on his mouth, appearing to silence him.",
       "claimReview": [
         {
           "publisher": {
-            "name": "Snopes.com",
+            "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-us-making-fortune-oil-gas/",
-          "title": "Did Trump say US is 'making money' like it never has before while ...",
-          "reviewDate": "2026-11-02T03:00:13Z",
-          "textualRating": "Correct Attribution",
+          "url": "https://www.snopes.com/fact-check/time-magazine-trump-cover-midterms/",
+          "title": "Time magazine published this Trump cover after Republicans' midterm losses",
+          "reviewDate": "2026-11-07T11:00:12Z",
+          "textualRating": "True",
           "languageCode": "en"
         }
       ],
       "matchedTopic": "new this week"
     },
     {
-      "text": "A screenshot authentically shows a social media post by U.S. President Donald Trump, in which he said the state of Montana should be renamed to \"Mountain.\"",
+      "text": "The video shows US President Donald Trump destroying his office.",
+      "claimant": "Twitter",
+      "claimDate": "2026-11-07T08:09:35Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "The Quint",
+            "site": "thequint.com"
+          },
+          "url": "https://www.thequint.com/news/webqoof/video-of-us-president-trump-destroying-his-office-is-ai-generated-fact-check",
+          "title": "Video of US President Donald Trump Destroying His Office Is AI-Generated",
+          "reviewDate": "2026-11-07T08:09:35Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "An image authentically shows U.S. President Donald Trump, convicted sex offender Jeffrey Epstein and singer Beyoncé together aboard a private jet.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes.com",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/trump-montana-mountain-post/",
-          "title": "Did Trump say he wanted to rename Montana to 'Mountain'?",
-          "reviewDate": "2026-11-01T16:00:13Z",
+          "url": "https://www.snopes.com/fact-check/trump-epstein-beyonce-photo-fake/",
+          "title": "Image of Trump, Epstein and Beyoncé on private jet is fake. Here's how we know",
+          "reviewDate": "2026-11-06T06:00:13Z",
           "textualRating": "Fake",
           "languageCode": "en"
         }
@@ -480,52 +501,16 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "President Donald Trump walked an old woman home after his Iowa rally on October 22, 2026.",
-      "claimant": "x.com",
-      "claimDate": "2026-10-31T15:47:10Z",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Lead Stories",
-            "site": "leadstories.com"
-          },
-          "url": "https://leadstories.com/hoax-alert/2026/10/fact-check-trump-did-not-walk-elderly-woman-home-after-iowa-rally-oct-22-2026.html",
-          "title": "Fact Check: Trump Did NOT Walk 'Old Woman' Home After Iowa Rally -- Image Is AI-Generated",
-          "reviewDate": "2026-10-31T15:47:10Z",
-          "textualRating": "Satire Account",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "A video within a news broadcast authentically shows U.S. President Donald Trump telling a crowd of his supporters that he has a husband.",
+      "text": "Oil prices were above $100 a barrel for more days under former President Barack Obama than they've been under President Donald Trump so far, as claimed in a chart shared to Facebook.",
       "claimReview": [
         {
           "publisher": {
             "name": "Snopes",
             "site": "snopes.com"
           },
-          "url": "https://www.snopes.com/fact-check/video-trump-husband/",
-          "title": "Does video show Trump saying he has a husband?",
-          "reviewDate": "2026-10-30T03:00:14Z",
-          "textualRating": "Originated as Satire",
-          "languageCode": "en"
-        }
-      ],
-      "matchedTopic": "new this week"
-    },
-    {
-      "text": "An open letter circulating online in which Katie Couric criticizes U.S. President Donald Trump a week before the 2026 midterm elections is authentic.",
-      "claimReview": [
-        {
-          "publisher": {
-            "name": "Snopes",
-            "site": "snopes.com"
-          },
-          "url": "https://www.snopes.com/fact-check/katie-couric-open-letter-trump/",
-          "title": "Katie Couric wrote open letter criticizing Trump, but edited version is circulating",
-          "reviewDate": "2026-10-30T16:25:09Z",
+          "url": "https://www.snopes.com/fact-check/trump-obama-oil-prices/",
+          "title": "Obama vs. Trump oil prices: Who saw more days over $100 a barrel?",
+          "reviewDate": "2026-11-06T11:43:38Z",
           "textualRating": "Mixture",
           "languageCode": "en"
         }
@@ -533,17 +518,34 @@
       "matchedTopic": "new this week"
     },
     {
-      "text": "A post about Donald Trump’s efforts to be awarded the Nobel Peace Prize was written by a Nobel Committee member.",
+      "text": "A screenshot authentically showed a Truth Social post by U.S. President Donald Trump that accused Democrats of using “WITCHCRAFT AND SATANISM” to win the 2026 midterm elections.",
       "claimReview": [
         {
           "publisher": {
-            "name": "Full Fact",
-            "site": "fullfact.org"
+            "name": "Snopes",
+            "site": "snopes.com"
           },
-          "url": "https://fullfact.org/us/nobel-peace-prize-trump-satire/",
-          "title": "Post from ‘Nobel Committee member’ is satire – Full Fact",
-          "reviewDate": "2026-10-30T00:00:00Z",
-          "textualRating": "This is a satirical post. It was first shared on X by an account that describes themselves as a “satirist” and regularly creates similar content from fictional insiders.",
+          "url": "https://www.snopes.com/fact-check/trump-witchcraft-satanism-democrats/",
+          "title": "Did Trump accuse Democrats of using 'witchcraft and satanism' to win midterms? Don't be fooled",
+          "reviewDate": "2026-11-06T09:57:32Z",
+          "textualRating": "Fake",
+          "languageCode": "en"
+        }
+      ],
+      "matchedTopic": "new this week"
+    },
+    {
+      "text": "A screenshot authentically displays a Truth Social post made by U.S. President Donald Trump following the 2026 midterm elections, saying in part, \"You failed me. There's consequences since you are an enemy of the greatest president to ever live.\"",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "Snopes",
+            "site": "snopes.com"
+          },
+          "url": "https://www.snopes.com/fact-check/trump-truth-social-election-meltdown/",
+          "title": "Did Trump post about 'consequences' after midterm losses?",
+          "reviewDate": "2026-11-06T03:00:13Z",
+          "textualRating": "Fake",
           "languageCode": "en"
         }
       ],
